@@ -10,12 +10,18 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
+    pan.cpp \
+    setting.cpp \
     widget.cpp
 
 HEADERS += \
+    pan.h \
+    setting.h \
     widget.h
 
 FORMS += \
+    pan.ui \
+    setting.ui \
     widget.ui
 
 # Default rules for deployment.
