@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
@@ -23,9 +22,7 @@ class Ui_setting
 {
 public:
     QLabel *label_1;
-    QLabel *label_2;
     QLineEdit *txtl_set_time;
-    QCheckBox *cbx_set_isfirst;
     QPushButton *btn_set_ok;
     QPushButton *btn_set_cancel;
 
@@ -41,16 +38,9 @@ public:
         font.setPointSize(15);
         font.setBold(true);
         label_1->setFont(font);
-        label_2 = new QLabel(setting);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(20, 160, 101, 41));
-        label_2->setFont(font);
         txtl_set_time = new QLineEdit(setting);
         txtl_set_time->setObjectName(QString::fromUtf8("txtl_set_time"));
         txtl_set_time->setGeometry(QRect(160, 100, 171, 31));
-        cbx_set_isfirst = new QCheckBox(setting);
-        cbx_set_isfirst->setObjectName(QString::fromUtf8("cbx_set_isfirst"));
-        cbx_set_isfirst->setGeometry(QRect(200, 170, 95, 24));
         btn_set_ok = new QPushButton(setting);
         btn_set_ok->setObjectName(QString::fromUtf8("btn_set_ok"));
         btn_set_ok->setGeometry(QRect(30, 340, 93, 29));
@@ -68,8 +58,6 @@ public:
     {
         setting->setWindowTitle(QCoreApplication::translate("setting", "Form", nullptr));
         label_1->setText(QCoreApplication::translate("setting", "\350\266\205\346\227\266\346\227\266\351\225\277", nullptr));
-        label_2->setText(QCoreApplication::translate("setting", "\346\230\257\345\220\246\345\205\210\346\211\213", nullptr));
-        cbx_set_isfirst->setText(QString());
         btn_set_ok->setText(QCoreApplication::translate("setting", "\347\241\256\350\256\244", nullptr));
         btn_set_cancel->setText(QCoreApplication::translate("setting", "\351\200\200\345\207\272", nullptr));
     } // retranslateUi

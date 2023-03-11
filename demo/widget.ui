@@ -58,19 +58,6 @@
     <string>退出游戏</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_wid_set">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>390</y>
-     <width>211</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>选项设置</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections>

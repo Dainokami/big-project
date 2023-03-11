@@ -19,6 +19,9 @@ public:
 signals:
     void  setting_close();//用于发出信号保证只存在一个设置界面
 
+private slots:
+    void on_btn_set_ok_clicked();
+
 private:
     Ui::setting *ui;
 };

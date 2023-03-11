@@ -17,3 +17,11 @@ void setting::closeEvent(QCloseEvent *event)
 {
     emit setting_close();
 }
+
+void setting::on_btn_set_ok_clicked()//设置思考时间
+{
+    //待完成
+    this->close();
+}
+
+
