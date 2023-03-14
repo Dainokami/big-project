@@ -18,7 +18,7 @@ public:
 
 signals:
     void  setting_close();//用于发出信号保证只存在一个设置界面
-
+    void  send_time(QString game_time);
 private slots:
     void on_btn_set_ok_clicked();
 

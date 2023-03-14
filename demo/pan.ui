@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>pan</class>
  <widget class="QWidget" name="pan">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -15,7 +18,7 @@
   </property>
   <widget class="QLineEdit" name="txtl_pan_time">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -34,25 +37,6 @@
    </property>
    <property name="text">
     <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_pan_set">
-   <property name="geometry">
-    <rect>
-     <x>950</x>
-     <y>10</y>
-     <width>81</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>15</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>设置</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -74,7 +58,7 @@
     <string>倒计时：</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btn_startgame">
    <property name="geometry">
     <rect>
      <x>740</x>
@@ -87,7 +71,7 @@
     <string>开始游戏</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="btn_stop">
    <property name="geometry">
     <rect>
      <x>950</x>
@@ -116,7 +100,58 @@
     </font>
    </property>
    <property name="text">
-    <string>这是棋盘</string>
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>image/pan.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_lose">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>430</y>
+     <width>91</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>认输</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>210</y>
+     <width>95</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>210</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>是否先手：</string>
    </property>
   </widget>
  </widget>

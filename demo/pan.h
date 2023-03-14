@@ -2,7 +2,9 @@
 #define PAN_H
 
 #include <QWidget>
-#include <setting.h>
+#include <QImage>
+#include <QTimer>
+
 namespace Ui {
 class pan;
 }
@@ -16,15 +18,24 @@ public:
     ~pan();
 
 private slots :
-    void close_s();
-    void on_btn_pan_set_clicked();
 
-    private:
+
+
+    void on_btn_startgame_clicked();
+
+public slots :
+
+
+private:
     Ui::pan *ui;
     void set_time(int seted_time = 50);
-    setting *s = nullptr;
+    void BeginCountdown();
+    void OnTimerCountdown();
+    void delete_time();
 
-
+    QTimer *m;
+    int game_max_time;
+    int now_time=0;
 };
 
 #endif // PAN_H

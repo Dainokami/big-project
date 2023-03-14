@@ -11,20 +11,19 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     pan.cpp \
-    setting.cpp \
     widget.cpp
 
 HEADERS += \
     pan.h \
-    setting.h \
     widget.h
 
 FORMS += \
     pan.ui \
-    setting.ui \
     widget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES +=
