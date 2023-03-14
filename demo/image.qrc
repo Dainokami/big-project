@@ -1,2 +1,5 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>image/pan.jpg</file>
+    </qresource>
+</RCC>
