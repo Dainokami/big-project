@@ -46,7 +46,7 @@ void pan::BeginCountdown()//当前定时器未激活时，激活定时器
 {
    if (m->isActive() == false)
    {
-        m->start(game_max_time);
+        m->start();
    }
 }
 
