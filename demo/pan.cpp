@@ -16,6 +16,7 @@ pan::pan(QWidget *parent) :
     m = new QTimer(this);
     m->setInterval(1000);
     connect(m,&QTimer::timeout,this,pan::OnTimerCountdown);
+    ui->txtl_pan_time->setText("50");
 
     //以下关联按钮
     QSignalMapper *myMapper = new QSignalMapper(this);
@@ -44,11 +45,10 @@ pan::~pan()
     delete ui;
 }
 
-
-void pan::set_time(int seted_time)
+void pan::set_time(int seted_time)//设置时间并激活时间
 {
-    this->game_max_time = seted_time;
-    this->now_time = game_max_time;
+    game_max_time = seted_time;
+    now_time = game_max_time;
     pan::BeginCountdown();
     QString temp = QString::number(seted_time);
     ui->txtl_pan_time->setText(temp);
@@ -62,20 +62,21 @@ void pan::BeginCountdown()//当前定时器未激活时，激活定时器
    }
 }
 
-void pan::OnTimerCountdown()
+void pan::OnTimerCountdown()//输出倒计时
 {
-   //定时器，没触发一次，时间减1，直到最后一次倒计时为0秒时，停止定时器
    now_time -= 1;
-   //使用QLabel控件显示倒计时的时间
    ui->txtl_pan_time->setText(QString::number(now_time));
-   if(now_time == 0)
+
+   if(now_time <= 0)
    {
-      //说明，定时器最后一次触发，可以做停止以及其它操作，假设，现在做停止定时器操作
+      QMessageBox::information(NULL, "嘻嘻嘻嘻", "你超时了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+      clear_pan();
+      ui->txtl_pan_time->setEnabled(true);
       m->stop();
    }
 }
 
-void pan::delete_time()
+void pan::delete_time()//删除计时器
 {
     if (m)
     {
@@ -105,39 +106,79 @@ void pan::play_the_Go(QPushButton *btn)//用于绘制棋子
     }
 }
 
-void pan::judge()//这个函数用于判断输赢
+void pan::judge()//这个函数用于判断输赢（待实现）
 {
     now_player *= -1;
+
+
+
+
+
+
+
 }
 
-void pan::on_btn_startgame_clicked()
+void pan::dfs(int x, int y)//深度搜索判断气有无被断（待实现）
 {
 
-    ui->txtl_pan_time->setEnabled(false);
-    game_state = 1;
-    set_time(ui->txtl_pan_time->text().toInt());
+}
 
+void pan::clear_pan()//该函数用于清屏,清空气,重设时间
+{
+    for(int i=0;i<9;i++)
+        for(int j=0;j<9;j++)
+        {
+            Qi[i][j] = 0;
+            QString temp = "btn_"+QString::number(i)+"_"+QString::number(j);
+            QPushButton *button = this->findChild<QPushButton*>(temp);
+            button->setFlat(true);
+
+        }
+    if(ui->txtl_pan_time->isEnabled())
+    {
+        ui->txtl_pan_time->setEnabled(false);
+        ui->btn_isEnable->setChecked(false);
+        set_time(ui->txtl_pan_time->text().toInt());
+    }
+    else
+        set_time(game_max_time);
 
 }
 
-void pan::on_btn_stop_clicked()
+void pan::on_btn_startgame_clicked()//开始游戏按钮
+{
+    if(ui->txtl_pan_time->isEnabled())
+    {
+        ui->txtl_pan_time->setEnabled(false);
+        ui->btn_isEnable->setChecked(false);
+        set_time(ui->txtl_pan_time->text().toInt());
+    }
+    else
+        m->start();
+    ui->txtl_pan_time->setEnabled(false);
+    game_state = 1;
+}
+
+void pan::on_btn_stop_clicked()//游戏暂停按钮
 {
     m->stop();
     game_state = 0;
 }
 
-void pan::on_btn_startgame_2_clicked()
+void pan::on_btn_startgame_2_clicked()//继续游戏按钮(和开始游戏合并了，已删除)
 {
     m->start();
     game_state = 1;
+
 }
 
-void pan::get_btn_sign(int idx)
+void pan::get_btn_sign(int idx)//处理下棋的81个按钮
 {
     for(int i_=0;i_<9;i_++)
         for(int j_=0;j_<9;j_++)
-            if(idx == i_*10+j_ && Qi[i_][j_] == 0)
+            if(idx == i_*10+j_ && Qi[i_][j_] == 0 && game_state == 1)
             {
+                now_time = game_max_time;
                 QString temp = "btn_"+QString::number(i_)+"_"+QString::number(j_);
                 QPushButton *button = this->findChild<QPushButton*>(temp);
                 Qi[i_][j_] = now_player;
@@ -146,3 +187,26 @@ void pan::get_btn_sign(int idx)
             }
 
 }
+
+void pan::on_btn_restart_clicked()//再来一把按钮
+{
+    clear_pan();
+    game_state = 1;
+}
+
+void pan::on_btn_lose_clicked()//投降
+{
+    QMessageBox::information(NULL, "嘻嘻嘻嘻", "你投降了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+    clear_pan();
+    ui->txtl_pan_time->setEnabled(true);
+    m->stop();
+}
+
+void pan::on_btn_isEnable_clicked()
+{
+    if(ui->btn_isEnable->isChecked())
+        ui->txtl_pan_time->setEnabled(true);
+    else
+        ui->txtl_pan_time->setEnabled(false);
+}
+

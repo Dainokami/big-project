@@ -7,7 +7,7 @@
 #include <qsignalmapper.h>
 #include <QObject>
 #include <QPushButton>
-
+#include <QMessageBox>
 
 namespace Ui {
 class pan;
@@ -36,6 +36,10 @@ private slots :
 
     void get_btn_sign(int idx);
 
+    void on_btn_restart_clicked();
+
+    void on_btn_isEnable_clicked();
+
 public slots :
 
 
@@ -47,6 +51,9 @@ private:
     void delete_time();
     void play_the_Go(QPushButton *btn);
     void judge();
+    void clear_pan();
+    void dfs(int x,int y);
+
 
     int now_player = -1;
     int Qi[9][9]={0};//棋盘的状态，0是未落子，1是白棋落子，-1是黑棋落子。

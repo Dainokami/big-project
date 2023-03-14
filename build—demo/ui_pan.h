@@ -14,6 +14,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,7 +28,6 @@ public:
     QPushButton *btn_stop;
     QLabel *label_pan;
     QPushButton *btn_lose;
-    QPushButton *btn_startgame_2;
     QPushButton *btn_0_0;
     QPushButton *btn_0_1;
     QPushButton *btn_0_2;
@@ -109,6 +109,8 @@ public:
     QPushButton *btn_8_5;
     QPushButton *btn_8_6;
     QPushButton *btn_8_8;
+    QPushButton *btn_restart;
+    QRadioButton *btn_isEnable;
 
     void setupUi(QWidget *pan)
     {
@@ -119,7 +121,7 @@ public:
         txtl_pan_time = new QLineEdit(pan);
         txtl_pan_time->setObjectName(QString::fromUtf8("txtl_pan_time"));
         txtl_pan_time->setEnabled(true);
-        txtl_pan_time->setGeometry(QRect(930, 140, 113, 31));
+        txtl_pan_time->setGeometry(QRect(870, 140, 113, 31));
         QFont font;
         font.setPointSize(10);
         font.setBold(true);
@@ -127,17 +129,17 @@ public:
         txtl_pan_time->setFont(font);
         label = new QLabel(pan);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(830, 140, 81, 31));
+        label->setGeometry(QRect(790, 140, 81, 31));
         QFont font1;
         font1.setPointSize(12);
         font1.setBold(true);
         label->setFont(font1);
         btn_startgame = new QPushButton(pan);
         btn_startgame->setObjectName(QString::fromUtf8("btn_startgame"));
-        btn_startgame->setGeometry(QRect(740, 280, 91, 61));
+        btn_startgame->setGeometry(QRect(740, 350, 91, 61));
         btn_stop = new QPushButton(pan);
         btn_stop->setObjectName(QString::fromUtf8("btn_stop"));
-        btn_stop->setGeometry(QRect(740, 360, 91, 61));
+        btn_stop->setGeometry(QRect(920, 350, 91, 61));
         label_pan = new QLabel(pan);
         label_pan->setObjectName(QString::fromUtf8("label_pan"));
         label_pan->setGeometry(QRect(60, 0, 601, 601));
@@ -150,9 +152,6 @@ public:
         btn_lose = new QPushButton(pan);
         btn_lose->setObjectName(QString::fromUtf8("btn_lose"));
         btn_lose->setGeometry(QRect(740, 450, 91, 61));
-        btn_startgame_2 = new QPushButton(pan);
-        btn_startgame_2->setObjectName(QString::fromUtf8("btn_startgame_2"));
-        btn_startgame_2->setGeometry(QRect(930, 360, 91, 61));
         btn_0_0 = new QPushButton(pan);
         btn_0_0->setObjectName(QString::fromUtf8("btn_0_0"));
         btn_0_0->setGeometry(QRect(90, 30, 60, 60));
@@ -477,6 +476,12 @@ public:
         btn_8_8->setObjectName(QString::fromUtf8("btn_8_8"));
         btn_8_8->setGeometry(QRect(570, 510, 60, 60));
         btn_8_8->setFlat(true);
+        btn_restart = new QPushButton(pan);
+        btn_restart->setObjectName(QString::fromUtf8("btn_restart"));
+        btn_restart->setGeometry(QRect(920, 450, 91, 61));
+        btn_isEnable = new QRadioButton(pan);
+        btn_isEnable->setObjectName(QString::fromUtf8("btn_isEnable"));
+        btn_isEnable->setGeometry(QRect(1010, 150, 111, 24));
 
         retranslateUi(pan);
 
@@ -492,7 +497,6 @@ public:
         btn_stop->setText(QCoreApplication::translate("pan", "\346\232\202\345\201\234\346\270\270\346\210\217", nullptr));
         label_pan->setText(QString());
         btn_lose->setText(QCoreApplication::translate("pan", "\350\256\244\350\276\223", nullptr));
-        btn_startgame_2->setText(QCoreApplication::translate("pan", "\347\273\247\347\273\255\346\270\270\346\210\217", nullptr));
         btn_0_0->setText(QString());
         btn_0_1->setText(QString());
         btn_0_2->setText(QString());
@@ -574,6 +578,8 @@ public:
         btn_8_5->setText(QString());
         btn_8_6->setText(QString());
         btn_8_8->setText(QString());
+        btn_restart->setText(QCoreApplication::translate("pan", "\351\207\215\346\226\260\345\274\200\345\247\213", nullptr));
+        btn_isEnable->setText(QString());
     } // retranslateUi
 
 };
