@@ -58,6 +58,7 @@ private:
 
     int now_player = -1;
     int Qi[9][9]={0};//棋盘的状态，0是未落子，1是白棋落子，-1是黑棋落子。
+    int replaced_Qi[9][9]={0};
 
     QTimer *m;
     int game_max_time;

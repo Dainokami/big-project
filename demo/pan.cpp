@@ -70,10 +70,16 @@ void pan::OnTimerCountdown()//输出倒计时
 
    if(now_time <= 0)
    {
-      QMessageBox::information(NULL, "嘻嘻嘻嘻", "你超时了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-      clear_pan();
-      ui->txtl_pan_time->setEnabled(true);
-      m->stop();
+       if(now_player==1)
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你超时了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+       else if(now_player==-1)
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你超时了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+
+        clear_pan();
+        ui->txtl_pan_time->setEnabled(true);
+        game_state = 0;
+        now_player = -1;
+        m->stop();
    }
 }
 
@@ -183,9 +189,9 @@ void pan::get_btn_sign(int idx)//处理下棋的81个按钮
                 now_time = game_max_time;
                 QString temp = "btn_"+QString::number(i_)+"_"+QString::number(j_);
                 QPushButton *button = this->findChild<QPushButton*>(temp);
-                Qi[i_][j_] = now_player;
-                judge();
+                Qi[i_][j_] = now_player;                
                 play_the_Go(button);
+                judge();
             }
 
 }
@@ -194,12 +200,14 @@ void pan::on_btn_restart_clicked()//再来一把按钮
 {
     clear_pan();
     game_state = 1;
+    now_player = -1;
 }
 
 void pan::on_btn_lose_clicked()//投降
 {
     QMessageBox::information(NULL, "嘻嘻嘻嘻", "你投降了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
     game_state = 0;
+    now_player = -1;
     clear_pan();
     ui->txtl_pan_time->setEnabled(true);
     m->stop();
