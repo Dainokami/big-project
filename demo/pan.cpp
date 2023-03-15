@@ -29,6 +29,7 @@ pan::pan(QWidget *parent) :
         }
     connect(myMapper,SIGNAL(mappedInt(int)),this,SLOT(get_btn_sign(int)));
 
+
 }
 
 pan::~pan()
@@ -95,12 +96,12 @@ void pan::play_the_Go(QPushButton *btn)//用于绘制棋子
     {
         if(now_player == 1)
         {
-            btn->setStyleSheet("background-color:white");
+            btn->setStyleSheet("background-color:white;border-radius:30px;border:2px groove gray;border-style:outset;");
             btn->setFlat(false);
         }
         else if(now_player == -1)
         {
-            btn->setStyleSheet("background-color:black");
+            btn->setStyleSheet("background-color:black;border-radius:30px;border:2px groove gray;border-style:outset;");
             btn->setFlat(false);
         }
     }
@@ -131,6 +132,7 @@ void pan::clear_pan()//该函数用于清屏,清空气,重设时间
             Qi[i][j] = 0;
             QString temp = "btn_"+QString::number(i)+"_"+QString::number(j);
             QPushButton *button = this->findChild<QPushButton*>(temp);
+            button->setStyleSheet("background-color:transparent;");
             button->setFlat(true);
 
         }
@@ -197,6 +199,7 @@ void pan::on_btn_restart_clicked()//再来一把按钮
 void pan::on_btn_lose_clicked()//投降
 {
     QMessageBox::information(NULL, "嘻嘻嘻嘻", "你投降了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+    game_state = 0;
     clear_pan();
     ui->txtl_pan_time->setEnabled(true);
     m->stop();

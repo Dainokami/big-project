@@ -9,6 +9,7 @@
 #include <QPushButton>
 #include <QMessageBox>
 
+
 namespace Ui {
 class pan;
 }
