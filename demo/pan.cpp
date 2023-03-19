@@ -9,7 +9,7 @@ pan::pan(QWidget *parent) :
 
     //以下设置背景图
     QImage *img_pan = new QImage;
-    img_pan->load("E:\\Qt‘s project\\big-project\\demo\\image\\pan.jpg");
+    img_pan->load("D:\\git demo\\big-project3\\demo\\picture\\picture.jpeg");
     ui->label_pan->setPixmap(QPixmap::fromImage(*img_pan));
 
     //以下设置定时器
@@ -45,7 +45,22 @@ pan::~pan()
     }
     delete ui;
 }
-
+void pan::paintEvent(QPaintEvent *)//绘制棋盘
+{
+    paint=new QPainter;
+    paint->begin(this);
+    paint->setPen(QPen(Qt::black,2,Qt::SolidLine));
+      for(int i=0;i<lu+1;i++)
+        {
+          paint->drawLine(x,y+size*i,x+size*(lu),y+size*i);//画线函数：x1,y1,x2,y2:画从(x1,y1)到(x2,y2)的线
+        }
+      //画lu+1条竖线
+      for(int i=0;i<lu+1;i++)
+        {
+          paint->drawLine(x+size*i,y,x+size*i,y+size*(lu));
+        }
+      //ui->setupUi()
+}
 void pan::set_time(int seted_time)//设置时间并激活时间
 {
     game_max_time = seted_time;

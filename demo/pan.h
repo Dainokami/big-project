@@ -8,7 +8,7 @@
 #include <QObject>
 #include <QPushButton>
 #include <QMessageBox>
-
+#include <QPainter>
 
 namespace Ui {
 class pan;
@@ -21,7 +21,14 @@ class pan : public QWidget
 public:
     explicit pan(QWidget *parent = nullptr);
     ~pan();
-
+    const int lu=8;
+    const int size=61;
+    const int x=115,y=55;
+private slots :
+private:
+  void paintEvent(QPaintEvent *);//绘图函数声明
+  //void mousePressEvent(QMouseEvent *);
+  QPainter *paint;
 
 private slots :
 
