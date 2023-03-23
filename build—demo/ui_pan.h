@@ -148,7 +148,6 @@ public:
         font2.setPointSize(90);
         font2.setBold(true);
         label_pan->setFont(font2);
-        label_pan->setPixmap(QPixmap(QString::fromUtf8("image/pan.jpg")));
         label_pan->setScaledContents(true);
         btn_lose = new QPushButton(pan);
         btn_lose->setObjectName(QString::fromUtf8("btn_lose"));

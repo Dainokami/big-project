@@ -6,6 +6,7 @@ pan::pan(QWidget *parent) :
     ui(new Ui::pan)
 {
     ui->setupUi(this);
+    setWindowTitle("NOGO");
 
     //以下设置背景图
     QImage *img_pan = new QImage;
@@ -61,6 +62,7 @@ void pan::paintEvent(QPaintEvent *)//绘制棋盘
         }
       //ui->setupUi()
 }
+
 void pan::set_time(int seted_time)//设置时间并激活时间
 {
     game_max_time = seted_time;
@@ -85,15 +87,15 @@ void pan::OnTimerCountdown()//输出倒计时
 
    if(now_time <= 0)
    {
-       if(now_player==1)
+       if(now_player==  white_player)
             QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你超时了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-       else if(now_player==-1)
+       else if(now_player== black_player)
             QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你超时了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
         clear_pan();
         ui->txtl_pan_time->setEnabled(true);
-        game_state = 0;
-        now_player = -1;
+        game_state = off;
+        now_player = black_player;
         m->stop();
    }
 }
@@ -113,14 +115,14 @@ void pan::delete_time()//删除计时器
 
 void pan::play_the_Go(QPushButton *btn)//用于绘制棋子
 {
-    if(game_state == 1)
+    if(game_state == on)
     {
-        if(now_player == 1)
+        if(now_player == white_player)
         {
             btn->setStyleSheet("background-color:white;border-radius:30px;border:2px groove gray;border-style:outset;");
             btn->setFlat(false);
         }
-        else if(now_player == -1)
+        else if(now_player == black_player)
         {
             btn->setStyleSheet("background-color:black;border-radius:30px;border:2px groove gray;border-style:outset;");
             btn->setFlat(false);
@@ -130,27 +132,148 @@ void pan::play_the_Go(QPushButton *btn)//用于绘制棋子
 
 void pan::judge()//这个函数用于判断输赢（待实现）
 {
-    now_player *= -1;
 
 
 
+    for(int i=0;i<9;i++)
+        for(int j=0;j<9;j++)
+        {
+            if(Qi[i][j] == 0 && copy_Qi[i][j] != empty_checked)
+                dfs(i,j,-1);
+        }
+
+    for(int i=0;i<9;i++)
+        for(int j=0;j<9;j++)
+        {
+            if(copy_Qi[i][j] == white_loseQi_or_unchecked)
+                white_flag = on;
+            else if(copy_Qi[i][j] == black_loseQi_or_unchecked)
+                black_flag = on;
+        }
+
+    for(int i=0;i<9;i++)
+        qDebug()<<Qi[i][0]<<Qi[i][1]<<Qi[i][2]<<Qi[i][3]<<Qi[i][4]<<Qi[i][5]<<Qi[i][6]<<Qi[i][7]<<Qi[i][8];
+
+    for(int i=0;i<9;i++)
+        qDebug()<<copy_Qi[i][0]<<copy_Qi[i][1]<<copy_Qi[i][2]<<copy_Qi[i][3]<<copy_Qi[i][4]<<copy_Qi[i][5]<<copy_Qi[i][6]<<copy_Qi[i][7]<<copy_Qi[i][8];
 
 
+
+    if(black_flag== on && white_flag== on)
+    {
+        if(now_player== black_player)
+        {
+            m->stop();
+            game_state = off;
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你输了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+            now_player = black_player;
+            clear_pan();
+            ui->txtl_pan_time->setEnabled(true);
+            m->stop();
+        }
+        else
+        {
+            m->stop();
+            game_state = off;
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你输了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+            now_player = black_player;
+            clear_pan();
+            ui->txtl_pan_time->setEnabled(true);
+            m->stop();
+        }
+
+    }
+    else if(black_flag==on)
+    {
+        m->stop();
+        game_state = off;
+        if(now_player == black_player)
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你紫砂了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+        else if(now_player == white_player)
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你输了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+        now_player = black_player;
+        clear_pan();
+        ui->txtl_pan_time->setEnabled(true);
+        m->stop();
+    }
+    else if(white_flag ==on)
+    {
+        m->stop();
+        game_state = off;
+        if(now_player == white_player)
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你紫砂了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+        else if(now_player == black_player)
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你输了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+        now_player = black_player;
+        clear_pan();
+        ui->txtl_pan_time->setEnabled(true);
+        m->stop();
+    }
 
 
 }
-
-void pan::dfs(int x, int y)//深度搜索判断气有无被断（待实现）
+void pan::dfs(int x, int y,int flag)//深度搜索判断气有无被断
 {
+    if(Qi[x][y] == empty_unchecked && flag == -1)
+    {
+        copy_Qi[x][y] = empty_checked;
+        for(int i=0;i<4;i++)
+            if(x+step[i][0]>=0 && x+step[i][0]<9 && y+step[i][1]>=0 && y+step[i][1]<9 && copy_Qi[x+step[i][0]][y+step[i][1]] != empty_unchecked && copy_Qi[x+step[i][0]][y+step[i][1]] != black_have_Qi && copy_Qi[x+step[i][0]][y+step[i][1]] != white_have_Qi)
+                dfs(x+step[i][0] , y+step[i][1], i);
+        return;
+    }
+
+    if(Qi[x][y] == white_loseQi_or_unchecked)
+    {
+        if(Qi[x-step[flag][0]][y-step[flag][1]] == empty_unchecked)
+        {
+            copy_Qi[x][y] = white_have_Qi;
+        }
+        else if(copy_Qi[x-step[flag][0]][y-step[flag][1]] == white_have_Qi)
+        {
+            copy_Qi[x][y] = white_have_Qi;
+        }
+        else
+            return;
+
+        for(int i=0;i<4;i++)
+            if(x+step[i][0]>=0 && x+step[i][0]<9 && y+step[i][1]>=0 && y+step[i][1]<9 && (i+2)%4 !=flag && copy_Qi[x+step[i][0]][y+step[i][1]] != empty_checked && copy_Qi[x+step[i][0]][y+step[i][1]] != black_have_Qi && copy_Qi[x+step[i][0]][y+step[i][1]] != white_have_Qi)
+                dfs(x+step[i][0] , y+step[i][1], i);
+        return;
+    }
+    if(Qi[x][y] == black_loseQi_or_unchecked)
+    {
+        if(Qi[x-step[flag][0]][y-step[flag][1]] == empty_unchecked)
+        {
+            copy_Qi[x][y] = black_have_Qi;
+        }
+        else if(copy_Qi[x-step[flag][0]][y-step[flag][1]] == black_have_Qi)
+        {
+            copy_Qi[x][y] = black_have_Qi;
+        }
+        else
+            return;
+
+        for(int i=0;i<4;i++)
+            if(x+step[i][0]>=0 && x+step[i][0]<9 && y+step[i][1]>=0 && y+step[i][1]<9 && (i+2)%4 !=flag && copy_Qi[x+step[i][0]][y+step[i][1]] != empty_checked && copy_Qi[x+step[i][0]][y+step[i][1]] != black_have_Qi && copy_Qi[x+step[i][0]][y+step[i][1]] != white_have_Qi)
+                dfs(x+step[i][0] , y+step[i][1], i);
+        return;
+    }
+
+
 
 }
 
 void pan::clear_pan()//该函数用于清屏,清空气,重设时间
 {
+    black_flag=off;
+    white_flag=off;
+
     for(int i=0;i<9;i++)
         for(int j=0;j<9;j++)
         {
-            Qi[i][j] = 0;
+            Qi[i][j] = empty_unchecked;
+            copy_Qi[i][j]=empty_unchecked;
             QString temp = "btn_"+QString::number(i)+"_"+QString::number(j);
             QPushButton *button = this->findChild<QPushButton*>(temp);
             button->setStyleSheet("background-color:transparent;");
@@ -179,19 +302,28 @@ void pan::on_btn_startgame_clicked()//开始游戏按钮
     else
         m->start();
     ui->txtl_pan_time->setEnabled(false);
-    game_state = 1;
+    game_state = on;
 }
 
 void pan::on_btn_stop_clicked()//游戏暂停按钮
 {
-    m->stop();
-    game_state = 0;
-}
+    if(game_state ==on)
+    {
+        m->stop();
+        game_state = off;
 
+    }
+    else if(game_state == off)
+    {
+        this->on_btn_startgame_clicked();
+    }
+
+
+}
 void pan::on_btn_startgame_2_clicked()//继续游戏按钮(和开始游戏合并了，已删除)
 {
     m->start();
-    game_state = 1;
+    game_state = on;
 
 }
 
@@ -199,14 +331,27 @@ void pan::get_btn_sign(int idx)//处理下棋的81个按钮
 {
     for(int i_=0;i_<9;i_++)
         for(int j_=0;j_<9;j_++)
-            if(idx == i_*10+j_ && Qi[i_][j_] == 0 && game_state == 1)
+            if(idx == i_*10+j_ && Qi[i_][j_] == empty_unchecked && game_state == on)
             {
                 now_time = game_max_time;
                 QString temp = "btn_"+QString::number(i_)+"_"+QString::number(j_);
                 QPushButton *button = this->findChild<QPushButton*>(temp);
-                Qi[i_][j_] = now_player;                
+                Qi[i_][j_] = now_player;
+
+                for(int i=0;i<9;i++)
+                    for(int j=0;j<9;j++)
+                        copy_Qi[i][j] = Qi[i][j];
+
+
                 play_the_Go(button);
                 judge();
+                if(game_state == on)
+                {
+                    if(now_player == white_player)
+                        now_player = black_player;
+                    else if(now_player == black_player)
+                        now_player = white_player;
+                }
             }
 
 }
@@ -214,15 +359,15 @@ void pan::get_btn_sign(int idx)//处理下棋的81个按钮
 void pan::on_btn_restart_clicked()//再来一把按钮
 {
     clear_pan();
-    game_state = 1;
-    now_player = -1;
+    game_state = on;
+    now_player = black_player;
 }
 
 void pan::on_btn_lose_clicked()//投降
 {
     QMessageBox::information(NULL, "嘻嘻嘻嘻", "你投降了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-    game_state = 0;
-    now_player = -1;
+    game_state = off;
+    now_player = black_player;
     clear_pan();
     ui->txtl_pan_time->setEnabled(true);
     m->stop();

@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Widget</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="image_music.qrc">
+    <normaloff>:/image/logo.png</normaloff>:/image/logo.png</iconset>
+  </property>
   <widget class="QLabel" name="lab_wid_title">
    <property name="geometry">
     <rect>
@@ -59,7 +63,9 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="image_music.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>btn_wid_exit</sender>

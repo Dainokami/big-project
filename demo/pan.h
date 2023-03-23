@@ -1,6 +1,10 @@
 #ifndef PAN_H
 #define PAN_H
 
+
+
+
+
 #include <QWidget>
 #include <QImage>
 #include <QTimer>
@@ -9,6 +13,8 @@
 #include <QPushButton>
 #include <QMessageBox>
 #include <QPainter>
+#include <QDebug>
+
 
 namespace Ui {
 class pan;
@@ -53,6 +59,8 @@ public slots :
 
 private:
     Ui::pan *ui;
+    QTimer *m;
+
     void set_time(int seted_time = 50);
     void BeginCountdown();
     void OnTimerCountdown();
@@ -60,18 +68,32 @@ private:
     void play_the_Go(QPushButton *btn);
     void judge();
     void clear_pan();
-    void dfs(int x,int y);
+    void dfs(int x,int y,int flag);
 
 
     int now_player = -1;
     int Qi[9][9]={0};//棋盘的状态，0是未落子，1是白棋落子，-1是黑棋落子。
-    int replaced_Qi[9][9]={0};
-
-    QTimer *m;
+    int copy_Qi[9][9]={0};
+    int black_flag=0;
+    int white_flag=0;
+    int step[4][2]={0,1,1,0,0,-1,-1,0};
     int game_max_time;
     int now_time=0;
     bool game_state = 0;//该变量为1则游戏开始，为0则不然
+    enum Chess
+    {
+        black_loseQi_or_unchecked = -1,empty_unchecked,white_loseQi_or_unchecked,empty_checked,white_have_Qi,black_have_Qi
+    }chess;
 
+    enum Player_state
+    {
+        black_player=-1,white_player =1
+    }player_state;
+
+    enum State
+    {
+        off,on
+    }state;
 
 };
 

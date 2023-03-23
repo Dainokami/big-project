@@ -251,6 +251,17 @@ release/moc_pan.cpp: ../demo/pan.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/QTimer \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qtimer.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qbasictimer.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qsignalmapper.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qdialog.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/QPainter \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qpainter.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qpen.h \
 		release/moc_predefs.h \
 		../../../Qt/6.3.2/mingw_64/bin/moc.exe
 	E:\Qt\6.3.2\mingw_64\bin\moc.exe $(DEFINES) --include "E:/Qt‘s project/big-project/build—demo/release/moc_predefs.h" -IE:/Qt/6.3.2/mingw_64/mkspecs/win32-g++ -I"E:/Qt‘s project/big-project/demo" -IE:/Qt/6.3.2/mingw_64/include -IE:/Qt/6.3.2/mingw_64/include/QtWidgets -IE:/Qt/6.3.2/mingw_64/include/QtGui -IE:/Qt/6.3.2/mingw_64/include/QtCore -I. -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IE:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\demo\pan.h -o release\moc_pan.cpp
@@ -393,6 +404,17 @@ release/moc_widget.cpp: ../demo/widget.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/QTimer \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qtimer.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qbasictimer.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qsignalmapper.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qdialog.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/QPainter \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qpainter.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qpen.h \
 		release/moc_predefs.h \
 		../../../Qt/6.3.2/mingw_64/bin/moc.exe
 	E:\Qt\6.3.2\mingw_64\bin\moc.exe $(DEFINES) --include "E:/Qt‘s project/big-project/build—demo/release/moc_predefs.h" -IE:/Qt/6.3.2/mingw_64/mkspecs/win32-g++ -I"E:/Qt‘s project/big-project/demo" -IE:/Qt/6.3.2/mingw_64/include -IE:/Qt/6.3.2/mingw_64/include/QtWidgets -IE:/Qt/6.3.2/mingw_64/include/QtGui -IE:/Qt/6.3.2/mingw_64/include/QtCore -I. -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IE:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\demo\widget.h -o release\moc_widget.cpp
@@ -562,6 +584,17 @@ release/main.o: ../demo/main.cpp ../demo/widget.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/QTimer \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qtimer.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qbasictimer.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qsignalmapper.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qdialog.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/QPainter \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qpainter.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qpen.h \
 		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QApplication \
 		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qapplication.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qcoreapplication.h \
@@ -722,6 +755,17 @@ release/pan.o: ../demo/pan.cpp ../demo/pan.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/QTimer \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qtimer.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qbasictimer.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qsignalmapper.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qdialog.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/QPainter \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qpainter.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qpen.h \
 		ui_pan.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\pan.o ..\demo\pan.cpp
 
@@ -863,6 +907,17 @@ release/widget.o: ../demo/widget.cpp ../demo/widget.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/QTimer \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qtimer.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qbasictimer.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qsignalmapper.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qdialog.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/QPainter \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qpainter.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qpen.h \
 		ui_widget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\widget.o ..\demo\widget.cpp
 

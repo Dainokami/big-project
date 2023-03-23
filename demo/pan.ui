@@ -16,6 +16,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="image_music.qrc">
+    <normaloff>:/image/logo.png</normaloff>:/image/logo.png</iconset>
+  </property>
   <widget class="QLineEdit" name="txtl_pan_time">
    <property name="enabled">
     <bool>true</bool>
@@ -3402,6 +3406,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="image_music.qrc"/>
+ </resources>
  <connections/>
 </ui>
