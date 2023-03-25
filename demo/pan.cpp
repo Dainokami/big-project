@@ -30,6 +30,18 @@ pan::pan(QWidget *parent) :
         }
     connect(myMapper,SIGNAL(mappedInt(int)),this,SLOT(get_btn_sign(int)));
 
+    //以下设置bgm
+    player = new QMediaPlayer;
+    audioOutput = new QAudioOutput;
+    player->setAudioOutput(audioOutput);
+    connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
+    player->setSource(QUrl::fromLocalFile("E:\\Qt_project\\big_project\\demo\\image\\bgm.mp3"));
+    audioOutput->setVolume(50);
+    player->setLoops(INFINITY);
+    player->play();
+
+
+
 
 }
 
@@ -365,6 +377,7 @@ void pan::on_btn_restart_clicked()//再来一把按钮
 
 void pan::on_btn_lose_clicked()//投降
 {
+    m->stop();
     QMessageBox::information(NULL, "嘻嘻嘻嘻", "你投降了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
     game_state = off;
     now_player = black_player;
