@@ -14,8 +14,8 @@
 #include <QMessageBox>
 #include <QPainter>
 #include <QDebug>
-#include <QMediaPlayer>
-#include <QAudioOutput>
+//#include <QMediaPlayer>
+//#include <QAudioOutput>
 
 
 namespace Ui {
@@ -82,8 +82,8 @@ private:
     int game_max_time;
     int now_time=0;
     bool game_state = 0;//该变量为1则游戏开始，为0则不然
-    QMediaPlayer *player;
-    QAudioOutput *audioOutput;
+   // QMediaPlayer *player;
+   // QAudioOutput *audioOutput;
     enum Chess
     {
         black_loseQi_or_unchecked = -1,empty_unchecked,white_loseQi_or_unchecked,empty_checked,white_have_Qi,black_have_Qi

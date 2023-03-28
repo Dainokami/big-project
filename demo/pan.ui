@@ -91,10 +91,10 @@
   <widget class="QLabel" name="label_pan">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>0</y>
-     <width>601</width>
-     <height>601</height>
+     <x>80</x>
+     <y>30</y>
+     <width>561</width>
+     <height>551</height>
     </rect>
    </property>
    <property name="font">
@@ -107,7 +107,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>image/pan.jpg</pixmap>
+    <pixmap>C:/Users/86130/Desktop/project/pan2.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
