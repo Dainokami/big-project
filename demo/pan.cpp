@@ -43,8 +43,8 @@ pan::pan(QWidget *parent) :
 
 
 
-}
 
+}
 pan::~pan()
 {
     if (m)
@@ -58,7 +58,7 @@ pan::~pan()
     }
     delete ui;
 }
-void pan::paintEvent(QPaintEvent *)//绘制棋盘
+void pan::paintEvent(QPaintEvent *)
 {
     paint=new QPainter;
     paint->begin(this);
@@ -75,7 +75,7 @@ void pan::paintEvent(QPaintEvent *)//绘制棋盘
       //ui->setupUi()
 }
 
-void pan::set_time(int seted_time)//设置时间并激活时间
+void pan::set_time(int seted_time)
 {
     game_max_time = seted_time;
     now_time = game_max_time;
@@ -84,7 +84,7 @@ void pan::set_time(int seted_time)//设置时间并激活时间
     ui->txtl_pan_time->setText(temp);
 }
 
-void pan::BeginCountdown()//当前定时器未激活时，激活定时器
+void pan::BeginCountdown()
 {
    if (m->isActive() == false)
    {
@@ -92,7 +92,7 @@ void pan::BeginCountdown()//当前定时器未激活时，激活定时器
    }
 }
 
-void pan::OnTimerCountdown()//输出倒计时
+void pan::OnTimerCountdown()
 {
    now_time -= 1;
    ui->txtl_pan_time->setText(QString::number(now_time));
@@ -106,13 +106,17 @@ void pan::OnTimerCountdown()//输出倒计时
 
         clear_pan();
         ui->txtl_pan_time->setEnabled(true);
+        ui->line_player_0->setEnabled(true);
+        ui->line_player_1->setEnabled(true);
+        ui->comboBox_2->setEnabled(true);
+        ui->comboBox->setEnabled(true);
         game_state = off;
         now_player = black_player;
         m->stop();
    }
 }
 
-void pan::delete_time()//删除计时器
+void pan::delete_time()
 {
     if (m)
     {
@@ -125,7 +129,7 @@ void pan::delete_time()//删除计时器
     }
 }
 
-void pan::play_the_Go(QPushButton *btn)//用于绘制棋子
+void pan::play_the_Go(QPushButton *btn)
 {
     if(game_state == on)
     {
@@ -142,17 +146,15 @@ void pan::play_the_Go(QPushButton *btn)//用于绘制棋子
     }
 }
 
-void pan::judge()//这个函数用于判断输赢（待实现）
+void pan::judge()//函数内部有分析
 {
-
-
-
     for(int i=0;i<9;i++)
         for(int j=0;j<9;j++)
         {
-            if(Qi[i][j] == 0 && copy_Qi[i][j] != empty_checked)
+            if(copy_Qi[i][j] == empty_unchecked)
                 dfs(i,j,-1);
-        }
+            num++;
+        }//用dfs重新绘制棋盘，本质是遍历，把子棋盘上“没查过的未落子处”坐标传进去。
 
     for(int i=0;i<9;i++)
         for(int j=0;j<9;j++)
@@ -161,19 +163,18 @@ void pan::judge()//这个函数用于判断输赢（待实现）
                 white_flag = on;
             else if(copy_Qi[i][j] == black_loseQi_or_unchecked)
                 black_flag = on;
-        }
+            num++;
+        }//检查一遍子棋盘，康康有没有棋子没气了
 
     for(int i=0;i<9;i++)
         qDebug()<<Qi[i][0]<<Qi[i][1]<<Qi[i][2]<<Qi[i][3]<<Qi[i][4]<<Qi[i][5]<<Qi[i][6]<<Qi[i][7]<<Qi[i][8];
 
     for(int i=0;i<9;i++)
         qDebug()<<copy_Qi[i][0]<<copy_Qi[i][1]<<copy_Qi[i][2]<<copy_Qi[i][3]<<copy_Qi[i][4]<<copy_Qi[i][5]<<copy_Qi[i][6]<<copy_Qi[i][7]<<copy_Qi[i][8];
-
-
-
+    qDebug()<<num;
     if(black_flag== on && white_flag== on)
     {
-        if(now_player== black_player)
+        if(now_player== black_player)//黑白棋都没气且黑棋下了最后一步棋，判定黑棋无路可走而输
         {
             m->stop();
             game_state = off;
@@ -181,9 +182,13 @@ void pan::judge()//这个函数用于判断输赢（待实现）
             now_player = black_player;
             clear_pan();
             ui->txtl_pan_time->setEnabled(true);
+            ui->line_player_0->setEnabled(true);
+            ui->line_player_1->setEnabled(true);
+            ui->comboBox_2->setEnabled(true);
+            ui->comboBox->setEnabled(true);
             m->stop();
         }
-        else
+        else//黑白棋都没气且白棋下了最后一步棋，判定白棋无路可走而输
         {
             m->stop();
             game_state = off;
@@ -191,11 +196,15 @@ void pan::judge()//这个函数用于判断输赢（待实现）
             now_player = black_player;
             clear_pan();
             ui->txtl_pan_time->setEnabled(true);
+            ui->line_player_0->setEnabled(true);
+            ui->line_player_1->setEnabled(true);
+            ui->comboBox_2->setEnabled(true);
+            ui->comboBox->setEnabled(true);
             m->stop();
         }
 
     }
-    else if(black_flag==on)
+    else if(black_flag==on)//黑棋没气了。黑棋围的，鉴定为紫砂；白棋围的，鉴定为白棋输
     {
         m->stop();
         game_state = off;
@@ -206,9 +215,13 @@ void pan::judge()//这个函数用于判断输赢（待实现）
         now_player = black_player;
         clear_pan();
         ui->txtl_pan_time->setEnabled(true);
+        ui->line_player_0->setEnabled(true);
+        ui->line_player_1->setEnabled(true);
+        ui->comboBox_2->setEnabled(true);
+        ui->comboBox->setEnabled(true);
         m->stop();
     }
-    else if(white_flag ==on)
+    else if(white_flag ==on)//白棋没气了。白棋围的，鉴定为紫砂；黑棋围的，鉴定为白棋输
     {
         m->stop();
         game_state = off;
@@ -219,19 +232,26 @@ void pan::judge()//这个函数用于判断输赢（待实现）
         now_player = black_player;
         clear_pan();
         ui->txtl_pan_time->setEnabled(true);
+        ui->line_player_0->setEnabled(true);
+        ui->line_player_1->setEnabled(true);
+        ui->comboBox_2->setEnabled(true);
+        ui->comboBox->setEnabled(true);
         m->stop();
     }
 
 
 }
-void pan::dfs(int x, int y,int flag)//深度搜索判断气有无被断
+
+void pan::dfs(int x, int y,int flag)
+//本质是通过dfs重新绘制一副棋盘，从未落子处开始，从未落子进入黑棋部分则是有气，从有气的黑棋进入为检查的黑棋也是有气，白棋同理。
+//flag是指上一个坐标是如何进入现在的坐标的，即二维数组step的第一维，flag=-1一位这个坐标是直接从judge传来的未落子坐标
 {
-    if(Qi[x][y] == empty_unchecked && flag == -1)
+    if(copy_Qi[x][y] == empty_unchecked && flag == -1)
     {
         copy_Qi[x][y] = empty_checked;
         for(int i=0;i<4;i++)
             if(x+step[i][0]>=0 && x+step[i][0]<9 && y+step[i][1]>=0 && y+step[i][1]<9 && copy_Qi[x+step[i][0]][y+step[i][1]] != empty_unchecked && copy_Qi[x+step[i][0]][y+step[i][1]] != black_have_Qi && copy_Qi[x+step[i][0]][y+step[i][1]] != white_have_Qi)
-                dfs(x+step[i][0] , y+step[i][1], i);
+            {    dfs(x+step[i][0] , y+step[i][1], i);num++;}
         return;
     }
 
@@ -250,7 +270,7 @@ void pan::dfs(int x, int y,int flag)//深度搜索判断气有无被断
 
         for(int i=0;i<4;i++)
             if(x+step[i][0]>=0 && x+step[i][0]<9 && y+step[i][1]>=0 && y+step[i][1]<9 && (i+2)%4 !=flag && copy_Qi[x+step[i][0]][y+step[i][1]] != empty_checked && copy_Qi[x+step[i][0]][y+step[i][1]] != black_have_Qi && copy_Qi[x+step[i][0]][y+step[i][1]] != white_have_Qi)
-                dfs(x+step[i][0] , y+step[i][1], i);
+            {    dfs(x+step[i][0] , y+step[i][1], i);num++;}
         return;
     }
     if(Qi[x][y] == black_loseQi_or_unchecked)
@@ -268,7 +288,7 @@ void pan::dfs(int x, int y,int flag)//深度搜索判断气有无被断
 
         for(int i=0;i<4;i++)
             if(x+step[i][0]>=0 && x+step[i][0]<9 && y+step[i][1]>=0 && y+step[i][1]<9 && (i+2)%4 !=flag && copy_Qi[x+step[i][0]][y+step[i][1]] != empty_checked && copy_Qi[x+step[i][0]][y+step[i][1]] != black_have_Qi && copy_Qi[x+step[i][0]][y+step[i][1]] != white_have_Qi)
-                dfs(x+step[i][0] , y+step[i][1], i);
+            {    dfs(x+step[i][0] , y+step[i][1], i);num++;}
         return;
     }
 
@@ -276,7 +296,7 @@ void pan::dfs(int x, int y,int flag)//深度搜索判断气有无被断
 
 }
 
-void pan::clear_pan()//该函数用于清屏,清空气,重设时间
+void pan::clear_pan()
 {
     black_flag=off;
     white_flag=off;
@@ -303,7 +323,7 @@ void pan::clear_pan()//该函数用于清屏,清空气,重设时间
 
 }
 
-void pan::on_btn_startgame_clicked()//开始游戏按钮
+void pan::on_btn_startgame_clicked()
 {
     if(ui->txtl_pan_time->isEnabled())
     {
@@ -314,10 +334,14 @@ void pan::on_btn_startgame_clicked()//开始游戏按钮
     else
         m->start();
     ui->txtl_pan_time->setEnabled(false);
+    ui->line_player_0->setEnabled(false);
+    ui->line_player_1->setEnabled(false);
+    ui->comboBox_2->setEnabled(false);
+    ui->comboBox->setEnabled(false);
     game_state = on;
 }
 
-void pan::on_btn_stop_clicked()//游戏暂停按钮
+void pan::on_btn_stop_clicked()
 {
     if(game_state ==on)
     {
@@ -332,14 +356,15 @@ void pan::on_btn_stop_clicked()//游戏暂停按钮
 
 
 }
-void pan::on_btn_startgame_2_clicked()//继续游戏按钮(和开始游戏合并了，已删除)
+
+void pan::on_btn_startgame_2_clicked()
 {
     m->start();
     game_state = on;
 
 }
 
-void pan::get_btn_sign(int idx)//处理下棋的81个按钮
+void pan::get_btn_sign(int idx)
 {
     for(int i_=0;i_<9;i_++)
         for(int j_=0;j_<9;j_++)
@@ -364,18 +389,19 @@ void pan::get_btn_sign(int idx)//处理下棋的81个按钮
                     else if(now_player == black_player)
                         now_player = white_player;
                 }
+                break;
             }
 
 }
 
-void pan::on_btn_restart_clicked()//再来一把按钮
+void pan::on_btn_restart_clicked()
 {
     clear_pan();
     game_state = on;
     now_player = black_player;
 }
 
-void pan::on_btn_lose_clicked()//投降
+void pan::on_btn_lose_clicked()
 {
     m->stop();
     QMessageBox::information(NULL, "嘻嘻嘻嘻", "你投降了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
@@ -383,6 +409,10 @@ void pan::on_btn_lose_clicked()//投降
     now_player = black_player;
     clear_pan();
     ui->txtl_pan_time->setEnabled(true);
+    ui->line_player_0->setEnabled(true);
+    ui->line_player_1->setEnabled(true);
+    ui->comboBox_2->setEnabled(true);
+    ui->comboBox->setEnabled(true);
     m->stop();
 }
 

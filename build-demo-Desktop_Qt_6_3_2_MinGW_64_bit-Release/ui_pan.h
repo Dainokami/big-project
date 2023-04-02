@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
@@ -113,38 +114,44 @@ public:
     QPushButton *btn_restart;
     QRadioButton *btn_isEnable;
     QLabel *label_2;
+    QLineEdit *line_player_0;
+    QLineEdit *line_player_1;
+    QLabel *label_3;
+    QComboBox *comboBox;
+    QComboBox *comboBox_2;
 
     void setupUi(QWidget *pan)
     {
         if (pan->objectName().isEmpty())
             pan->setObjectName(QString::fromUtf8("pan"));
         pan->setEnabled(true);
-        pan->resize(1051, 615);
+        pan->resize(1167, 725);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/image/logo.png"), QSize(), QIcon::Normal, QIcon::Off);
         pan->setWindowIcon(icon);
         txtl_pan_time = new QLineEdit(pan);
         txtl_pan_time->setObjectName(QString::fromUtf8("txtl_pan_time"));
         txtl_pan_time->setEnabled(true);
-        txtl_pan_time->setGeometry(QRect(870, 140, 113, 31));
+        txtl_pan_time->setGeometry(QRect(980, 150, 131, 81));
         QFont font;
-        font.setPointSize(10);
-        font.setBold(true);
-        font.setItalic(true);
+        font.setFamilies({QString::fromUtf8("Gigi")});
+        font.setPointSize(36);
+        font.setBold(false);
+        font.setItalic(false);
         txtl_pan_time->setFont(font);
         label = new QLabel(pan);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(790, 140, 81, 31));
+        label->setGeometry(QRect(900, 150, 81, 31));
         QFont font1;
         font1.setPointSize(12);
         font1.setBold(true);
         label->setFont(font1);
         btn_startgame = new QPushButton(pan);
         btn_startgame->setObjectName(QString::fromUtf8("btn_startgame"));
-        btn_startgame->setGeometry(QRect(740, 350, 91, 61));
+        btn_startgame->setGeometry(QRect(960, 270, 91, 61));
         btn_stop = new QPushButton(pan);
         btn_stop->setObjectName(QString::fromUtf8("btn_stop"));
-        btn_stop->setGeometry(QRect(920, 350, 91, 61));
+        btn_stop->setGeometry(QRect(1070, 270, 91, 61));
         label_pan = new QLabel(pan);
         label_pan->setObjectName(QString::fromUtf8("label_pan"));
         label_pan->setGeometry(QRect(60, 0, 601, 601));
@@ -156,7 +163,7 @@ public:
         label_pan->setScaledContents(true);
         btn_lose = new QPushButton(pan);
         btn_lose->setObjectName(QString::fromUtf8("btn_lose"));
-        btn_lose->setGeometry(QRect(740, 450, 91, 61));
+        btn_lose->setGeometry(QRect(960, 340, 91, 61));
         btn_0_0 = new QPushButton(pan);
         btn_0_0->setObjectName(QString::fromUtf8("btn_0_0"));
         btn_0_0->setEnabled(true);
@@ -972,13 +979,59 @@ public:
         btn_8_8->setFlat(true);
         btn_restart = new QPushButton(pan);
         btn_restart->setObjectName(QString::fromUtf8("btn_restart"));
-        btn_restart->setGeometry(QRect(920, 450, 91, 61));
+        btn_restart->setGeometry(QRect(1070, 340, 91, 61));
         btn_isEnable = new QRadioButton(pan);
         btn_isEnable->setObjectName(QString::fromUtf8("btn_isEnable"));
-        btn_isEnable->setGeometry(QRect(1010, 150, 111, 24));
+        btn_isEnable->setGeometry(QRect(1120, 160, 111, 24));
         label_2 = new QLabel(pan);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(780, 100, 271, 41));
+        label_2->setGeometry(QRect(890, 110, 271, 41));
+        line_player_0 = new QLineEdit(pan);
+        line_player_0->setObjectName(QString::fromUtf8("line_player_0"));
+        line_player_0->setGeometry(QRect(210, 640, 91, 51));
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("\345\215\216\346\226\207\350\241\214\346\245\267")});
+        font3.setPointSize(16);
+        line_player_0->setFont(font3);
+        line_player_1 = new QLineEdit(pan);
+        line_player_1->setObjectName(QString::fromUtf8("line_player_1"));
+        line_player_1->setGeometry(QRect(590, 640, 91, 51));
+        line_player_1->setFont(font3);
+        label_3 = new QLabel(pan);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(310, 630, 69, 71));
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("Informal Roman")});
+        font4.setPointSize(28);
+        label_3->setFont(font4);
+        comboBox = new QComboBox(pan);
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setGeometry(QRect(10, 640, 191, 51));
+        comboBox->setFont(font3);
+        comboBox_2 = new QComboBox(pan);
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->addItem(QString());
+        comboBox_2->setObjectName(QString::fromUtf8("comboBox_2"));
+        comboBox_2->setGeometry(QRect(390, 640, 191, 51));
+        comboBox_2->setFont(font3);
 
         retranslateUi(pan);
 
@@ -1078,6 +1131,31 @@ public:
         btn_restart->setText(QCoreApplication::translate("pan", "\351\207\215\346\226\260\345\274\200\345\247\213", nullptr));
         btn_isEnable->setText(QString());
         label_2->setText(QCoreApplication::translate("pan", "\350\257\267\346\263\250\346\204\217\357\274\232\350\257\267\345\234\250\345\200\222\350\256\241\346\227\266\346\241\206\345\217\257\344\277\256\346\224\271\346\227\266\345\274\200\345\247\213\346\270\270\346\210\217", nullptr));
+        line_player_0->setText(QCoreApplication::translate("pan", "\344\270\201\347\234\237", nullptr));
+        line_player_1->setText(QCoreApplication::translate("pan", "\350\260\267\347\210\261\345\207\214", nullptr));
+        label_3->setText(QCoreApplication::translate("pan", "VS", nullptr));
+        comboBox->setItemText(0, QCoreApplication::translate("pan", "\347\220\206\345\241\230\343\201\256\347\273\235\345\221\275\350\231\216", nullptr));
+        comboBox->setItemText(1, QCoreApplication::translate("pan", "\351\233\252\343\201\256\351\255\224\345\245\263", nullptr));
+        comboBox->setItemText(2, QCoreApplication::translate("pan", "\346\215\267\350\261\271\343\201\256\345\256\210\346\212\244\350\200\205", nullptr));
+        comboBox->setItemText(3, QCoreApplication::translate("pan", "\345\205\253\345\206\240\347\216\213\343\201\256\347\273\247\344\273\273", nullptr));
+        comboBox->setItemText(4, QCoreApplication::translate("pan", "\350\212\256\345\245\266\345\245\266\343\201\256\350\203\234\350\200\205", nullptr));
+        comboBox->setItemText(5, QCoreApplication::translate("pan", "\344\270\215\345\261\210\343\201\256\351\271\260\351\205\261", nullptr));
+        comboBox->setItemText(6, QCoreApplication::translate("pan", "2-16\343\201\256\346\213\245\346\234\211\350\200\205", nullptr));
+        comboBox->setItemText(7, QCoreApplication::translate("pan", "\347\206\254\350\200\201\345\244\252\345\244\252\344\271\213\344\272\272", nullptr));
+        comboBox->setItemText(8, QCoreApplication::translate("pan", "NOGO KING", nullptr));
+        comboBox->setItemText(9, QCoreApplication::translate("pan", "\345\233\264\346\243\213\345\260\221\345\271\264", nullptr));
+
+        comboBox_2->setItemText(0, QCoreApplication::translate("pan", "\347\220\206\345\241\230\343\201\256\347\273\235\345\221\275\350\231\216", nullptr));
+        comboBox_2->setItemText(1, QCoreApplication::translate("pan", "\351\233\252\343\201\256\351\255\224\345\245\263", nullptr));
+        comboBox_2->setItemText(2, QCoreApplication::translate("pan", "\346\215\267\350\261\271\343\201\256\345\256\210\346\212\244\350\200\205", nullptr));
+        comboBox_2->setItemText(3, QCoreApplication::translate("pan", "\345\205\253\345\206\240\347\216\213\343\201\256\347\273\247\344\273\273", nullptr));
+        comboBox_2->setItemText(4, QCoreApplication::translate("pan", "\350\212\256\345\245\266\345\245\266\343\201\256\350\203\234\350\200\205", nullptr));
+        comboBox_2->setItemText(5, QCoreApplication::translate("pan", "\344\270\215\345\261\210\343\201\256\351\271\260\351\205\261", nullptr));
+        comboBox_2->setItemText(6, QCoreApplication::translate("pan", "2-16\343\201\256\346\213\245\346\234\211\350\200\205", nullptr));
+        comboBox_2->setItemText(7, QCoreApplication::translate("pan", "\347\206\254\350\200\201\345\244\252\345\244\252\344\271\213\344\272\272", nullptr));
+        comboBox_2->setItemText(8, QCoreApplication::translate("pan", "NOGO KING", nullptr));
+        comboBox_2->setItemText(9, QCoreApplication::translate("pan", "\345\233\264\346\243\213\345\260\221\345\271\264", nullptr));
+
     } // retranslateUi
 
 };

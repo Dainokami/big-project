@@ -15,7 +15,7 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::on_btn_wid_start_clicked()//进入棋盘
+void Widget::on_btn_wid_start_clicked()
 {
     p = new pan();
     p->show();

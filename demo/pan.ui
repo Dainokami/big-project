@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1051</width>
-    <height>615</height>
+    <width>1167</width>
+    <height>725</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,17 +26,18 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>870</x>
-     <y>140</y>
-     <width>113</width>
-     <height>31</height>
+     <x>980</x>
+     <y>150</y>
+     <width>131</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
-     <italic>true</italic>
-     <bold>true</bold>
+     <family>Gigi</family>
+     <pointsize>36</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="text">
@@ -46,8 +47,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>790</x>
-     <y>140</y>
+     <x>900</x>
+     <y>150</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -65,8 +66,8 @@
   <widget class="QPushButton" name="btn_startgame">
    <property name="geometry">
     <rect>
-     <x>740</x>
-     <y>350</y>
+     <x>960</x>
+     <y>270</y>
      <width>91</width>
      <height>61</height>
     </rect>
@@ -78,8 +79,8 @@
   <widget class="QPushButton" name="btn_stop">
    <property name="geometry">
     <rect>
-     <x>920</x>
-     <y>350</y>
+     <x>1070</x>
+     <y>270</y>
      <width>91</width>
      <height>61</height>
     </rect>
@@ -116,8 +117,8 @@
   <widget class="QPushButton" name="btn_lose">
    <property name="geometry">
     <rect>
-     <x>740</x>
-     <y>450</y>
+     <x>960</x>
+     <y>340</y>
      <width>91</width>
      <height>61</height>
     </rect>
@@ -3369,8 +3370,8 @@
   <widget class="QPushButton" name="btn_restart">
    <property name="geometry">
     <rect>
-     <x>920</x>
-     <y>450</y>
+     <x>1070</x>
+     <y>340</y>
      <width>91</width>
      <height>61</height>
     </rect>
@@ -3382,8 +3383,8 @@
   <widget class="QRadioButton" name="btn_isEnable">
    <property name="geometry">
     <rect>
-     <x>1010</x>
-     <y>150</y>
+     <x>1120</x>
+     <y>160</y>
      <width>111</width>
      <height>24</height>
     </rect>
@@ -3395,8 +3396,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>780</x>
-     <y>100</y>
+     <x>890</x>
+     <y>110</y>
      <width>271</width>
      <height>41</height>
     </rect>
@@ -3404,6 +3405,195 @@
    <property name="text">
     <string>请注意：请在倒计时框可修改时开始游戏</string>
    </property>
+  </widget>
+  <widget class="QLineEdit" name="line_player_0">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>640</y>
+     <width>91</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华文行楷</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>丁真</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_player_1">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>640</y>
+     <width>91</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华文行楷</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>谷爱凌</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>630</y>
+     <width>69</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Informal Roman</family>
+     <pointsize>28</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>VS</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>640</y>
+     <width>191</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华文行楷</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>理塘の绝命虎</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>雪の魔女</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>捷豹の守护者</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>八冠王の继任</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>芮奶奶の胜者</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>不屈の鹰酱</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2-16の拥有者</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>熬老太太之人</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>NOGO KING</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>围棋少年</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="comboBox_2">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>640</y>
+     <width>191</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华文行楷</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>理塘の绝命虎</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>雪の魔女</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>捷豹の守护者</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>八冠王の继任</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>芮奶奶の胜者</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>不屈の鹰酱</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2-16の拥有者</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>熬老太太之人</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>NOGO KING</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>围棋少年</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources>

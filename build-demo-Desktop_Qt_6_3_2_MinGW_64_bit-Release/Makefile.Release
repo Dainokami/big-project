@@ -15,7 +15,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_NO_DEBUG -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -O2 -Wall -Wextra -Wextra $(DEFINES)
-CXXFLAGS      = -fno-keep-inline-dllexport -O2 -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
+CXXFLAGS      = -fno-keep-inline-dllexport -O2 -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
 INCPATH       = -I../demo -I. -I../../../Qt/6.3.2/mingw_64/include -I../../../Qt/6.3.2/mingw_64/include/QtMultimedia -I../../../Qt/6.3.2/mingw_64/include/QtWidgets -I../../../Qt/6.3.2/mingw_64/include/QtGui -I../../../Qt/6.3.2/mingw_64/include/QtNetwork -I../../../Qt/6.3.2/mingw_64/include/QtCore -Irelease -I. -I/include -I../../../Qt/6.3.2/mingw_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
@@ -119,7 +119,7 @@ compiler_moc_predefs_make_all: release/moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) release\moc_predefs.h
 release/moc_predefs.h: ../../../Qt/6.3.2/mingw_64/mkspecs/features/data/dummy.cpp
-	g++ -fno-keep-inline-dllexport -O2 -Wall -Wextra -Wextra -dM -E -o release\moc_predefs.h ..\..\..\Qt\6.3.2\mingw_64\mkspecs\features\data\dummy.cpp
+	g++ -fno-keep-inline-dllexport -O2 -std=gnu++1z -Wall -Wextra -Wextra -dM -E -o release\moc_predefs.h ..\..\..\Qt\6.3.2\mingw_64\mkspecs\features\data\dummy.cpp
 
 compiler_moc_header_make_all: release/moc_pan.cpp release/moc_widget.cpp
 compiler_moc_header_clean:
@@ -281,9 +281,11 @@ release/moc_pan.cpp: ../demo/pan.h \
 		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qmetaobject.h \
 		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qaudio.h \
+		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/QAudioOutput \
+		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qaudiooutput.h \
 		release/moc_predefs.h \
 		../../../Qt/6.3.2/mingw_64/bin/moc.exe
-	E:\Qt\6.3.2\mingw_64\bin\moc.exe $(DEFINES) --include "E:/Qt‘s project/big-project/build-demo-Desktop_Qt_6_3_2_MinGW_64_bit-Release/release/moc_predefs.h" -IE:/Qt/6.3.2/mingw_64/mkspecs/win32-g++ -I"E:/Qt‘s project/big-project/demo" -IE:/Qt/6.3.2/mingw_64/include -IE:/Qt/6.3.2/mingw_64/include/QtMultimedia -IE:/Qt/6.3.2/mingw_64/include/QtWidgets -IE:/Qt/6.3.2/mingw_64/include/QtGui -IE:/Qt/6.3.2/mingw_64/include/QtNetwork -IE:/Qt/6.3.2/mingw_64/include/QtCore -I. -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IE:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\demo\pan.h -o release\moc_pan.cpp
+	E:\Qt\6.3.2\mingw_64\bin\moc.exe $(DEFINES) --include E:/Qt_project/big_project/build-demo-Desktop_Qt_6_3_2_MinGW_64_bit-Release/release/moc_predefs.h -IE:/Qt/6.3.2/mingw_64/mkspecs/win32-g++ -IE:/Qt_project/big_project/demo -IE:/Qt/6.3.2/mingw_64/include -IE:/Qt/6.3.2/mingw_64/include/QtMultimedia -IE:/Qt/6.3.2/mingw_64/include/QtWidgets -IE:/Qt/6.3.2/mingw_64/include/QtGui -IE:/Qt/6.3.2/mingw_64/include/QtNetwork -IE:/Qt/6.3.2/mingw_64/include/QtCore -I. -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IE:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\demo\pan.h -o release\moc_pan.cpp
 
 release/moc_widget.cpp: ../demo/widget.h \
 		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QWidget \
@@ -443,9 +445,11 @@ release/moc_widget.cpp: ../demo/widget.h \
 		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qmetaobject.h \
 		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qaudio.h \
+		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/QAudioOutput \
+		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qaudiooutput.h \
 		release/moc_predefs.h \
 		../../../Qt/6.3.2/mingw_64/bin/moc.exe
-	E:\Qt\6.3.2\mingw_64\bin\moc.exe $(DEFINES) --include "E:/Qt‘s project/big-project/build-demo-Desktop_Qt_6_3_2_MinGW_64_bit-Release/release/moc_predefs.h" -IE:/Qt/6.3.2/mingw_64/mkspecs/win32-g++ -I"E:/Qt‘s project/big-project/demo" -IE:/Qt/6.3.2/mingw_64/include -IE:/Qt/6.3.2/mingw_64/include/QtMultimedia -IE:/Qt/6.3.2/mingw_64/include/QtWidgets -IE:/Qt/6.3.2/mingw_64/include/QtGui -IE:/Qt/6.3.2/mingw_64/include/QtNetwork -IE:/Qt/6.3.2/mingw_64/include/QtCore -I. -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IE:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\demo\widget.h -o release\moc_widget.cpp
+	E:\Qt\6.3.2\mingw_64\bin\moc.exe $(DEFINES) --include E:/Qt_project/big_project/build-demo-Desktop_Qt_6_3_2_MinGW_64_bit-Release/release/moc_predefs.h -IE:/Qt/6.3.2/mingw_64/mkspecs/win32-g++ -IE:/Qt_project/big_project/demo -IE:/Qt/6.3.2/mingw_64/include -IE:/Qt/6.3.2/mingw_64/include/QtMultimedia -IE:/Qt/6.3.2/mingw_64/include/QtWidgets -IE:/Qt/6.3.2/mingw_64/include/QtGui -IE:/Qt/6.3.2/mingw_64/include/QtNetwork -IE:/Qt/6.3.2/mingw_64/include/QtCore -I. -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IE:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IE:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\demo\widget.h -o release\moc_widget.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -632,6 +636,8 @@ release/main.o: ../demo/main.cpp ../demo/widget.h \
 		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qmetaobject.h \
 		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qaudio.h \
+		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/QAudioOutput \
+		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qaudiooutput.h \
 		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QApplication \
 		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qapplication.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qcoreapplication.h \
@@ -812,7 +818,43 @@ release/pan.o: ../demo/pan.cpp ../demo/pan.h \
 		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qmetaobject.h \
 		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qaudio.h \
-		ui_pan.h
+		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/QAudioOutput \
+		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qaudiooutput.h \
+		ui_pan.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/QVariant \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/QIcon \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qlocale.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QLineEdit \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qtextcursor.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qtextformat.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QRadioButton \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qradiobutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\pan.o ..\demo\pan.cpp
 
 release/widget.o: ../demo/widget.cpp ../demo/widget.h \
@@ -973,7 +1015,37 @@ release/widget.o: ../demo/widget.cpp ../demo/widget.h \
 		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qmediaenumdebug.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qmetaobject.h \
 		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qaudio.h \
-		ui_widget.h
+		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/QAudioOutput \
+		../../../Qt/6.3.2/mingw_64/include/QtMultimedia/qaudiooutput.h \
+		ui_widget.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/QVariant \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/QIcon \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QApplication \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qfuture.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qmutex.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qthread.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qexception.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qpromise.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qlocale.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QLabel \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qpicture.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qtextdocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\widget.o ..\demo\widget.cpp
 
 release/qrc_image_music.o: release/qrc_image_music.cpp 

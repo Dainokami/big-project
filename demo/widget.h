@@ -18,7 +18,7 @@ public:
 
 private slots:
 
-    void on_btn_wid_start_clicked();
+    void on_btn_wid_start_clicked();//进入棋盘
 
 private:
     Ui::Widget *ui;
