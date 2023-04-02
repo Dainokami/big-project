@@ -10,6 +10,7 @@
 #define UI_PAN_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -119,6 +120,9 @@ public:
             pan->setObjectName("pan");
         pan->setEnabled(true);
         pan->resize(1051, 615);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/image/logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pan->setWindowIcon(icon);
         txtl_pan_time = new QLineEdit(pan);
         txtl_pan_time->setObjectName("txtl_pan_time");
         txtl_pan_time->setEnabled(true);
@@ -143,12 +147,12 @@ public:
         btn_stop->setGeometry(QRect(920, 350, 91, 61));
         label_pan = new QLabel(pan);
         label_pan->setObjectName("label_pan");
-        label_pan->setGeometry(QRect(60, 0, 601, 601));
+        label_pan->setGeometry(QRect(80, 30, 561, 551));
         QFont font2;
         font2.setPointSize(90);
         font2.setBold(true);
         label_pan->setFont(font2);
-        label_pan->setPixmap(QPixmap(QString::fromUtf8("image/pan.jpg")));
+        label_pan->setPixmap(QPixmap(QString::fromUtf8("C:/Users/86130/Desktop/project/pan2.jpg")));
         label_pan->setScaledContents(true);
         btn_lose = new QPushButton(pan);
         btn_lose->setObjectName("btn_lose");

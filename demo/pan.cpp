@@ -10,7 +10,7 @@ pan::pan(QWidget *parent) :
 
     //以下设置背景图
     QImage *img_pan = new QImage;
-    img_pan->load("D:\\git demo\\big-project3\\demo\\picture\\picture.jpeg");
+    img_pan->load("C:\\Users\\86130\\Desktop\\project\\pan2.jpg");
     ui->label_pan->setPixmap(QPixmap::fromImage(*img_pan));
 
     //以下设置定时器
@@ -31,14 +31,14 @@ pan::pan(QWidget *parent) :
     connect(myMapper,SIGNAL(mappedInt(int)),this,SLOT(get_btn_sign(int)));
 
     //以下设置bgm
-    player = new QMediaPlayer;
+  /* player = new QMediaPlayer;
     audioOutput = new QAudioOutput;
     player->setAudioOutput(audioOutput);
     connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
     player->setSource(QUrl::fromLocalFile("E:\\Qt_project\\big_project\\demo\\image\\bgm.mp3"));
     audioOutput->setVolume(50);
     player->setLoops(INFINITY);
-    player->play();
+    player->play();*/
 
 
 
