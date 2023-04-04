@@ -844,9 +844,23 @@ release/pan.o: ../demo/pan.cpp ../demo/pan.h \
 		../../../Qt/6.3.2/mingw_64/include/QtGui/qinputmethod.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qlocale.h \
 		../../../Qt/6.3.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QComboBox \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qcombobox.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/6.3.2/mingw_64/include/QtGui/qvalidator.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qregularexpression.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qslider.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qstyle.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.3.2/mingw_64/include/QtCore/qabstractitemmodel.h \
 		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QLabel \
 		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qlabel.h \
-		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qframe.h \
 		../../../Qt/6.3.2/mingw_64/include/QtGui/qpicture.h \
 		../../../Qt/6.3.2/mingw_64/include/QtGui/qtextdocument.h \
 		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QLineEdit \

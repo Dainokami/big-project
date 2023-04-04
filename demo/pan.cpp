@@ -10,7 +10,7 @@ pan::pan(QWidget *parent) :
 
     //以下设置背景图
     QImage *img_pan = new QImage;
-    img_pan->load("C:\\Users\\86130\\Desktop\\project\\pan2.jpg");
+    img_pan->load("D:\\git demo\\big-project3\\demo\\picture\\picture.jpeg");
     ui->label_pan->setPixmap(QPixmap::fromImage(*img_pan));
 
     //以下设置定时器
@@ -22,8 +22,8 @@ pan::pan(QWidget *parent) :
     //以下关联按钮
     QSignalMapper *myMapper = new QSignalMapper(this);
     QPushButton *button[9][9]={ui->btn_0_0,ui->btn_0_1,ui->btn_0_2,ui->btn_0_3,ui->btn_0_4,ui->btn_0_5,ui->btn_0_6,ui->btn_0_7,ui->btn_0_8,ui->btn_1_0,ui->btn_1_1,ui->btn_1_2,ui->btn_1_3,ui->btn_1_4,ui->btn_1_5,ui->btn_1_6,ui->btn_1_7,ui->btn_1_8,ui->btn_2_0,ui->btn_2_1,ui->btn_2_2,ui->btn_2_3,ui->btn_2_4,ui->btn_2_5,ui->btn_2_6,ui->btn_2_7,ui->btn_2_8,ui->btn_3_0,ui->btn_3_1,ui->btn_3_2,ui->btn_3_3,ui->btn_3_4,ui->btn_3_5,ui->btn_3_6,ui->btn_3_7,ui->btn_3_8,ui->btn_4_0,ui->btn_4_1,ui->btn_4_2,ui->btn_4_3,ui->btn_4_4,ui->btn_4_5,ui->btn_4_6,ui->btn_4_7,ui->btn_4_8,ui->btn_5_0,ui->btn_5_1,ui->btn_5_2,ui->btn_5_3,ui->btn_5_4,ui->btn_5_5,ui->btn_5_6,ui->btn_5_7,ui->btn_5_8,ui->btn_6_0,ui->btn_6_1,ui->btn_6_2,ui->btn_6_3,ui->btn_6_4,ui->btn_6_5,ui->btn_6_6,ui->btn_6_7,ui->btn_6_8,ui->btn_7_0,ui->btn_7_1,ui->btn_7_2,ui->btn_7_3,ui->btn_7_4,ui->btn_7_5,ui->btn_7_6,ui->btn_7_7,ui->btn_7_8,ui->btn_8_0,ui->btn_8_1,ui->btn_8_2,ui->btn_8_3,ui->btn_8_4,ui->btn_8_5,ui->btn_8_6,ui->btn_8_7,ui->btn_8_8};
-    for(int i=0;i<9;i++)
-        for(int j=0;j<9;j++)
+    for(int i=0;i<length;i++)
+        for(int j=0;j<length;j++)
         {
             connect(button[i][j],SIGNAL(clicked(bool)),myMapper,SLOT(map()));
             myMapper->setMapping(button[i][j],i*10+j);
@@ -31,14 +31,14 @@ pan::pan(QWidget *parent) :
     connect(myMapper,SIGNAL(mappedInt(int)),this,SLOT(get_btn_sign(int)));
 
     //以下设置bgm
-  /* player = new QMediaPlayer;
+    player = new QMediaPlayer;
     audioOutput = new QAudioOutput;
     player->setAudioOutput(audioOutput);
     connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
     player->setSource(QUrl::fromLocalFile("E:\\Qt_project\\big_project\\demo\\image\\bgm.mp3"));
     audioOutput->setVolume(50);
     player->setLoops(INFINITY);
-    player->play();*/
+    player->play();
 
 
 
@@ -148,29 +148,29 @@ void pan::play_the_Go(QPushButton *btn)
 
 void pan::judge()//函数内部有分析
 {
-    for(int i=0;i<9;i++)
-        for(int j=0;j<9;j++)
+    for(int i=0;i<length;i++)
+        for(int j=0;j<length;j++)
         {
-            if(copy_Qi[i][j] == empty_unchecked)
+            if(copy_Qi[now_step][i][j] == empty_unchecked)
                 dfs(i,j,-1);
             num++;
         }//用dfs重新绘制棋盘，本质是遍历，把子棋盘上“没查过的未落子处”坐标传进去。
 
-    for(int i=0;i<9;i++)
-        for(int j=0;j<9;j++)
+    for(int i=0;i<length;i++)
+        for(int j=0;j<length;j++)
         {
-            if(copy_Qi[i][j] == white_loseQi_or_unchecked)
+            if(copy_Qi[now_step][i][j] == white_loseQi_or_unchecked)
                 white_flag = on;
-            else if(copy_Qi[i][j] == black_loseQi_or_unchecked)
+            else if(copy_Qi[now_step][i][j] == black_loseQi_or_unchecked)
                 black_flag = on;
             num++;
         }//检查一遍子棋盘，康康有没有棋子没气了
 
-    for(int i=0;i<9;i++)
+    for(int i=0;i<length;i++)
         qDebug()<<Qi[i][0]<<Qi[i][1]<<Qi[i][2]<<Qi[i][3]<<Qi[i][4]<<Qi[i][5]<<Qi[i][6]<<Qi[i][7]<<Qi[i][8];
 
-    for(int i=0;i<9;i++)
-        qDebug()<<copy_Qi[i][0]<<copy_Qi[i][1]<<copy_Qi[i][2]<<copy_Qi[i][3]<<copy_Qi[i][4]<<copy_Qi[i][5]<<copy_Qi[i][6]<<copy_Qi[i][7]<<copy_Qi[i][8];
+    for(int i=0;i<length;i++)
+        qDebug()<<copy_Qi[now_step][i][0]<<copy_Qi[now_step][i][1]<<copy_Qi[now_step][i][2]<<copy_Qi[now_step][i][3]<<copy_Qi[now_step][i][4]<<copy_Qi[now_step][i][5]<<copy_Qi[now_step][i][6]<<copy_Qi[now_step][i][7]<<copy_Qi[now_step][i][8];
     qDebug()<<num;
     if(black_flag== on && white_flag== on)
     {
@@ -246,11 +246,11 @@ void pan::dfs(int x, int y,int flag)
 //本质是通过dfs重新绘制一副棋盘，从未落子处开始，从未落子进入黑棋部分则是有气，从有气的黑棋进入为检查的黑棋也是有气，白棋同理。
 //flag是指上一个坐标是如何进入现在的坐标的，即二维数组step的第一维，flag=-1一位这个坐标是直接从judge传来的未落子坐标
 {
-    if(copy_Qi[x][y] == empty_unchecked && flag == -1)
+    if(copy_Qi[now_step][x][y] == empty_unchecked && flag == -1)
     {
-        copy_Qi[x][y] = empty_checked;
+        copy_Qi[now_step][x][y] = empty_checked;
         for(int i=0;i<4;i++)
-            if(x+step[i][0]>=0 && x+step[i][0]<9 && y+step[i][1]>=0 && y+step[i][1]<9 && copy_Qi[x+step[i][0]][y+step[i][1]] != empty_unchecked && copy_Qi[x+step[i][0]][y+step[i][1]] != black_have_Qi && copy_Qi[x+step[i][0]][y+step[i][1]] != white_have_Qi)
+            if(x+step[i][0]>=0 && x+step[i][0]<length && y+step[i][1]>=0 && y+step[i][1]<length && copy_Qi[now_step][x+step[i][0]][y+step[i][1]] != empty_unchecked && copy_Qi[now_step][x+step[i][0]][y+step[i][1]] != black_have_Qi && copy_Qi[now_step][x+step[i][0]][y+step[i][1]] != white_have_Qi)
             {    dfs(x+step[i][0] , y+step[i][1], i);num++;}
         return;
     }
@@ -259,17 +259,17 @@ void pan::dfs(int x, int y,int flag)
     {
         if(Qi[x-step[flag][0]][y-step[flag][1]] == empty_unchecked)
         {
-            copy_Qi[x][y] = white_have_Qi;
+            copy_Qi[now_step][x][y] = white_have_Qi;
         }
-        else if(copy_Qi[x-step[flag][0]][y-step[flag][1]] == white_have_Qi)
+        else if(copy_Qi[now_step][x-step[flag][0]][y-step[flag][1]] == white_have_Qi)
         {
-            copy_Qi[x][y] = white_have_Qi;
+            copy_Qi[now_step][x][y] = white_have_Qi;
         }
         else
             return;
 
         for(int i=0;i<4;i++)
-            if(x+step[i][0]>=0 && x+step[i][0]<9 && y+step[i][1]>=0 && y+step[i][1]<9 && (i+2)%4 !=flag && copy_Qi[x+step[i][0]][y+step[i][1]] != empty_checked && copy_Qi[x+step[i][0]][y+step[i][1]] != black_have_Qi && copy_Qi[x+step[i][0]][y+step[i][1]] != white_have_Qi)
+            if(x+step[i][0]>=0 && x+step[i][0]<length && y+step[i][1]>=0 && y+step[i][1]<length && (i+2)%4 !=flag && copy_Qi[now_step][x+step[i][0]][y+step[i][1]] != empty_checked && copy_Qi[now_step][x+step[i][0]][y+step[i][1]] != black_have_Qi && copy_Qi[now_step][x+step[i][0]][y+step[i][1]] != white_have_Qi)
             {    dfs(x+step[i][0] , y+step[i][1], i);num++;}
         return;
     }
@@ -277,17 +277,17 @@ void pan::dfs(int x, int y,int flag)
     {
         if(Qi[x-step[flag][0]][y-step[flag][1]] == empty_unchecked)
         {
-            copy_Qi[x][y] = black_have_Qi;
+            copy_Qi[now_step][x][y] = black_have_Qi;
         }
-        else if(copy_Qi[x-step[flag][0]][y-step[flag][1]] == black_have_Qi)
+        else if(copy_Qi[now_step][x-step[flag][0]][y-step[flag][1]] == black_have_Qi)
         {
-            copy_Qi[x][y] = black_have_Qi;
+            copy_Qi[now_step][x][y] = black_have_Qi;
         }
         else
             return;
 
         for(int i=0;i<4;i++)
-            if(x+step[i][0]>=0 && x+step[i][0]<9 && y+step[i][1]>=0 && y+step[i][1]<9 && (i+2)%4 !=flag && copy_Qi[x+step[i][0]][y+step[i][1]] != empty_checked && copy_Qi[x+step[i][0]][y+step[i][1]] != black_have_Qi && copy_Qi[x+step[i][0]][y+step[i][1]] != white_have_Qi)
+            if(x+step[i][0]>=0 && x+step[i][0]<length && y+step[i][1]>=0 && y+step[i][1]<length && (i+2)%4 !=flag && copy_Qi[now_step][x+step[i][0]][y+step[i][1]] != empty_checked && copy_Qi[now_step][x+step[i][0]][y+step[i][1]] != black_have_Qi && copy_Qi[now_step][x+step[i][0]][y+step[i][1]] != white_have_Qi)
             {    dfs(x+step[i][0] , y+step[i][1], i);num++;}
         return;
     }
@@ -300,12 +300,15 @@ void pan::clear_pan()
 {
     black_flag=off;
     white_flag=off;
-
-    for(int i=0;i<9;i++)
-        for(int j=0;j<9;j++)
+    now_step=0;
+    for(int i=0;i<length;i++)
+        for(int j=0;j<length;j++)
         {
             Qi[i][j] = empty_unchecked;
-            copy_Qi[i][j]=empty_unchecked;
+
+            for(int l=1;l<170;l++)
+                copy_Qi[l][i][j]=empty_unchecked;
+
             QString temp = "btn_"+QString::number(i)+"_"+QString::number(j);
             QPushButton *button = this->findChild<QPushButton*>(temp);
             button->setStyleSheet("background-color:transparent;");
@@ -366,8 +369,9 @@ void pan::on_btn_startgame_2_clicked()
 
 void pan::get_btn_sign(int idx)
 {
-    for(int i_=0;i_<9;i_++)
-        for(int j_=0;j_<9;j_++)
+    now_step++;
+    for(int i_=0;i_<length;i_++)
+        for(int j_=0;j_<length;j_++)
             if(idx == i_*10+j_ && Qi[i_][j_] == empty_unchecked && game_state == on)
             {
                 now_time = game_max_time;
@@ -375,9 +379,9 @@ void pan::get_btn_sign(int idx)
                 QPushButton *button = this->findChild<QPushButton*>(temp);
                 Qi[i_][j_] = now_player;
 
-                for(int i=0;i<9;i++)
-                    for(int j=0;j<9;j++)
-                        copy_Qi[i][j] = Qi[i][j];
+                for(int i=0;i<length;i++)
+                    for(int j=0;j<length;j++)
+                        copy_Qi[now_step][i][j] = Qi[i][j];
 
 
                 play_the_Go(button);

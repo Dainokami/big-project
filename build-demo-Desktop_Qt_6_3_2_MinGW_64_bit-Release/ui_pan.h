@@ -154,7 +154,7 @@ public:
         btn_stop->setGeometry(QRect(1070, 270, 91, 61));
         label_pan = new QLabel(pan);
         label_pan->setObjectName(QString::fromUtf8("label_pan"));
-        label_pan->setGeometry(QRect(60, 0, 601, 601));
+        label_pan->setGeometry(QRect(80, 30, 561, 551));
         QFont font2;
         font2.setPointSize(90);
         font2.setBold(true);

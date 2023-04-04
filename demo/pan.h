@@ -67,10 +67,11 @@ private:
     void clear_pan();//恢复棋盘初始状态，包括清屏,清空气,重设时间
     void dfs(int x,int y,int flag);//深度搜索棋盘，是judge函数里面的一个小函数，具体见cpp。
 
-
+    int length=9;//棋盘的长度，默认是9x9
+    int now_step=0;//现在是第几步棋
     int now_player = -1;//当前棋手
-    int Qi[9][9]={0};//母棋盘。
-    int copy_Qi[9][9]={0};//供dfs的子棋盘，在dfs前会copy成母棋盘，dfs后会变成相对应的子棋盘
+    int Qi[13][13]={0};//母棋盘。
+    int copy_Qi[170][13][13]={0};//供dfs的子棋盘，在dfs前会copy成母棋盘，dfs后会变成相对应的子棋盘
     int black_flag=0;//若dfs后有loseQi的黑棋则变为on（值为1），不然就一直是off（值为0）
     int white_flag=0;////同上
     int step[4][2]={0,1,1,0,0,-1,-1,0};//为了方便dfs而设置的向量
