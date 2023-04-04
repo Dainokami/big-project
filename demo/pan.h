@@ -49,6 +49,8 @@ private slots :
 
     void on_btn_isEnable_clicked();//控制倒计时框可不可以编辑，在游戏过程中默认不可以
 
+
+
 private:
     Ui::pan *ui;
     QTimer *m;
@@ -66,8 +68,10 @@ private:
     void judge();//在每次落子后判断有无胜负
     void clear_pan();//恢复棋盘初始状态，包括清屏,清空气,重设时间
     void dfs(int x,int y,int flag);//深度搜索棋盘，是judge函数里面的一个小函数，具体见cpp。
+    void change_pan();//设置棋盘是多大
 
-    int length=9;//棋盘的长度，默认是9x9
+
+    int length=13;//棋盘的长度，默认是9x9
     int now_step=0;//现在是第几步棋
     int now_player = -1;//当前棋手
     int Qi[13][13]={0};//母棋盘。
@@ -94,7 +98,7 @@ private:
     {
         off,on
     }state;//既是游戏的状态也用于whiteflag和blackstage的状态
-    int num=0;
+
 };
 
 #endif // PAN_H
