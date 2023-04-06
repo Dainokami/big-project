@@ -29,9 +29,9 @@ class pan : public QWidget
 public:
     explicit pan(QWidget *parent = nullptr);
     ~pan();
-    const int lu=8;
-    const int size=61;
-    const int x=115,y=55;
+
+    const int size=50;
+    const int x=35,y=35;
 
 private slots :
 
@@ -64,7 +64,7 @@ private:
     void BeginCountdown();//打开计时器
     void OnTimerCountdown();//输出倒计时
     void delete_time();//删除计时器
-    void play_the_Go(QPushButton *btn);//绘制棋盘，其实就是把对应的按钮画成黑棋或白棋
+    void play_the_Go(QPushButton *now_btn,QPushButton *last_btn);//绘制棋盘，其实就是把对应的按钮画成黑棋或白棋
     void judge();//在每次落子后判断有无胜负
     void clear_pan();//恢复棋盘初始状态，包括清屏,清空气,重设时间
     void dfs(int x,int y,int flag);//深度搜索棋盘，是judge函数里面的一个小函数，具体见cpp。
@@ -82,7 +82,7 @@ private:
     int game_max_time;//倒计时的最大时长
     int now_time=0;//倒计时的当前时长
     bool game_state = 0;//该变量为1则游戏开始，为0则不然
-
+    int loc=-1;//落子位置，用于高亮当前子和记录对局,-1指游戏开始未有落子
 
     enum Chess
     {

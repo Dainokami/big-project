@@ -843,6 +843,11 @@ debug/pan.o: ../demo/pan.cpp ../demo/pan.h \
 		../../../Qt/6.3.2/mingw_64/include/QtGui/qinputmethod.h \
 		../../../Qt/6.3.2/mingw_64/include/QtCore/qlocale.h \
 		../../../Qt/6.3.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qgridlayout.h \
 		../../../Qt/6.3.2/mingw_64/include/QtWidgets/QLabel \
 		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qlabel.h \
 		../../../Qt/6.3.2/mingw_64/include/QtWidgets/qframe.h \

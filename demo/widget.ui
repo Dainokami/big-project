@@ -14,7 +14,7 @@
    <string>Widget</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="image_music.qrc">
+   <iconset>
     <normaloff>:/image/logo.png</normaloff>:/image/logo.png</iconset>
   </property>
   <widget class="QLabel" name="lab_wid_title">
@@ -41,19 +41,19 @@
     <rect>
      <x>280</x>
      <y>310</y>
-     <width>211</width>
-     <height>61</height>
+     <width>101</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="text">
-    <string>进入游戏</string>
+    <string>单机</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_wid_exit">
    <property name="geometry">
     <rect>
      <x>280</x>
-     <y>480</y>
+     <y>430</y>
      <width>211</width>
      <height>61</height>
     </rect>
@@ -62,10 +62,21 @@
     <string>退出游戏</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="btn_wid_start_2">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>310</y>
+     <width>101</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>联机</string>
+   </property>
+  </widget>
  </widget>
- <resources>
-  <include location="image_music.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>btn_wid_exit</sender>

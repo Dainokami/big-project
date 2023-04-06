@@ -24,6 +24,7 @@ public:
     QLabel *lab_wid_title;
     QPushButton *btn_wid_start;
     QPushButton *btn_wid_exit;
+    QPushButton *btn_wid_start_2;
 
     void setupUi(QWidget *Widget)
     {
@@ -42,10 +43,13 @@ public:
         lab_wid_title->setFont(font);
         btn_wid_start = new QPushButton(Widget);
         btn_wid_start->setObjectName(QString::fromUtf8("btn_wid_start"));
-        btn_wid_start->setGeometry(QRect(280, 310, 211, 61));
+        btn_wid_start->setGeometry(QRect(280, 310, 101, 101));
         btn_wid_exit = new QPushButton(Widget);
         btn_wid_exit->setObjectName(QString::fromUtf8("btn_wid_exit"));
-        btn_wid_exit->setGeometry(QRect(280, 480, 211, 61));
+        btn_wid_exit->setGeometry(QRect(280, 430, 211, 61));
+        btn_wid_start_2 = new QPushButton(Widget);
+        btn_wid_start_2->setObjectName(QString::fromUtf8("btn_wid_start_2"));
+        btn_wid_start_2->setGeometry(QRect(390, 310, 101, 101));
 
         retranslateUi(Widget);
         QObject::connect(btn_wid_exit, &QPushButton::clicked, Widget, qOverload<>(&QWidget::close));
@@ -57,8 +61,9 @@ public:
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
         lab_wid_title->setText(QCoreApplication::translate("Widget", "NOGO", nullptr));
-        btn_wid_start->setText(QCoreApplication::translate("Widget", "\350\277\233\345\205\245\346\270\270\346\210\217", nullptr));
+        btn_wid_start->setText(QCoreApplication::translate("Widget", "\345\215\225\346\234\272", nullptr));
         btn_wid_exit->setText(QCoreApplication::translate("Widget", "\351\200\200\345\207\272\346\270\270\346\210\217", nullptr));
+        btn_wid_start_2->setText(QCoreApplication::translate("Widget", "\350\201\224\346\234\272", nullptr));
     } // retranslateUi
 
 };

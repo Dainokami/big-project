@@ -62,14 +62,14 @@ void pan::paintEvent(QPaintEvent *)
     paint=new QPainter;
     paint->begin(this);
     paint->setPen(QPen(Qt::black,2,Qt::SolidLine));
-      for(int i=0;i<lu+1;i++)
+      for(int i=0;i<length;i++)
         {
-          paint->drawLine(x,y+size*i,x+size*(lu),y+size*i);//画线函数：x1,y1,x2,y2:画从(x1,y1)到(x2,y2)的线
+          paint->drawLine(x,y+size*i,x+size*(length-1),y+size*i);//画线函数：x1,y1,x2,y2:画从(x1,y1)到(x2,y2)的线
         }
       //画lu+1条竖线
-      for(int i=0;i<lu+1;i++)
+      for(int i=0;i<length;i++)
         {
-          paint->drawLine(x+size*i,y,x+size*i,y+size*(lu));
+          paint->drawLine(x+size*i,y,x+size*i,y+size*(length-1));
         }
       //ui->setupUi()
 }
@@ -129,19 +129,25 @@ void pan::delete_time()
     }
 }
 
-void pan::play_the_Go(QPushButton *btn)
+void pan::play_the_Go(QPushButton *now_btn,QPushButton *last_btn)
 {
     if(game_state == on)
     {
         if(now_player == white_player)
         {
-            btn->setStyleSheet("background-color:white;border-radius:25px;border:1px groove gray;border-style:outset;");
-            btn->setFlat(false);
+            last_btn->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
+            now_btn->setStyleSheet("background-color:white;border-radius:25px;border:2px groove red;border-style:outset;");
+            now_btn->setFlat(false);
+            ui->btn_white->setStyleSheet("background-color:white;border-radius:25px;border:2px groove gray;border-style:outset;");
+            ui->btn_black->setStyleSheet("");
         }
         else if(now_player == black_player)
         {
-            btn->setStyleSheet("background-color:black;border-radius:25px;border:1px groove gray;border-style:outset;");
-            btn->setFlat(false);
+            last_btn->setStyleSheet("background-color:white;border-radius:25px;border:2px groove gray;border-style:outset;");
+            now_btn->setStyleSheet("background-color:black;border-radius:25px;border:2px groove red;border-style:outset;");
+            now_btn->setFlat(false);
+            ui->btn_white->setStyleSheet("");
+            ui->btn_black->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
         }
     }
 }
@@ -306,6 +312,7 @@ void pan::change_pan()
     else if(ui->rad_13x13->isChecked())
         length = 13;
 
+    pan::update();
     for(int i=0;i<13;i++)
         for(int j=0;j<13;j++)
         {
@@ -399,37 +406,39 @@ void pan::get_btn_sign(int idx)
 {
     qDebug()<<idx;
     now_step++;
-    for(int i_=0;i_<length;i_++)
+    int i_=idx/100;
+    int j_=idx%100;
+    if(Qi[i_][j_] == empty_unchecked && game_state == on)
     {
-        for(int j_=0;j_<length;j_++)
+        now_time = game_max_time;
+        QString now_btn_str = "btn_"+QString::number(i_)+"_"+QString::number(j_);
+        if(loc == -1)
+            loc = idx;
+        QString last_btn_str = "btn_"+QString::number(loc/100)+"_"+QString::number(loc%100);
+        QPushButton *now_btn = this->findChild<QPushButton*>(now_btn_str);
+        QPushButton *last_btn = this->findChild<QPushButton*>(last_btn_str);
+        Qi[i_][j_] = now_player;
+
+        for(int i=0;i<length;i++)
+            for(int j=0;j<length;j++)
+                copy_Qi[now_step][i][j] = Qi[i][j];
+
+
+        play_the_Go(now_btn,last_btn);
+        judge();
+        loc = idx;
+        if(game_state == on)
         {
-            if(idx == i_*100+j_ && Qi[i_][j_] == empty_unchecked && game_state == on)
-            {
-                now_time = game_max_time;
-                QString temp = "btn_"+QString::number(i_)+"_"+QString::number(j_);
-                QPushButton *button = this->findChild<QPushButton*>(temp);
-                Qi[i_][j_] = now_player;
-
-                for(int i=0;i<length;i++)
-                    for(int j=0;j<length;j++)
-                        copy_Qi[now_step][i][j] = Qi[i][j];
-
-
-                play_the_Go(button);
-                judge();
-                if(game_state == on)
-                {
-                    if(now_player == white_player)
-                        now_player = black_player;
-                    else if(now_player == black_player)
-                        now_player = white_player;
-                }
-                break;
-            }
-
+            if(now_player == white_player)
+                now_player = black_player;
+            else if(now_player == black_player)
+                now_player = white_player;
         }
-
     }
+
+
+
+
 }
 
 void pan::on_btn_restart_clicked()
