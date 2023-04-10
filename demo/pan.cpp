@@ -12,7 +12,8 @@ pan::pan(QWidget *parent) :
     connect(ui->rad_9x9,&QRadioButton::clicked,this,pan::change_pan);
     connect(ui->rad_11x11,&QRadioButton::clicked,this,pan::change_pan);
     connect(ui->rad_13x13,&QRadioButton::clicked,this,pan::change_pan);
-
+    ui->btn_white->setStyleSheet("");
+    ui->btn_black->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
 
 
     //以下设置定时器
@@ -137,22 +138,22 @@ void pan::play_the_Go(QPushButton *now_btn,QPushButton *last_btn)
         {
             last_btn->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
             now_btn->setStyleSheet("background-color:white;border-radius:25px;border:2px groove red;border-style:outset;");
-            now_btn->setFlat(false);
-            ui->btn_white->setStyleSheet("background-color:white;border-radius:25px;border:2px groove gray;border-style:outset;");
-            ui->btn_black->setStyleSheet("");
+            now_btn->setEnabled(false);
+            ui->btn_white->setStyleSheet("");
+            ui->btn_black->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
         }
         else if(now_player == black_player)
         {
             last_btn->setStyleSheet("background-color:white;border-radius:25px;border:2px groove gray;border-style:outset;");
             now_btn->setStyleSheet("background-color:black;border-radius:25px;border:2px groove red;border-style:outset;");
-            now_btn->setFlat(false);
-            ui->btn_white->setStyleSheet("");
-            ui->btn_black->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
+            now_btn->setEnabled(false);
+            ui->btn_white->setStyleSheet("background-color:white;border-radius:25px;border:2px groove gray;border-style:outset;");
+            ui->btn_black->setStyleSheet("");
         }
     }
 }
 
-void pan::judge()//函数内部有分析
+int pan::judge()//函数内部有分析
 {
     for(int i=0;i<length;i++)
         for(int j=0;j<length;j++)
@@ -172,17 +173,18 @@ void pan::judge()//函数内部有分析
 
     for(int i=0;i<length;i++)
         qDebug()<<Qi[i][0]<<Qi[i][1]<<Qi[i][2]<<Qi[i][3]<<Qi[i][4]<<Qi[i][5]<<Qi[i][6]<<Qi[i][7]<<Qi[i][8]<<Qi[i][9]<<Qi[i][10]<<Qi[i][11]<<Qi[i][12];
-
+;
     for(int i=0;i<length;i++)
         qDebug()<<copy_Qi[now_step][i][0]<<copy_Qi[now_step][i][1]<<copy_Qi[now_step][i][2]<<copy_Qi[now_step][i][3]<<copy_Qi[now_step][i][4]<<copy_Qi[now_step][i][5]<<copy_Qi[now_step][i][6]<<copy_Qi[now_step][i][7]<<copy_Qi[now_step][i][8];
     if(black_flag== on && white_flag== on)
     {
         if(now_player== black_player)//黑白棋都没气且黑棋下了最后一步棋，判定黑棋无路可走而输
         {
-            m->stop();
-            game_state = off;
+            /*m->stop();
+            game_state = off;*/
             QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你输了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-            now_player = black_player;
+            return no;
+            /*now_player = black_player;
             clear_pan();
             ui->txtl_pan_time->setEnabled(true);
             ui->line_player_0->setEnabled(true);
@@ -190,14 +192,15 @@ void pan::judge()//函数内部有分析
             ui->rad_9x9->setEnabled(true);
             ui->rad_11x11->setEnabled(true);
             ui->rad_13x13->setEnabled(true);
-            m->stop();
+            m->stop();*/
         }
         else//黑白棋都没气且白棋下了最后一步棋，判定白棋无路可走而输
         {
-            m->stop();
-            game_state = off;
+            /*m->stop();
+            game_state = off;*/
             QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你输了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-            now_player = black_player;
+            return no;
+            /*now_player = black_player;
             clear_pan();
             ui->txtl_pan_time->setEnabled(true);
             ui->line_player_0->setEnabled(true);
@@ -205,19 +208,20 @@ void pan::judge()//函数内部有分析
             ui->rad_9x9->setEnabled(true);
             ui->rad_11x11->setEnabled(true);
             ui->rad_13x13->setEnabled(true);
-            m->stop();
+            m->stop();*/
         }
 
     }
     else if(black_flag==on)//黑棋没气了。黑棋围的，鉴定为紫砂；白棋围的，鉴定为白棋输
     {
-        m->stop();
-        game_state = off;
+        /*m->stop();
+        game_state = off;*/
         if(now_player == black_player)
             QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你紫砂了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
         else if(now_player == white_player)
             QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你输了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-        now_player = black_player;
+        return no;
+        /*now_player = black_player;
         clear_pan();
         ui->txtl_pan_time->setEnabled(true);
         ui->line_player_0->setEnabled(true);
@@ -225,17 +229,18 @@ void pan::judge()//函数内部有分析
         ui->rad_9x9->setEnabled(true);
         ui->rad_11x11->setEnabled(true);
         ui->rad_13x13->setEnabled(true);
-        m->stop();
+        m->stop();*/
     }
     else if(white_flag ==on)//白棋没气了。白棋围的，鉴定为紫砂；黑棋围的，鉴定为白棋输
     {
-        m->stop();
-        game_state = off;
+        /*m->stop();
+        game_state = off;*/
         if(now_player == white_player)
             QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你紫砂了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
         else if(now_player == black_player)
             QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你输了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-        now_player = black_player;
+        return no;
+        /*now_player = black_player;
         clear_pan();
         ui->txtl_pan_time->setEnabled(true);
         ui->line_player_0->setEnabled(true);
@@ -243,10 +248,10 @@ void pan::judge()//函数内部有分析
         ui->rad_9x9->setEnabled(true);
         ui->rad_11x11->setEnabled(true);
         ui->rad_13x13->setEnabled(true);
-        m->stop();
+        m->stop();*/
     }
 
-
+    return yes;
 }
 
 void pan::dfs(int x, int y,int flag)
@@ -335,6 +340,7 @@ void pan::clear_pan()
     black_flag=off;
     white_flag=off;
     now_step=0;
+    loc = -1;
     for(int i=0;i<length;i++)
         for(int j=0;j<length;j++)
         {
@@ -345,10 +351,14 @@ void pan::clear_pan()
 
             QString temp = "btn_"+QString::number(i)+"_"+QString::number(j);
             QPushButton *button = this->findChild<QPushButton*>(temp);
-            button->setStyleSheet("background-color:transparent;");
-            button->setFlat(true);
+            button->setStyleSheet("");
+            button->setEnabled(true);
 
         }
+
+    ui->btn_white->setStyleSheet("");
+    ui->btn_black->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
+
     if(ui->txtl_pan_time->isEnabled())
     {
         ui->txtl_pan_time->setEnabled(false);
@@ -405,18 +415,11 @@ void pan::on_btn_startgame_2_clicked()
 void pan::get_btn_sign(int idx)
 {
     qDebug()<<idx;
-    now_step++;
     int i_=idx/100;
     int j_=idx%100;
     if(Qi[i_][j_] == empty_unchecked && game_state == on)
     {
-        now_time = game_max_time;
-        QString now_btn_str = "btn_"+QString::number(i_)+"_"+QString::number(j_);
-        if(loc == -1)
-            loc = idx;
-        QString last_btn_str = "btn_"+QString::number(loc/100)+"_"+QString::number(loc%100);
-        QPushButton *now_btn = this->findChild<QPushButton*>(now_btn_str);
-        QPushButton *last_btn = this->findChild<QPushButton*>(last_btn_str);
+
         Qi[i_][j_] = now_player;
 
         for(int i=0;i<length;i++)
@@ -424,18 +427,34 @@ void pan::get_btn_sign(int idx)
                 copy_Qi[now_step][i][j] = Qi[i][j];
 
 
-        play_the_Go(now_btn,last_btn);
-        judge();
-        loc = idx;
-        if(game_state == on)
+        if(judge())
         {
-            if(now_player == white_player)
-                now_player = black_player;
-            else if(now_player == black_player)
-                now_player = white_player;
+            now_time = game_max_time;
+            QString now_btn_str = "btn_"+QString::number(i_)+"_"+QString::number(j_);
+            if(loc == -1)
+                loc = idx;
+            QString last_btn_str = "btn_"+QString::number(loc/100)+"_"+QString::number(loc%100);
+            QPushButton *now_btn = this->findChild<QPushButton*>(now_btn_str);
+            QPushButton *last_btn = this->findChild<QPushButton*>(last_btn_str);
+            play_the_Go(now_btn,last_btn);
+            loc = idx;
+            if(game_state == on)
+            {
+                if(now_player == white_player)
+                    now_player = black_player;
+                else if(now_player == black_player)
+                    now_player = white_player;
+            }
+            now_step++;
+
+        }
+        else
+        {
+            Qi[i_][j_]= empty_unchecked;
+            white_flag=off;
+            black_flag=off;
         }
     }
-
 
 
 

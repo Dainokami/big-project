@@ -263,11 +263,11 @@ public:
         line_player_0->setFont(font2);
         line_player_1 = new QLineEdit(pan);
         line_player_1->setObjectName(QString::fromUtf8("line_player_1"));
-        line_player_1->setGeometry(QRect(940, 520, 91, 51));
+        line_player_1->setGeometry(QRect(950, 520, 91, 51));
         line_player_1->setFont(font2);
         label_3 = new QLabel(pan);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(860, 510, 69, 71));
+        label_3->setGeometry(QRect(870, 510, 69, 71));
         QFont font3;
         font3.setFamilies({QString::fromUtf8("Informal Roman")});
         font3.setPointSize(28);
@@ -1998,7 +1998,7 @@ public:
         btn_6_7->setFlat(true);
         btn_black = new QPushButton(pan);
         btn_black->setObjectName(QString::fromUtf8("btn_black"));
-        btn_black->setEnabled(true);
+        btn_black->setEnabled(false);
         btn_black->setGeometry(QRect(780, 450, 50, 50));
         sizePolicy.setHeightForWidth(btn_black->sizePolicy().hasHeightForWidth());
         btn_black->setSizePolicy(sizePolicy);
@@ -2008,8 +2008,8 @@ public:
         btn_black->setFlat(true);
         btn_white = new QPushButton(pan);
         btn_white->setObjectName(QString::fromUtf8("btn_white"));
-        btn_white->setEnabled(true);
-        btn_white->setGeometry(QRect(960, 450, 50, 50));
+        btn_white->setEnabled(false);
+        btn_white->setGeometry(QRect(970, 450, 50, 50));
         sizePolicy.setHeightForWidth(btn_white->sizePolicy().hasHeightForWidth());
         btn_white->setSizePolicy(sizePolicy);
         btn_white->setMinimumSize(QSize(50, 50));

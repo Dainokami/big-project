@@ -150,7 +150,7 @@
   <widget class="QLineEdit" name="line_player_1">
    <property name="geometry">
     <rect>
-     <x>940</x>
+     <x>950</x>
      <y>520</y>
      <width>91</width>
      <height>51</height>
@@ -169,7 +169,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>860</x>
+     <x>870</x>
      <y>510</y>
      <width>69</width>
      <height>71</height>
@@ -7009,7 +7009,7 @@
   </widget>
   <widget class="QPushButton" name="btn_black">
    <property name="enabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -7049,11 +7049,11 @@
   </widget>
   <widget class="QPushButton" name="btn_white">
    <property name="enabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="geometry">
     <rect>
-     <x>960</x>
+     <x>970</x>
      <y>450</y>
      <width>50</width>
      <height>50</height>

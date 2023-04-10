@@ -65,7 +65,7 @@ private:
     void OnTimerCountdown();//输出倒计时
     void delete_time();//删除计时器
     void play_the_Go(QPushButton *now_btn,QPushButton *last_btn);//绘制棋盘，其实就是把对应的按钮画成黑棋或白棋
-    void judge();//在每次落子后判断有无胜负
+    int judge();//在每次落子后判断有无胜负,若会吃子或紫砂则传回no，反之则传yes
     void clear_pan();//恢复棋盘初始状态，包括清屏,清空气,重设时间
     void dfs(int x,int y,int flag);//深度搜索棋盘，是judge函数里面的一个小函数，具体见cpp。
     void change_pan();//设置棋盘是多大
@@ -93,6 +93,11 @@ private:
     {
         black_player=-1,white_player =1
     }player_state;
+
+    enum WINLOSE
+    {
+        no,yes
+    }winlose;
 
     enum State
     {
