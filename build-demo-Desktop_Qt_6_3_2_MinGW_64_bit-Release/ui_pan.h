@@ -30,7 +30,6 @@ public:
     QPushButton *btn_stop;
     QPushButton *btn_lose;
     QPushButton *btn_restart;
-    QRadioButton *btn_isEnable;
     QLineEdit *line_player_0;
     QLineEdit *line_player_1;
     QLabel *label_3;
@@ -212,6 +211,7 @@ public:
     QPushButton *btn_6_7;
     QPushButton *btn_black;
     QPushButton *btn_white;
+    QPushButton *back;
 
     void setupUi(QWidget *pan)
     {
@@ -251,9 +251,6 @@ public:
         btn_restart = new QPushButton(pan);
         btn_restart->setObjectName(QString::fromUtf8("btn_restart"));
         btn_restart->setGeometry(QRect(900, 330, 91, 61));
-        btn_isEnable = new QRadioButton(pan);
-        btn_isEnable->setObjectName(QString::fromUtf8("btn_isEnable"));
-        btn_isEnable->setGeometry(QRect(970, 160, 111, 24));
         line_player_0 = new QLineEdit(pan);
         line_player_0->setObjectName(QString::fromUtf8("line_player_0"));
         line_player_0->setGeometry(QRect(760, 520, 91, 51));
@@ -315,7 +312,7 @@ public:
         btn_4_8->setMinimumSize(QSize(50, 50));
         btn_4_8->setMaximumSize(QSize(60, 50));
         btn_4_8->setStyleSheet(QString::fromUtf8(""));
-        btn_4_8->setFlat(true);
+        btn_4_8->setFlat(false);
         btn_12_9 = new QPushButton(pan);
         btn_12_9->setObjectName(QString::fromUtf8("btn_12_9"));
         btn_12_9->setEnabled(true);
@@ -325,7 +322,7 @@ public:
         btn_12_9->setMinimumSize(QSize(50, 50));
         btn_12_9->setMaximumSize(QSize(60, 50));
         btn_12_9->setStyleSheet(QString::fromUtf8(""));
-        btn_12_9->setFlat(true);
+        btn_12_9->setFlat(false);
         btn_10_5 = new QPushButton(pan);
         btn_10_5->setObjectName(QString::fromUtf8("btn_10_5"));
         btn_10_5->setEnabled(true);
@@ -335,7 +332,7 @@ public:
         btn_10_5->setMinimumSize(QSize(50, 50));
         btn_10_5->setMaximumSize(QSize(60, 50));
         btn_10_5->setStyleSheet(QString::fromUtf8(""));
-        btn_10_5->setFlat(true);
+        btn_10_5->setFlat(false);
         btn_9_12 = new QPushButton(pan);
         btn_9_12->setObjectName(QString::fromUtf8("btn_9_12"));
         btn_9_12->setEnabled(true);
@@ -345,7 +342,7 @@ public:
         btn_9_12->setMinimumSize(QSize(50, 50));
         btn_9_12->setMaximumSize(QSize(60, 50));
         btn_9_12->setStyleSheet(QString::fromUtf8(""));
-        btn_9_12->setFlat(true);
+        btn_9_12->setFlat(false);
         btn_3_3 = new QPushButton(pan);
         btn_3_3->setObjectName(QString::fromUtf8("btn_3_3"));
         btn_3_3->setEnabled(true);
@@ -355,7 +352,7 @@ public:
         btn_3_3->setMinimumSize(QSize(50, 50));
         btn_3_3->setMaximumSize(QSize(60, 50));
         btn_3_3->setStyleSheet(QString::fromUtf8(""));
-        btn_3_3->setFlat(true);
+        btn_3_3->setFlat(false);
         btn_9_8 = new QPushButton(pan);
         btn_9_8->setObjectName(QString::fromUtf8("btn_9_8"));
         btn_9_8->setEnabled(true);
@@ -365,7 +362,7 @@ public:
         btn_9_8->setMinimumSize(QSize(50, 50));
         btn_9_8->setMaximumSize(QSize(60, 50));
         btn_9_8->setStyleSheet(QString::fromUtf8(""));
-        btn_9_8->setFlat(true);
+        btn_9_8->setFlat(false);
         btn_0_10 = new QPushButton(pan);
         btn_0_10->setObjectName(QString::fromUtf8("btn_0_10"));
         btn_0_10->setEnabled(true);
@@ -375,7 +372,7 @@ public:
         btn_0_10->setMinimumSize(QSize(50, 50));
         btn_0_10->setMaximumSize(QSize(60, 50));
         btn_0_10->setStyleSheet(QString::fromUtf8(""));
-        btn_0_10->setFlat(true);
+        btn_0_10->setFlat(false);
         btn_6_5 = new QPushButton(pan);
         btn_6_5->setObjectName(QString::fromUtf8("btn_6_5"));
         btn_6_5->setEnabled(true);
@@ -385,7 +382,7 @@ public:
         btn_6_5->setMinimumSize(QSize(50, 50));
         btn_6_5->setMaximumSize(QSize(60, 50));
         btn_6_5->setStyleSheet(QString::fromUtf8(""));
-        btn_6_5->setFlat(true);
+        btn_6_5->setFlat(false);
         btn_7_12 = new QPushButton(pan);
         btn_7_12->setObjectName(QString::fromUtf8("btn_7_12"));
         btn_7_12->setEnabled(true);
@@ -395,7 +392,7 @@ public:
         btn_7_12->setMinimumSize(QSize(50, 50));
         btn_7_12->setMaximumSize(QSize(60, 50));
         btn_7_12->setStyleSheet(QString::fromUtf8(""));
-        btn_7_12->setFlat(true);
+        btn_7_12->setFlat(false);
         btn_5_7 = new QPushButton(pan);
         btn_5_7->setObjectName(QString::fromUtf8("btn_5_7"));
         btn_5_7->setEnabled(true);
@@ -405,7 +402,7 @@ public:
         btn_5_7->setMinimumSize(QSize(50, 50));
         btn_5_7->setMaximumSize(QSize(60, 50));
         btn_5_7->setStyleSheet(QString::fromUtf8(""));
-        btn_5_7->setFlat(true);
+        btn_5_7->setFlat(false);
         btn_2_8 = new QPushButton(pan);
         btn_2_8->setObjectName(QString::fromUtf8("btn_2_8"));
         btn_2_8->setEnabled(true);
@@ -415,7 +412,7 @@ public:
         btn_2_8->setMinimumSize(QSize(50, 50));
         btn_2_8->setMaximumSize(QSize(60, 50));
         btn_2_8->setStyleSheet(QString::fromUtf8(""));
-        btn_2_8->setFlat(true);
+        btn_2_8->setFlat(false);
         btn_4_2 = new QPushButton(pan);
         btn_4_2->setObjectName(QString::fromUtf8("btn_4_2"));
         btn_4_2->setEnabled(true);
@@ -425,7 +422,7 @@ public:
         btn_4_2->setMinimumSize(QSize(50, 50));
         btn_4_2->setMaximumSize(QSize(60, 50));
         btn_4_2->setStyleSheet(QString::fromUtf8(""));
-        btn_4_2->setFlat(true);
+        btn_4_2->setFlat(false);
         btn_11_3 = new QPushButton(pan);
         btn_11_3->setObjectName(QString::fromUtf8("btn_11_3"));
         btn_11_3->setEnabled(true);
@@ -435,7 +432,7 @@ public:
         btn_11_3->setMinimumSize(QSize(50, 50));
         btn_11_3->setMaximumSize(QSize(60, 50));
         btn_11_3->setStyleSheet(QString::fromUtf8(""));
-        btn_11_3->setFlat(true);
+        btn_11_3->setFlat(false);
         btn_9_3 = new QPushButton(pan);
         btn_9_3->setObjectName(QString::fromUtf8("btn_9_3"));
         btn_9_3->setEnabled(true);
@@ -445,7 +442,7 @@ public:
         btn_9_3->setMinimumSize(QSize(50, 50));
         btn_9_3->setMaximumSize(QSize(60, 50));
         btn_9_3->setStyleSheet(QString::fromUtf8(""));
-        btn_9_3->setFlat(true);
+        btn_9_3->setFlat(false);
         btn_9_4 = new QPushButton(pan);
         btn_9_4->setObjectName(QString::fromUtf8("btn_9_4"));
         btn_9_4->setEnabled(true);
@@ -455,7 +452,7 @@ public:
         btn_9_4->setMinimumSize(QSize(50, 50));
         btn_9_4->setMaximumSize(QSize(60, 50));
         btn_9_4->setStyleSheet(QString::fromUtf8(""));
-        btn_9_4->setFlat(true);
+        btn_9_4->setFlat(false);
         btn_3_1 = new QPushButton(pan);
         btn_3_1->setObjectName(QString::fromUtf8("btn_3_1"));
         btn_3_1->setEnabled(true);
@@ -465,7 +462,7 @@ public:
         btn_3_1->setMinimumSize(QSize(50, 50));
         btn_3_1->setMaximumSize(QSize(60, 50));
         btn_3_1->setStyleSheet(QString::fromUtf8(""));
-        btn_3_1->setFlat(true);
+        btn_3_1->setFlat(false);
         btn_1_2 = new QPushButton(pan);
         btn_1_2->setObjectName(QString::fromUtf8("btn_1_2"));
         btn_1_2->setEnabled(true);
@@ -475,7 +472,7 @@ public:
         btn_1_2->setMinimumSize(QSize(50, 50));
         btn_1_2->setMaximumSize(QSize(60, 50));
         btn_1_2->setStyleSheet(QString::fromUtf8(""));
-        btn_1_2->setFlat(true);
+        btn_1_2->setFlat(false);
         btn_4_4 = new QPushButton(pan);
         btn_4_4->setObjectName(QString::fromUtf8("btn_4_4"));
         btn_4_4->setEnabled(true);
@@ -485,7 +482,7 @@ public:
         btn_4_4->setMinimumSize(QSize(50, 50));
         btn_4_4->setMaximumSize(QSize(60, 50));
         btn_4_4->setStyleSheet(QString::fromUtf8(""));
-        btn_4_4->setFlat(true);
+        btn_4_4->setFlat(false);
         btn_12_12 = new QPushButton(pan);
         btn_12_12->setObjectName(QString::fromUtf8("btn_12_12"));
         btn_12_12->setEnabled(true);
@@ -495,7 +492,7 @@ public:
         btn_12_12->setMinimumSize(QSize(50, 50));
         btn_12_12->setMaximumSize(QSize(60, 50));
         btn_12_12->setStyleSheet(QString::fromUtf8(""));
-        btn_12_12->setFlat(true);
+        btn_12_12->setFlat(false);
         btn_10_6 = new QPushButton(pan);
         btn_10_6->setObjectName(QString::fromUtf8("btn_10_6"));
         btn_10_6->setEnabled(true);
@@ -505,7 +502,7 @@ public:
         btn_10_6->setMinimumSize(QSize(50, 50));
         btn_10_6->setMaximumSize(QSize(60, 50));
         btn_10_6->setStyleSheet(QString::fromUtf8(""));
-        btn_10_6->setFlat(true);
+        btn_10_6->setFlat(false);
         btn_1_10 = new QPushButton(pan);
         btn_1_10->setObjectName(QString::fromUtf8("btn_1_10"));
         btn_1_10->setEnabled(true);
@@ -515,7 +512,7 @@ public:
         btn_1_10->setMinimumSize(QSize(50, 50));
         btn_1_10->setMaximumSize(QSize(60, 50));
         btn_1_10->setStyleSheet(QString::fromUtf8(""));
-        btn_1_10->setFlat(true);
+        btn_1_10->setFlat(false);
         btn_0_5 = new QPushButton(pan);
         btn_0_5->setObjectName(QString::fromUtf8("btn_0_5"));
         btn_0_5->setEnabled(true);
@@ -525,7 +522,7 @@ public:
         btn_0_5->setMinimumSize(QSize(50, 50));
         btn_0_5->setMaximumSize(QSize(60, 50));
         btn_0_5->setStyleSheet(QString::fromUtf8(""));
-        btn_0_5->setFlat(true);
+        btn_0_5->setFlat(false);
         btn_1_11 = new QPushButton(pan);
         btn_1_11->setObjectName(QString::fromUtf8("btn_1_11"));
         btn_1_11->setEnabled(true);
@@ -535,7 +532,7 @@ public:
         btn_1_11->setMinimumSize(QSize(50, 50));
         btn_1_11->setMaximumSize(QSize(60, 50));
         btn_1_11->setStyleSheet(QString::fromUtf8(""));
-        btn_1_11->setFlat(true);
+        btn_1_11->setFlat(false);
         btn_6_4 = new QPushButton(pan);
         btn_6_4->setObjectName(QString::fromUtf8("btn_6_4"));
         btn_6_4->setEnabled(true);
@@ -545,7 +542,7 @@ public:
         btn_6_4->setMinimumSize(QSize(50, 50));
         btn_6_4->setMaximumSize(QSize(60, 50));
         btn_6_4->setStyleSheet(QString::fromUtf8(""));
-        btn_6_4->setFlat(true);
+        btn_6_4->setFlat(false);
         btn_12_1 = new QPushButton(pan);
         btn_12_1->setObjectName(QString::fromUtf8("btn_12_1"));
         btn_12_1->setEnabled(true);
@@ -555,7 +552,7 @@ public:
         btn_12_1->setMinimumSize(QSize(50, 50));
         btn_12_1->setMaximumSize(QSize(60, 50));
         btn_12_1->setStyleSheet(QString::fromUtf8(""));
-        btn_12_1->setFlat(true);
+        btn_12_1->setFlat(false);
         btn_1_9 = new QPushButton(pan);
         btn_1_9->setObjectName(QString::fromUtf8("btn_1_9"));
         btn_1_9->setEnabled(true);
@@ -565,7 +562,7 @@ public:
         btn_1_9->setMinimumSize(QSize(50, 50));
         btn_1_9->setMaximumSize(QSize(60, 50));
         btn_1_9->setStyleSheet(QString::fromUtf8(""));
-        btn_1_9->setFlat(true);
+        btn_1_9->setFlat(false);
         btn_8_1 = new QPushButton(pan);
         btn_8_1->setObjectName(QString::fromUtf8("btn_8_1"));
         btn_8_1->setEnabled(true);
@@ -575,7 +572,7 @@ public:
         btn_8_1->setMinimumSize(QSize(50, 50));
         btn_8_1->setMaximumSize(QSize(60, 50));
         btn_8_1->setStyleSheet(QString::fromUtf8(""));
-        btn_8_1->setFlat(true);
+        btn_8_1->setFlat(false);
         btn_11_0 = new QPushButton(pan);
         btn_11_0->setObjectName(QString::fromUtf8("btn_11_0"));
         btn_11_0->setEnabled(true);
@@ -585,7 +582,7 @@ public:
         btn_11_0->setMinimumSize(QSize(50, 50));
         btn_11_0->setMaximumSize(QSize(60, 50));
         btn_11_0->setStyleSheet(QString::fromUtf8(""));
-        btn_11_0->setFlat(true);
+        btn_11_0->setFlat(false);
         btn_4_3 = new QPushButton(pan);
         btn_4_3->setObjectName(QString::fromUtf8("btn_4_3"));
         btn_4_3->setEnabled(true);
@@ -595,7 +592,7 @@ public:
         btn_4_3->setMinimumSize(QSize(50, 50));
         btn_4_3->setMaximumSize(QSize(60, 50));
         btn_4_3->setStyleSheet(QString::fromUtf8(""));
-        btn_4_3->setFlat(true);
+        btn_4_3->setFlat(false);
         btn_1_0 = new QPushButton(pan);
         btn_1_0->setObjectName(QString::fromUtf8("btn_1_0"));
         btn_1_0->setEnabled(true);
@@ -605,7 +602,7 @@ public:
         btn_1_0->setMinimumSize(QSize(50, 50));
         btn_1_0->setMaximumSize(QSize(60, 50));
         btn_1_0->setStyleSheet(QString::fromUtf8(""));
-        btn_1_0->setFlat(true);
+        btn_1_0->setFlat(false);
         btn_1_5 = new QPushButton(pan);
         btn_1_5->setObjectName(QString::fromUtf8("btn_1_5"));
         btn_1_5->setEnabled(true);
@@ -615,7 +612,7 @@ public:
         btn_1_5->setMinimumSize(QSize(50, 50));
         btn_1_5->setMaximumSize(QSize(60, 50));
         btn_1_5->setStyleSheet(QString::fromUtf8(""));
-        btn_1_5->setFlat(true);
+        btn_1_5->setFlat(false);
         btn_5_0 = new QPushButton(pan);
         btn_5_0->setObjectName(QString::fromUtf8("btn_5_0"));
         btn_5_0->setEnabled(true);
@@ -625,7 +622,7 @@ public:
         btn_5_0->setMinimumSize(QSize(50, 50));
         btn_5_0->setMaximumSize(QSize(60, 50));
         btn_5_0->setStyleSheet(QString::fromUtf8(""));
-        btn_5_0->setFlat(true);
+        btn_5_0->setFlat(false);
         btn_5_3 = new QPushButton(pan);
         btn_5_3->setObjectName(QString::fromUtf8("btn_5_3"));
         btn_5_3->setEnabled(true);
@@ -635,7 +632,7 @@ public:
         btn_5_3->setMinimumSize(QSize(50, 50));
         btn_5_3->setMaximumSize(QSize(60, 50));
         btn_5_3->setStyleSheet(QString::fromUtf8(""));
-        btn_5_3->setFlat(true);
+        btn_5_3->setFlat(false);
         btn_5_5 = new QPushButton(pan);
         btn_5_5->setObjectName(QString::fromUtf8("btn_5_5"));
         btn_5_5->setEnabled(true);
@@ -645,7 +642,7 @@ public:
         btn_5_5->setMinimumSize(QSize(50, 50));
         btn_5_5->setMaximumSize(QSize(60, 50));
         btn_5_5->setStyleSheet(QString::fromUtf8(""));
-        btn_5_5->setFlat(true);
+        btn_5_5->setFlat(false);
         btn_7_2 = new QPushButton(pan);
         btn_7_2->setObjectName(QString::fromUtf8("btn_7_2"));
         btn_7_2->setEnabled(true);
@@ -655,7 +652,7 @@ public:
         btn_7_2->setMinimumSize(QSize(50, 50));
         btn_7_2->setMaximumSize(QSize(60, 50));
         btn_7_2->setStyleSheet(QString::fromUtf8(""));
-        btn_7_2->setFlat(true);
+        btn_7_2->setFlat(false);
         btn_7_9 = new QPushButton(pan);
         btn_7_9->setObjectName(QString::fromUtf8("btn_7_9"));
         btn_7_9->setEnabled(true);
@@ -665,7 +662,7 @@ public:
         btn_7_9->setMinimumSize(QSize(50, 50));
         btn_7_9->setMaximumSize(QSize(60, 50));
         btn_7_9->setStyleSheet(QString::fromUtf8(""));
-        btn_7_9->setFlat(true);
+        btn_7_9->setFlat(false);
         btn_0_9 = new QPushButton(pan);
         btn_0_9->setObjectName(QString::fromUtf8("btn_0_9"));
         btn_0_9->setEnabled(true);
@@ -675,7 +672,7 @@ public:
         btn_0_9->setMinimumSize(QSize(50, 50));
         btn_0_9->setMaximumSize(QSize(60, 50));
         btn_0_9->setStyleSheet(QString::fromUtf8(""));
-        btn_0_9->setFlat(true);
+        btn_0_9->setFlat(false);
         btn_6_2 = new QPushButton(pan);
         btn_6_2->setObjectName(QString::fromUtf8("btn_6_2"));
         btn_6_2->setEnabled(true);
@@ -685,7 +682,7 @@ public:
         btn_6_2->setMinimumSize(QSize(50, 50));
         btn_6_2->setMaximumSize(QSize(60, 50));
         btn_6_2->setStyleSheet(QString::fromUtf8(""));
-        btn_6_2->setFlat(true);
+        btn_6_2->setFlat(false);
         btn_8_2 = new QPushButton(pan);
         btn_8_2->setObjectName(QString::fromUtf8("btn_8_2"));
         btn_8_2->setEnabled(true);
@@ -695,7 +692,7 @@ public:
         btn_8_2->setMinimumSize(QSize(50, 50));
         btn_8_2->setMaximumSize(QSize(60, 50));
         btn_8_2->setStyleSheet(QString::fromUtf8(""));
-        btn_8_2->setFlat(true);
+        btn_8_2->setFlat(false);
         btn_4_12 = new QPushButton(pan);
         btn_4_12->setObjectName(QString::fromUtf8("btn_4_12"));
         btn_4_12->setEnabled(true);
@@ -705,7 +702,7 @@ public:
         btn_4_12->setMinimumSize(QSize(50, 50));
         btn_4_12->setMaximumSize(QSize(60, 50));
         btn_4_12->setStyleSheet(QString::fromUtf8(""));
-        btn_4_12->setFlat(true);
+        btn_4_12->setFlat(false);
         btn_12_10 = new QPushButton(pan);
         btn_12_10->setObjectName(QString::fromUtf8("btn_12_10"));
         btn_12_10->setEnabled(true);
@@ -715,7 +712,7 @@ public:
         btn_12_10->setMinimumSize(QSize(50, 50));
         btn_12_10->setMaximumSize(QSize(60, 50));
         btn_12_10->setStyleSheet(QString::fromUtf8(""));
-        btn_12_10->setFlat(true);
+        btn_12_10->setFlat(false);
         btn_3_6 = new QPushButton(pan);
         btn_3_6->setObjectName(QString::fromUtf8("btn_3_6"));
         btn_3_6->setEnabled(true);
@@ -725,7 +722,7 @@ public:
         btn_3_6->setMinimumSize(QSize(50, 50));
         btn_3_6->setMaximumSize(QSize(60, 50));
         btn_3_6->setStyleSheet(QString::fromUtf8(""));
-        btn_3_6->setFlat(true);
+        btn_3_6->setFlat(false);
         btn_1_3 = new QPushButton(pan);
         btn_1_3->setObjectName(QString::fromUtf8("btn_1_3"));
         btn_1_3->setEnabled(true);
@@ -735,7 +732,7 @@ public:
         btn_1_3->setMinimumSize(QSize(50, 50));
         btn_1_3->setMaximumSize(QSize(60, 50));
         btn_1_3->setStyleSheet(QString::fromUtf8(""));
-        btn_1_3->setFlat(true);
+        btn_1_3->setFlat(false);
         btn_2_10 = new QPushButton(pan);
         btn_2_10->setObjectName(QString::fromUtf8("btn_2_10"));
         btn_2_10->setEnabled(true);
@@ -745,7 +742,7 @@ public:
         btn_2_10->setMinimumSize(QSize(50, 50));
         btn_2_10->setMaximumSize(QSize(60, 50));
         btn_2_10->setStyleSheet(QString::fromUtf8(""));
-        btn_2_10->setFlat(true);
+        btn_2_10->setFlat(false);
         btn_5_9 = new QPushButton(pan);
         btn_5_9->setObjectName(QString::fromUtf8("btn_5_9"));
         btn_5_9->setEnabled(true);
@@ -755,7 +752,7 @@ public:
         btn_5_9->setMinimumSize(QSize(50, 50));
         btn_5_9->setMaximumSize(QSize(60, 50));
         btn_5_9->setStyleSheet(QString::fromUtf8(""));
-        btn_5_9->setFlat(true);
+        btn_5_9->setFlat(false);
         btn_9_1 = new QPushButton(pan);
         btn_9_1->setObjectName(QString::fromUtf8("btn_9_1"));
         btn_9_1->setEnabled(true);
@@ -765,7 +762,7 @@ public:
         btn_9_1->setMinimumSize(QSize(50, 50));
         btn_9_1->setMaximumSize(QSize(60, 50));
         btn_9_1->setStyleSheet(QString::fromUtf8(""));
-        btn_9_1->setFlat(true);
+        btn_9_1->setFlat(false);
         btn_7_7 = new QPushButton(pan);
         btn_7_7->setObjectName(QString::fromUtf8("btn_7_7"));
         btn_7_7->setEnabled(true);
@@ -775,7 +772,7 @@ public:
         btn_7_7->setMinimumSize(QSize(50, 50));
         btn_7_7->setMaximumSize(QSize(60, 50));
         btn_7_7->setStyleSheet(QString::fromUtf8(""));
-        btn_7_7->setFlat(true);
+        btn_7_7->setFlat(false);
         btn_11_8 = new QPushButton(pan);
         btn_11_8->setObjectName(QString::fromUtf8("btn_11_8"));
         btn_11_8->setEnabled(true);
@@ -785,7 +782,7 @@ public:
         btn_11_8->setMinimumSize(QSize(50, 50));
         btn_11_8->setMaximumSize(QSize(60, 50));
         btn_11_8->setStyleSheet(QString::fromUtf8(""));
-        btn_11_8->setFlat(true);
+        btn_11_8->setFlat(false);
         btn_4_11 = new QPushButton(pan);
         btn_4_11->setObjectName(QString::fromUtf8("btn_4_11"));
         btn_4_11->setEnabled(true);
@@ -795,7 +792,7 @@ public:
         btn_4_11->setMinimumSize(QSize(50, 50));
         btn_4_11->setMaximumSize(QSize(60, 50));
         btn_4_11->setStyleSheet(QString::fromUtf8(""));
-        btn_4_11->setFlat(true);
+        btn_4_11->setFlat(false);
         btn_8_6 = new QPushButton(pan);
         btn_8_6->setObjectName(QString::fromUtf8("btn_8_6"));
         btn_8_6->setEnabled(true);
@@ -805,7 +802,7 @@ public:
         btn_8_6->setMinimumSize(QSize(50, 50));
         btn_8_6->setMaximumSize(QSize(60, 50));
         btn_8_6->setStyleSheet(QString::fromUtf8(""));
-        btn_8_6->setFlat(true);
+        btn_8_6->setFlat(false);
         btn_11_6 = new QPushButton(pan);
         btn_11_6->setObjectName(QString::fromUtf8("btn_11_6"));
         btn_11_6->setEnabled(true);
@@ -815,7 +812,7 @@ public:
         btn_11_6->setMinimumSize(QSize(50, 50));
         btn_11_6->setMaximumSize(QSize(60, 50));
         btn_11_6->setStyleSheet(QString::fromUtf8(""));
-        btn_11_6->setFlat(true);
+        btn_11_6->setFlat(false);
         btn_8_4 = new QPushButton(pan);
         btn_8_4->setObjectName(QString::fromUtf8("btn_8_4"));
         btn_8_4->setEnabled(true);
@@ -825,7 +822,7 @@ public:
         btn_8_4->setMinimumSize(QSize(50, 50));
         btn_8_4->setMaximumSize(QSize(60, 50));
         btn_8_4->setStyleSheet(QString::fromUtf8(""));
-        btn_8_4->setFlat(true);
+        btn_8_4->setFlat(false);
         btn_2_7 = new QPushButton(pan);
         btn_2_7->setObjectName(QString::fromUtf8("btn_2_7"));
         btn_2_7->setEnabled(true);
@@ -835,7 +832,7 @@ public:
         btn_2_7->setMinimumSize(QSize(50, 50));
         btn_2_7->setMaximumSize(QSize(60, 50));
         btn_2_7->setStyleSheet(QString::fromUtf8(""));
-        btn_2_7->setFlat(true);
+        btn_2_7->setFlat(false);
         btn_6_6 = new QPushButton(pan);
         btn_6_6->setObjectName(QString::fromUtf8("btn_6_6"));
         btn_6_6->setEnabled(true);
@@ -845,7 +842,7 @@ public:
         btn_6_6->setMinimumSize(QSize(50, 50));
         btn_6_6->setMaximumSize(QSize(60, 50));
         btn_6_6->setStyleSheet(QString::fromUtf8(""));
-        btn_6_6->setFlat(true);
+        btn_6_6->setFlat(false);
         btn_10_12 = new QPushButton(pan);
         btn_10_12->setObjectName(QString::fromUtf8("btn_10_12"));
         btn_10_12->setEnabled(true);
@@ -855,7 +852,7 @@ public:
         btn_10_12->setMinimumSize(QSize(50, 50));
         btn_10_12->setMaximumSize(QSize(60, 50));
         btn_10_12->setStyleSheet(QString::fromUtf8(""));
-        btn_10_12->setFlat(true);
+        btn_10_12->setFlat(false);
         btn_6_11 = new QPushButton(pan);
         btn_6_11->setObjectName(QString::fromUtf8("btn_6_11"));
         btn_6_11->setEnabled(true);
@@ -865,7 +862,7 @@ public:
         btn_6_11->setMinimumSize(QSize(50, 50));
         btn_6_11->setMaximumSize(QSize(60, 50));
         btn_6_11->setStyleSheet(QString::fromUtf8(""));
-        btn_6_11->setFlat(true);
+        btn_6_11->setFlat(false);
         btn_7_0 = new QPushButton(pan);
         btn_7_0->setObjectName(QString::fromUtf8("btn_7_0"));
         btn_7_0->setEnabled(true);
@@ -875,7 +872,7 @@ public:
         btn_7_0->setMinimumSize(QSize(50, 50));
         btn_7_0->setMaximumSize(QSize(60, 50));
         btn_7_0->setStyleSheet(QString::fromUtf8(""));
-        btn_7_0->setFlat(true);
+        btn_7_0->setFlat(false);
         btn_8_10 = new QPushButton(pan);
         btn_8_10->setObjectName(QString::fromUtf8("btn_8_10"));
         btn_8_10->setEnabled(true);
@@ -885,7 +882,7 @@ public:
         btn_8_10->setMinimumSize(QSize(50, 50));
         btn_8_10->setMaximumSize(QSize(60, 50));
         btn_8_10->setStyleSheet(QString::fromUtf8(""));
-        btn_8_10->setFlat(true);
+        btn_8_10->setFlat(false);
         btn_12_7 = new QPushButton(pan);
         btn_12_7->setObjectName(QString::fromUtf8("btn_12_7"));
         btn_12_7->setEnabled(true);
@@ -895,7 +892,7 @@ public:
         btn_12_7->setMinimumSize(QSize(50, 50));
         btn_12_7->setMaximumSize(QSize(60, 50));
         btn_12_7->setStyleSheet(QString::fromUtf8(""));
-        btn_12_7->setFlat(true);
+        btn_12_7->setFlat(false);
         btn_6_1 = new QPushButton(pan);
         btn_6_1->setObjectName(QString::fromUtf8("btn_6_1"));
         btn_6_1->setEnabled(true);
@@ -905,7 +902,7 @@ public:
         btn_6_1->setMinimumSize(QSize(50, 50));
         btn_6_1->setMaximumSize(QSize(60, 50));
         btn_6_1->setStyleSheet(QString::fromUtf8(""));
-        btn_6_1->setFlat(true);
+        btn_6_1->setFlat(false);
         btn_4_7 = new QPushButton(pan);
         btn_4_7->setObjectName(QString::fromUtf8("btn_4_7"));
         btn_4_7->setEnabled(true);
@@ -915,7 +912,7 @@ public:
         btn_4_7->setMinimumSize(QSize(50, 50));
         btn_4_7->setMaximumSize(QSize(60, 50));
         btn_4_7->setStyleSheet(QString::fromUtf8(""));
-        btn_4_7->setFlat(true);
+        btn_4_7->setFlat(false);
         btn_4_10 = new QPushButton(pan);
         btn_4_10->setObjectName(QString::fromUtf8("btn_4_10"));
         btn_4_10->setEnabled(true);
@@ -925,7 +922,7 @@ public:
         btn_4_10->setMinimumSize(QSize(50, 50));
         btn_4_10->setMaximumSize(QSize(60, 50));
         btn_4_10->setStyleSheet(QString::fromUtf8(""));
-        btn_4_10->setFlat(true);
+        btn_4_10->setFlat(false);
         btn_8_7 = new QPushButton(pan);
         btn_8_7->setObjectName(QString::fromUtf8("btn_8_7"));
         btn_8_7->setEnabled(true);
@@ -935,7 +932,7 @@ public:
         btn_8_7->setMinimumSize(QSize(50, 50));
         btn_8_7->setMaximumSize(QSize(60, 50));
         btn_8_7->setStyleSheet(QString::fromUtf8(""));
-        btn_8_7->setFlat(true);
+        btn_8_7->setFlat(false);
         btn_1_12 = new QPushButton(pan);
         btn_1_12->setObjectName(QString::fromUtf8("btn_1_12"));
         btn_1_12->setEnabled(true);
@@ -945,7 +942,7 @@ public:
         btn_1_12->setMinimumSize(QSize(50, 50));
         btn_1_12->setMaximumSize(QSize(60, 50));
         btn_1_12->setStyleSheet(QString::fromUtf8(""));
-        btn_1_12->setFlat(true);
+        btn_1_12->setFlat(false);
         btn_7_5 = new QPushButton(pan);
         btn_7_5->setObjectName(QString::fromUtf8("btn_7_5"));
         btn_7_5->setEnabled(true);
@@ -955,7 +952,7 @@ public:
         btn_7_5->setMinimumSize(QSize(50, 50));
         btn_7_5->setMaximumSize(QSize(60, 50));
         btn_7_5->setStyleSheet(QString::fromUtf8(""));
-        btn_7_5->setFlat(true);
+        btn_7_5->setFlat(false);
         btn_8_3 = new QPushButton(pan);
         btn_8_3->setObjectName(QString::fromUtf8("btn_8_3"));
         btn_8_3->setEnabled(true);
@@ -965,7 +962,7 @@ public:
         btn_8_3->setMinimumSize(QSize(50, 50));
         btn_8_3->setMaximumSize(QSize(60, 50));
         btn_8_3->setStyleSheet(QString::fromUtf8(""));
-        btn_8_3->setFlat(true);
+        btn_8_3->setFlat(false);
         btn_2_9 = new QPushButton(pan);
         btn_2_9->setObjectName(QString::fromUtf8("btn_2_9"));
         btn_2_9->setEnabled(true);
@@ -975,7 +972,7 @@ public:
         btn_2_9->setMinimumSize(QSize(50, 50));
         btn_2_9->setMaximumSize(QSize(60, 50));
         btn_2_9->setStyleSheet(QString::fromUtf8(""));
-        btn_2_9->setFlat(true);
+        btn_2_9->setFlat(false);
         btn_1_8 = new QPushButton(pan);
         btn_1_8->setObjectName(QString::fromUtf8("btn_1_8"));
         btn_1_8->setEnabled(true);
@@ -985,7 +982,7 @@ public:
         btn_1_8->setMinimumSize(QSize(50, 50));
         btn_1_8->setMaximumSize(QSize(60, 50));
         btn_1_8->setStyleSheet(QString::fromUtf8(""));
-        btn_1_8->setFlat(true);
+        btn_1_8->setFlat(false);
         btn_9_6 = new QPushButton(pan);
         btn_9_6->setObjectName(QString::fromUtf8("btn_9_6"));
         btn_9_6->setEnabled(true);
@@ -995,7 +992,7 @@ public:
         btn_9_6->setMinimumSize(QSize(50, 50));
         btn_9_6->setMaximumSize(QSize(60, 50));
         btn_9_6->setStyleSheet(QString::fromUtf8(""));
-        btn_9_6->setFlat(true);
+        btn_9_6->setFlat(false);
         btn_1_1 = new QPushButton(pan);
         btn_1_1->setObjectName(QString::fromUtf8("btn_1_1"));
         btn_1_1->setEnabled(true);
@@ -1005,7 +1002,7 @@ public:
         btn_1_1->setMinimumSize(QSize(50, 50));
         btn_1_1->setMaximumSize(QSize(60, 50));
         btn_1_1->setStyleSheet(QString::fromUtf8(""));
-        btn_1_1->setFlat(true);
+        btn_1_1->setFlat(false);
         btn_6_12 = new QPushButton(pan);
         btn_6_12->setObjectName(QString::fromUtf8("btn_6_12"));
         btn_6_12->setEnabled(true);
@@ -1015,7 +1012,7 @@ public:
         btn_6_12->setMinimumSize(QSize(50, 50));
         btn_6_12->setMaximumSize(QSize(60, 50));
         btn_6_12->setStyleSheet(QString::fromUtf8(""));
-        btn_6_12->setFlat(true);
+        btn_6_12->setFlat(false);
         btn_0_0 = new QPushButton(pan);
         btn_0_0->setObjectName(QString::fromUtf8("btn_0_0"));
         btn_0_0->setEnabled(true);
@@ -1025,7 +1022,7 @@ public:
         btn_0_0->setMinimumSize(QSize(50, 50));
         btn_0_0->setMaximumSize(QSize(60, 50));
         btn_0_0->setStyleSheet(QString::fromUtf8(""));
-        btn_0_0->setFlat(true);
+        btn_0_0->setFlat(false);
         btn_8_9 = new QPushButton(pan);
         btn_8_9->setObjectName(QString::fromUtf8("btn_8_9"));
         btn_8_9->setEnabled(true);
@@ -1035,7 +1032,7 @@ public:
         btn_8_9->setMinimumSize(QSize(50, 50));
         btn_8_9->setMaximumSize(QSize(60, 50));
         btn_8_9->setStyleSheet(QString::fromUtf8(""));
-        btn_8_9->setFlat(true);
+        btn_8_9->setFlat(false);
         btn_0_7 = new QPushButton(pan);
         btn_0_7->setObjectName(QString::fromUtf8("btn_0_7"));
         btn_0_7->setEnabled(true);
@@ -1045,7 +1042,7 @@ public:
         btn_0_7->setMinimumSize(QSize(50, 50));
         btn_0_7->setMaximumSize(QSize(60, 50));
         btn_0_7->setStyleSheet(QString::fromUtf8(""));
-        btn_0_7->setFlat(true);
+        btn_0_7->setFlat(false);
         btn_3_7 = new QPushButton(pan);
         btn_3_7->setObjectName(QString::fromUtf8("btn_3_7"));
         btn_3_7->setEnabled(true);
@@ -1055,7 +1052,7 @@ public:
         btn_3_7->setMinimumSize(QSize(50, 50));
         btn_3_7->setMaximumSize(QSize(60, 50));
         btn_3_7->setStyleSheet(QString::fromUtf8(""));
-        btn_3_7->setFlat(true);
+        btn_3_7->setFlat(false);
         btn_4_6 = new QPushButton(pan);
         btn_4_6->setObjectName(QString::fromUtf8("btn_4_6"));
         btn_4_6->setEnabled(true);
@@ -1065,7 +1062,7 @@ public:
         btn_4_6->setMinimumSize(QSize(50, 50));
         btn_4_6->setMaximumSize(QSize(60, 50));
         btn_4_6->setStyleSheet(QString::fromUtf8(""));
-        btn_4_6->setFlat(true);
+        btn_4_6->setFlat(false);
         btn_12_5 = new QPushButton(pan);
         btn_12_5->setObjectName(QString::fromUtf8("btn_12_5"));
         btn_12_5->setEnabled(true);
@@ -1075,7 +1072,7 @@ public:
         btn_12_5->setMinimumSize(QSize(50, 50));
         btn_12_5->setMaximumSize(QSize(60, 50));
         btn_12_5->setStyleSheet(QString::fromUtf8(""));
-        btn_12_5->setFlat(true);
+        btn_12_5->setFlat(false);
         btn_0_3 = new QPushButton(pan);
         btn_0_3->setObjectName(QString::fromUtf8("btn_0_3"));
         btn_0_3->setEnabled(true);
@@ -1085,7 +1082,7 @@ public:
         btn_0_3->setMinimumSize(QSize(50, 50));
         btn_0_3->setMaximumSize(QSize(60, 50));
         btn_0_3->setStyleSheet(QString::fromUtf8(""));
-        btn_0_3->setFlat(true);
+        btn_0_3->setFlat(false);
         btn_5_8 = new QPushButton(pan);
         btn_5_8->setObjectName(QString::fromUtf8("btn_5_8"));
         btn_5_8->setEnabled(true);
@@ -1095,7 +1092,7 @@ public:
         btn_5_8->setMinimumSize(QSize(50, 50));
         btn_5_8->setMaximumSize(QSize(60, 50));
         btn_5_8->setStyleSheet(QString::fromUtf8(""));
-        btn_5_8->setFlat(true);
+        btn_5_8->setFlat(false);
         btn_2_12 = new QPushButton(pan);
         btn_2_12->setObjectName(QString::fromUtf8("btn_2_12"));
         btn_2_12->setEnabled(true);
@@ -1105,7 +1102,7 @@ public:
         btn_2_12->setMinimumSize(QSize(50, 50));
         btn_2_12->setMaximumSize(QSize(60, 50));
         btn_2_12->setStyleSheet(QString::fromUtf8(""));
-        btn_2_12->setFlat(true);
+        btn_2_12->setFlat(false);
         btn_11_9 = new QPushButton(pan);
         btn_11_9->setObjectName(QString::fromUtf8("btn_11_9"));
         btn_11_9->setEnabled(true);
@@ -1115,7 +1112,7 @@ public:
         btn_11_9->setMinimumSize(QSize(50, 50));
         btn_11_9->setMaximumSize(QSize(60, 50));
         btn_11_9->setStyleSheet(QString::fromUtf8(""));
-        btn_11_9->setFlat(true);
+        btn_11_9->setFlat(false);
         btn_1_7 = new QPushButton(pan);
         btn_1_7->setObjectName(QString::fromUtf8("btn_1_7"));
         btn_1_7->setEnabled(true);
@@ -1125,7 +1122,7 @@ public:
         btn_1_7->setMinimumSize(QSize(50, 50));
         btn_1_7->setMaximumSize(QSize(60, 50));
         btn_1_7->setStyleSheet(QString::fromUtf8(""));
-        btn_1_7->setFlat(true);
+        btn_1_7->setFlat(false);
         btn_8_11 = new QPushButton(pan);
         btn_8_11->setObjectName(QString::fromUtf8("btn_8_11"));
         btn_8_11->setEnabled(true);
@@ -1135,7 +1132,7 @@ public:
         btn_8_11->setMinimumSize(QSize(50, 50));
         btn_8_11->setMaximumSize(QSize(60, 50));
         btn_8_11->setStyleSheet(QString::fromUtf8(""));
-        btn_8_11->setFlat(true);
+        btn_8_11->setFlat(false);
         btn_3_11 = new QPushButton(pan);
         btn_3_11->setObjectName(QString::fromUtf8("btn_3_11"));
         btn_3_11->setEnabled(true);
@@ -1145,7 +1142,7 @@ public:
         btn_3_11->setMinimumSize(QSize(50, 50));
         btn_3_11->setMaximumSize(QSize(60, 50));
         btn_3_11->setStyleSheet(QString::fromUtf8(""));
-        btn_3_11->setFlat(true);
+        btn_3_11->setFlat(false);
         btn_4_1 = new QPushButton(pan);
         btn_4_1->setObjectName(QString::fromUtf8("btn_4_1"));
         btn_4_1->setEnabled(true);
@@ -1155,7 +1152,7 @@ public:
         btn_4_1->setMinimumSize(QSize(50, 50));
         btn_4_1->setMaximumSize(QSize(60, 50));
         btn_4_1->setStyleSheet(QString::fromUtf8(""));
-        btn_4_1->setFlat(true);
+        btn_4_1->setFlat(false);
         btn_9_0 = new QPushButton(pan);
         btn_9_0->setObjectName(QString::fromUtf8("btn_9_0"));
         btn_9_0->setEnabled(true);
@@ -1165,7 +1162,7 @@ public:
         btn_9_0->setMinimumSize(QSize(50, 50));
         btn_9_0->setMaximumSize(QSize(60, 50));
         btn_9_0->setStyleSheet(QString::fromUtf8(""));
-        btn_9_0->setFlat(true);
+        btn_9_0->setFlat(false);
         btn_5_12 = new QPushButton(pan);
         btn_5_12->setObjectName(QString::fromUtf8("btn_5_12"));
         btn_5_12->setEnabled(true);
@@ -1175,7 +1172,7 @@ public:
         btn_5_12->setMinimumSize(QSize(50, 50));
         btn_5_12->setMaximumSize(QSize(60, 50));
         btn_5_12->setStyleSheet(QString::fromUtf8(""));
-        btn_5_12->setFlat(true);
+        btn_5_12->setFlat(false);
         btn_0_2 = new QPushButton(pan);
         btn_0_2->setObjectName(QString::fromUtf8("btn_0_2"));
         btn_0_2->setEnabled(true);
@@ -1185,7 +1182,7 @@ public:
         btn_0_2->setMinimumSize(QSize(50, 50));
         btn_0_2->setMaximumSize(QSize(60, 50));
         btn_0_2->setStyleSheet(QString::fromUtf8(""));
-        btn_0_2->setFlat(true);
+        btn_0_2->setFlat(false);
         btn_3_8 = new QPushButton(pan);
         btn_3_8->setObjectName(QString::fromUtf8("btn_3_8"));
         btn_3_8->setEnabled(true);
@@ -1195,7 +1192,7 @@ public:
         btn_3_8->setMinimumSize(QSize(50, 50));
         btn_3_8->setMaximumSize(QSize(60, 50));
         btn_3_8->setStyleSheet(QString::fromUtf8(""));
-        btn_3_8->setFlat(true);
+        btn_3_8->setFlat(false);
         btn_5_6 = new QPushButton(pan);
         btn_5_6->setObjectName(QString::fromUtf8("btn_5_6"));
         btn_5_6->setEnabled(true);
@@ -1205,7 +1202,7 @@ public:
         btn_5_6->setMinimumSize(QSize(50, 50));
         btn_5_6->setMaximumSize(QSize(60, 50));
         btn_5_6->setStyleSheet(QString::fromUtf8(""));
-        btn_5_6->setFlat(true);
+        btn_5_6->setFlat(false);
         btn_9_5 = new QPushButton(pan);
         btn_9_5->setObjectName(QString::fromUtf8("btn_9_5"));
         btn_9_5->setEnabled(true);
@@ -1215,7 +1212,7 @@ public:
         btn_9_5->setMinimumSize(QSize(50, 50));
         btn_9_5->setMaximumSize(QSize(60, 50));
         btn_9_5->setStyleSheet(QString::fromUtf8(""));
-        btn_9_5->setFlat(true);
+        btn_9_5->setFlat(false);
         btn_10_9 = new QPushButton(pan);
         btn_10_9->setObjectName(QString::fromUtf8("btn_10_9"));
         btn_10_9->setEnabled(true);
@@ -1225,7 +1222,7 @@ public:
         btn_10_9->setMinimumSize(QSize(50, 50));
         btn_10_9->setMaximumSize(QSize(60, 50));
         btn_10_9->setStyleSheet(QString::fromUtf8(""));
-        btn_10_9->setFlat(true);
+        btn_10_9->setFlat(false);
         btn_7_6 = new QPushButton(pan);
         btn_7_6->setObjectName(QString::fromUtf8("btn_7_6"));
         btn_7_6->setEnabled(true);
@@ -1235,7 +1232,7 @@ public:
         btn_7_6->setMinimumSize(QSize(50, 50));
         btn_7_6->setMaximumSize(QSize(60, 50));
         btn_7_6->setStyleSheet(QString::fromUtf8(""));
-        btn_7_6->setFlat(true);
+        btn_7_6->setFlat(false);
         btn_1_4 = new QPushButton(pan);
         btn_1_4->setObjectName(QString::fromUtf8("btn_1_4"));
         btn_1_4->setEnabled(true);
@@ -1245,7 +1242,7 @@ public:
         btn_1_4->setMinimumSize(QSize(50, 50));
         btn_1_4->setMaximumSize(QSize(60, 50));
         btn_1_4->setStyleSheet(QString::fromUtf8(""));
-        btn_1_4->setFlat(true);
+        btn_1_4->setFlat(false);
         btn_11_4 = new QPushButton(pan);
         btn_11_4->setObjectName(QString::fromUtf8("btn_11_4"));
         btn_11_4->setEnabled(true);
@@ -1255,7 +1252,7 @@ public:
         btn_11_4->setMinimumSize(QSize(50, 50));
         btn_11_4->setMaximumSize(QSize(60, 50));
         btn_11_4->setStyleSheet(QString::fromUtf8(""));
-        btn_11_4->setFlat(true);
+        btn_11_4->setFlat(false);
         btn_5_2 = new QPushButton(pan);
         btn_5_2->setObjectName(QString::fromUtf8("btn_5_2"));
         btn_5_2->setEnabled(true);
@@ -1265,7 +1262,7 @@ public:
         btn_5_2->setMinimumSize(QSize(50, 50));
         btn_5_2->setMaximumSize(QSize(60, 50));
         btn_5_2->setStyleSheet(QString::fromUtf8(""));
-        btn_5_2->setFlat(true);
+        btn_5_2->setFlat(false);
         btn_8_5 = new QPushButton(pan);
         btn_8_5->setObjectName(QString::fromUtf8("btn_8_5"));
         btn_8_5->setEnabled(true);
@@ -1275,7 +1272,7 @@ public:
         btn_8_5->setMinimumSize(QSize(50, 50));
         btn_8_5->setMaximumSize(QSize(60, 50));
         btn_8_5->setStyleSheet(QString::fromUtf8(""));
-        btn_8_5->setFlat(true);
+        btn_8_5->setFlat(false);
         btn_8_0 = new QPushButton(pan);
         btn_8_0->setObjectName(QString::fromUtf8("btn_8_0"));
         btn_8_0->setEnabled(true);
@@ -1285,7 +1282,7 @@ public:
         btn_8_0->setMinimumSize(QSize(50, 50));
         btn_8_0->setMaximumSize(QSize(60, 50));
         btn_8_0->setStyleSheet(QString::fromUtf8(""));
-        btn_8_0->setFlat(true);
+        btn_8_0->setFlat(false);
         btn_1_6 = new QPushButton(pan);
         btn_1_6->setObjectName(QString::fromUtf8("btn_1_6"));
         btn_1_6->setEnabled(true);
@@ -1295,7 +1292,7 @@ public:
         btn_1_6->setMinimumSize(QSize(50, 50));
         btn_1_6->setMaximumSize(QSize(60, 50));
         btn_1_6->setStyleSheet(QString::fromUtf8(""));
-        btn_1_6->setFlat(true);
+        btn_1_6->setFlat(false);
         btn_12_3 = new QPushButton(pan);
         btn_12_3->setObjectName(QString::fromUtf8("btn_12_3"));
         btn_12_3->setEnabled(true);
@@ -1305,7 +1302,7 @@ public:
         btn_12_3->setMinimumSize(QSize(50, 50));
         btn_12_3->setMaximumSize(QSize(60, 50));
         btn_12_3->setStyleSheet(QString::fromUtf8(""));
-        btn_12_3->setFlat(true);
+        btn_12_3->setFlat(false);
         btn_3_10 = new QPushButton(pan);
         btn_3_10->setObjectName(QString::fromUtf8("btn_3_10"));
         btn_3_10->setEnabled(true);
@@ -1315,7 +1312,7 @@ public:
         btn_3_10->setMinimumSize(QSize(50, 50));
         btn_3_10->setMaximumSize(QSize(60, 50));
         btn_3_10->setStyleSheet(QString::fromUtf8(""));
-        btn_3_10->setFlat(true);
+        btn_3_10->setFlat(false);
         btn_10_7 = new QPushButton(pan);
         btn_10_7->setObjectName(QString::fromUtf8("btn_10_7"));
         btn_10_7->setEnabled(true);
@@ -1325,7 +1322,7 @@ public:
         btn_10_7->setMinimumSize(QSize(50, 50));
         btn_10_7->setMaximumSize(QSize(60, 50));
         btn_10_7->setStyleSheet(QString::fromUtf8(""));
-        btn_10_7->setFlat(true);
+        btn_10_7->setFlat(false);
         btn_7_8 = new QPushButton(pan);
         btn_7_8->setObjectName(QString::fromUtf8("btn_7_8"));
         btn_7_8->setEnabled(true);
@@ -1335,7 +1332,7 @@ public:
         btn_7_8->setMinimumSize(QSize(50, 50));
         btn_7_8->setMaximumSize(QSize(60, 50));
         btn_7_8->setStyleSheet(QString::fromUtf8(""));
-        btn_7_8->setFlat(true);
+        btn_7_8->setFlat(false);
         btn_6_0 = new QPushButton(pan);
         btn_6_0->setObjectName(QString::fromUtf8("btn_6_0"));
         btn_6_0->setEnabled(true);
@@ -1345,7 +1342,7 @@ public:
         btn_6_0->setMinimumSize(QSize(50, 50));
         btn_6_0->setMaximumSize(QSize(60, 50));
         btn_6_0->setStyleSheet(QString::fromUtf8(""));
-        btn_6_0->setFlat(true);
+        btn_6_0->setFlat(false);
         btn_8_12 = new QPushButton(pan);
         btn_8_12->setObjectName(QString::fromUtf8("btn_8_12"));
         btn_8_12->setEnabled(true);
@@ -1355,7 +1352,7 @@ public:
         btn_8_12->setMinimumSize(QSize(50, 50));
         btn_8_12->setMaximumSize(QSize(60, 50));
         btn_8_12->setStyleSheet(QString::fromUtf8(""));
-        btn_8_12->setFlat(true);
+        btn_8_12->setFlat(false);
         btn_7_1 = new QPushButton(pan);
         btn_7_1->setObjectName(QString::fromUtf8("btn_7_1"));
         btn_7_1->setEnabled(true);
@@ -1365,7 +1362,7 @@ public:
         btn_7_1->setMinimumSize(QSize(50, 50));
         btn_7_1->setMaximumSize(QSize(60, 50));
         btn_7_1->setStyleSheet(QString::fromUtf8(""));
-        btn_7_1->setFlat(true);
+        btn_7_1->setFlat(false);
         btn_9_7 = new QPushButton(pan);
         btn_9_7->setObjectName(QString::fromUtf8("btn_9_7"));
         btn_9_7->setEnabled(true);
@@ -1375,7 +1372,7 @@ public:
         btn_9_7->setMinimumSize(QSize(50, 50));
         btn_9_7->setMaximumSize(QSize(60, 50));
         btn_9_7->setStyleSheet(QString::fromUtf8(""));
-        btn_9_7->setFlat(true);
+        btn_9_7->setFlat(false);
         btn_9_2 = new QPushButton(pan);
         btn_9_2->setObjectName(QString::fromUtf8("btn_9_2"));
         btn_9_2->setEnabled(true);
@@ -1385,7 +1382,7 @@ public:
         btn_9_2->setMinimumSize(QSize(50, 50));
         btn_9_2->setMaximumSize(QSize(60, 50));
         btn_9_2->setStyleSheet(QString::fromUtf8(""));
-        btn_9_2->setFlat(true);
+        btn_9_2->setFlat(false);
         btn_4_9 = new QPushButton(pan);
         btn_4_9->setObjectName(QString::fromUtf8("btn_4_9"));
         btn_4_9->setEnabled(true);
@@ -1395,7 +1392,7 @@ public:
         btn_4_9->setMinimumSize(QSize(50, 50));
         btn_4_9->setMaximumSize(QSize(60, 50));
         btn_4_9->setStyleSheet(QString::fromUtf8(""));
-        btn_4_9->setFlat(true);
+        btn_4_9->setFlat(false);
         btn_0_6 = new QPushButton(pan);
         btn_0_6->setObjectName(QString::fromUtf8("btn_0_6"));
         btn_0_6->setEnabled(true);
@@ -1405,7 +1402,7 @@ public:
         btn_0_6->setMinimumSize(QSize(50, 50));
         btn_0_6->setMaximumSize(QSize(60, 50));
         btn_0_6->setStyleSheet(QString::fromUtf8(""));
-        btn_0_6->setFlat(true);
+        btn_0_6->setFlat(false);
         btn_3_9 = new QPushButton(pan);
         btn_3_9->setObjectName(QString::fromUtf8("btn_3_9"));
         btn_3_9->setEnabled(true);
@@ -1415,7 +1412,7 @@ public:
         btn_3_9->setMinimumSize(QSize(50, 50));
         btn_3_9->setMaximumSize(QSize(60, 50));
         btn_3_9->setStyleSheet(QString::fromUtf8(""));
-        btn_3_9->setFlat(true);
+        btn_3_9->setFlat(false);
         btn_6_9 = new QPushButton(pan);
         btn_6_9->setObjectName(QString::fromUtf8("btn_6_9"));
         btn_6_9->setEnabled(true);
@@ -1425,7 +1422,7 @@ public:
         btn_6_9->setMinimumSize(QSize(50, 50));
         btn_6_9->setMaximumSize(QSize(60, 50));
         btn_6_9->setStyleSheet(QString::fromUtf8(""));
-        btn_6_9->setFlat(true);
+        btn_6_9->setFlat(false);
         btn_0_4 = new QPushButton(pan);
         btn_0_4->setObjectName(QString::fromUtf8("btn_0_4"));
         btn_0_4->setEnabled(true);
@@ -1435,7 +1432,7 @@ public:
         btn_0_4->setMinimumSize(QSize(50, 50));
         btn_0_4->setMaximumSize(QSize(60, 50));
         btn_0_4->setStyleSheet(QString::fromUtf8(""));
-        btn_0_4->setFlat(true);
+        btn_0_4->setFlat(false);
         btn_10_0 = new QPushButton(pan);
         btn_10_0->setObjectName(QString::fromUtf8("btn_10_0"));
         btn_10_0->setEnabled(true);
@@ -1445,7 +1442,7 @@ public:
         btn_10_0->setMinimumSize(QSize(50, 50));
         btn_10_0->setMaximumSize(QSize(60, 50));
         btn_10_0->setStyleSheet(QString::fromUtf8(""));
-        btn_10_0->setFlat(true);
+        btn_10_0->setFlat(false);
         btn_2_6 = new QPushButton(pan);
         btn_2_6->setObjectName(QString::fromUtf8("btn_2_6"));
         btn_2_6->setEnabled(true);
@@ -1455,7 +1452,7 @@ public:
         btn_2_6->setMinimumSize(QSize(50, 50));
         btn_2_6->setMaximumSize(QSize(60, 50));
         btn_2_6->setStyleSheet(QString::fromUtf8(""));
-        btn_2_6->setFlat(true);
+        btn_2_6->setFlat(false);
         btn_12_11 = new QPushButton(pan);
         btn_12_11->setObjectName(QString::fromUtf8("btn_12_11"));
         btn_12_11->setEnabled(true);
@@ -1465,7 +1462,7 @@ public:
         btn_12_11->setMinimumSize(QSize(50, 50));
         btn_12_11->setMaximumSize(QSize(60, 50));
         btn_12_11->setStyleSheet(QString::fromUtf8(""));
-        btn_12_11->setFlat(true);
+        btn_12_11->setFlat(false);
         btn_2_0 = new QPushButton(pan);
         btn_2_0->setObjectName(QString::fromUtf8("btn_2_0"));
         btn_2_0->setEnabled(true);
@@ -1475,7 +1472,7 @@ public:
         btn_2_0->setMinimumSize(QSize(50, 50));
         btn_2_0->setMaximumSize(QSize(60, 50));
         btn_2_0->setStyleSheet(QString::fromUtf8(""));
-        btn_2_0->setFlat(true);
+        btn_2_0->setFlat(false);
         btn_9_9 = new QPushButton(pan);
         btn_9_9->setObjectName(QString::fromUtf8("btn_9_9"));
         btn_9_9->setEnabled(true);
@@ -1485,7 +1482,7 @@ public:
         btn_9_9->setMinimumSize(QSize(50, 50));
         btn_9_9->setMaximumSize(QSize(60, 50));
         btn_9_9->setStyleSheet(QString::fromUtf8(""));
-        btn_9_9->setFlat(true);
+        btn_9_9->setFlat(false);
         btn_2_2 = new QPushButton(pan);
         btn_2_2->setObjectName(QString::fromUtf8("btn_2_2"));
         btn_2_2->setEnabled(true);
@@ -1495,7 +1492,7 @@ public:
         btn_2_2->setMinimumSize(QSize(50, 50));
         btn_2_2->setMaximumSize(QSize(60, 50));
         btn_2_2->setStyleSheet(QString::fromUtf8(""));
-        btn_2_2->setFlat(true);
+        btn_2_2->setFlat(false);
         btn_3_4 = new QPushButton(pan);
         btn_3_4->setObjectName(QString::fromUtf8("btn_3_4"));
         btn_3_4->setEnabled(true);
@@ -1505,7 +1502,7 @@ public:
         btn_3_4->setMinimumSize(QSize(50, 50));
         btn_3_4->setMaximumSize(QSize(60, 50));
         btn_3_4->setStyleSheet(QString::fromUtf8(""));
-        btn_3_4->setFlat(true);
+        btn_3_4->setFlat(false);
         btn_2_3 = new QPushButton(pan);
         btn_2_3->setObjectName(QString::fromUtf8("btn_2_3"));
         btn_2_3->setEnabled(true);
@@ -1515,7 +1512,7 @@ public:
         btn_2_3->setMinimumSize(QSize(50, 50));
         btn_2_3->setMaximumSize(QSize(60, 50));
         btn_2_3->setStyleSheet(QString::fromUtf8(""));
-        btn_2_3->setFlat(true);
+        btn_2_3->setFlat(false);
         btn_10_2 = new QPushButton(pan);
         btn_10_2->setObjectName(QString::fromUtf8("btn_10_2"));
         btn_10_2->setEnabled(true);
@@ -1525,7 +1522,7 @@ public:
         btn_10_2->setMinimumSize(QSize(50, 50));
         btn_10_2->setMaximumSize(QSize(60, 50));
         btn_10_2->setStyleSheet(QString::fromUtf8(""));
-        btn_10_2->setFlat(true);
+        btn_10_2->setFlat(false);
         btn_0_11 = new QPushButton(pan);
         btn_0_11->setObjectName(QString::fromUtf8("btn_0_11"));
         btn_0_11->setEnabled(true);
@@ -1535,7 +1532,7 @@ public:
         btn_0_11->setMinimumSize(QSize(50, 50));
         btn_0_11->setMaximumSize(QSize(60, 50));
         btn_0_11->setStyleSheet(QString::fromUtf8(""));
-        btn_0_11->setFlat(true);
+        btn_0_11->setFlat(false);
         btn_0_12 = new QPushButton(pan);
         btn_0_12->setObjectName(QString::fromUtf8("btn_0_12"));
         btn_0_12->setEnabled(true);
@@ -1545,7 +1542,7 @@ public:
         btn_0_12->setMinimumSize(QSize(50, 50));
         btn_0_12->setMaximumSize(QSize(60, 50));
         btn_0_12->setStyleSheet(QString::fromUtf8(""));
-        btn_0_12->setFlat(true);
+        btn_0_12->setFlat(false);
         btn_10_8 = new QPushButton(pan);
         btn_10_8->setObjectName(QString::fromUtf8("btn_10_8"));
         btn_10_8->setEnabled(true);
@@ -1555,7 +1552,7 @@ public:
         btn_10_8->setMinimumSize(QSize(50, 50));
         btn_10_8->setMaximumSize(QSize(60, 50));
         btn_10_8->setStyleSheet(QString::fromUtf8(""));
-        btn_10_8->setFlat(true);
+        btn_10_8->setFlat(false);
         btn_7_3 = new QPushButton(pan);
         btn_7_3->setObjectName(QString::fromUtf8("btn_7_3"));
         btn_7_3->setEnabled(true);
@@ -1565,7 +1562,7 @@ public:
         btn_7_3->setMinimumSize(QSize(50, 50));
         btn_7_3->setMaximumSize(QSize(60, 50));
         btn_7_3->setStyleSheet(QString::fromUtf8(""));
-        btn_7_3->setFlat(true);
+        btn_7_3->setFlat(false);
         btn_7_4 = new QPushButton(pan);
         btn_7_4->setObjectName(QString::fromUtf8("btn_7_4"));
         btn_7_4->setEnabled(true);
@@ -1575,7 +1572,7 @@ public:
         btn_7_4->setMinimumSize(QSize(50, 50));
         btn_7_4->setMaximumSize(QSize(60, 50));
         btn_7_4->setStyleSheet(QString::fromUtf8(""));
-        btn_7_4->setFlat(true);
+        btn_7_4->setFlat(false);
         btn_11_12 = new QPushButton(pan);
         btn_11_12->setObjectName(QString::fromUtf8("btn_11_12"));
         btn_11_12->setEnabled(true);
@@ -1585,7 +1582,7 @@ public:
         btn_11_12->setMinimumSize(QSize(50, 50));
         btn_11_12->setMaximumSize(QSize(60, 50));
         btn_11_12->setStyleSheet(QString::fromUtf8(""));
-        btn_11_12->setFlat(true);
+        btn_11_12->setFlat(false);
         btn_6_10 = new QPushButton(pan);
         btn_6_10->setObjectName(QString::fromUtf8("btn_6_10"));
         btn_6_10->setEnabled(true);
@@ -1595,7 +1592,7 @@ public:
         btn_6_10->setMinimumSize(QSize(50, 50));
         btn_6_10->setMaximumSize(QSize(60, 50));
         btn_6_10->setStyleSheet(QString::fromUtf8(""));
-        btn_6_10->setFlat(true);
+        btn_6_10->setFlat(false);
         btn_11_2 = new QPushButton(pan);
         btn_11_2->setObjectName(QString::fromUtf8("btn_11_2"));
         btn_11_2->setEnabled(true);
@@ -1605,7 +1602,7 @@ public:
         btn_11_2->setMinimumSize(QSize(50, 50));
         btn_11_2->setMaximumSize(QSize(60, 50));
         btn_11_2->setStyleSheet(QString::fromUtf8(""));
-        btn_11_2->setFlat(true);
+        btn_11_2->setFlat(false);
         btn_11_11 = new QPushButton(pan);
         btn_11_11->setObjectName(QString::fromUtf8("btn_11_11"));
         btn_11_11->setEnabled(true);
@@ -1615,7 +1612,7 @@ public:
         btn_11_11->setMinimumSize(QSize(50, 50));
         btn_11_11->setMaximumSize(QSize(60, 50));
         btn_11_11->setStyleSheet(QString::fromUtf8(""));
-        btn_11_11->setFlat(true);
+        btn_11_11->setFlat(false);
         btn_10_11 = new QPushButton(pan);
         btn_10_11->setObjectName(QString::fromUtf8("btn_10_11"));
         btn_10_11->setEnabled(true);
@@ -1625,7 +1622,7 @@ public:
         btn_10_11->setMinimumSize(QSize(50, 50));
         btn_10_11->setMaximumSize(QSize(60, 50));
         btn_10_11->setStyleSheet(QString::fromUtf8(""));
-        btn_10_11->setFlat(true);
+        btn_10_11->setFlat(false);
         btn_6_8 = new QPushButton(pan);
         btn_6_8->setObjectName(QString::fromUtf8("btn_6_8"));
         btn_6_8->setEnabled(true);
@@ -1635,7 +1632,7 @@ public:
         btn_6_8->setMinimumSize(QSize(50, 50));
         btn_6_8->setMaximumSize(QSize(60, 50));
         btn_6_8->setStyleSheet(QString::fromUtf8(""));
-        btn_6_8->setFlat(true);
+        btn_6_8->setFlat(false);
         btn_9_11 = new QPushButton(pan);
         btn_9_11->setObjectName(QString::fromUtf8("btn_9_11"));
         btn_9_11->setEnabled(true);
@@ -1645,7 +1642,7 @@ public:
         btn_9_11->setMinimumSize(QSize(50, 50));
         btn_9_11->setMaximumSize(QSize(60, 50));
         btn_9_11->setStyleSheet(QString::fromUtf8(""));
-        btn_9_11->setFlat(true);
+        btn_9_11->setFlat(false);
         btn_0_8 = new QPushButton(pan);
         btn_0_8->setObjectName(QString::fromUtf8("btn_0_8"));
         btn_0_8->setEnabled(true);
@@ -1655,7 +1652,7 @@ public:
         btn_0_8->setMinimumSize(QSize(50, 50));
         btn_0_8->setMaximumSize(QSize(60, 50));
         btn_0_8->setStyleSheet(QString::fromUtf8(""));
-        btn_0_8->setFlat(true);
+        btn_0_8->setFlat(false);
         btn_12_4 = new QPushButton(pan);
         btn_12_4->setObjectName(QString::fromUtf8("btn_12_4"));
         btn_12_4->setEnabled(true);
@@ -1665,7 +1662,7 @@ public:
         btn_12_4->setMinimumSize(QSize(50, 50));
         btn_12_4->setMaximumSize(QSize(60, 50));
         btn_12_4->setStyleSheet(QString::fromUtf8(""));
-        btn_12_4->setFlat(true);
+        btn_12_4->setFlat(false);
         btn_5_4 = new QPushButton(pan);
         btn_5_4->setObjectName(QString::fromUtf8("btn_5_4"));
         btn_5_4->setEnabled(true);
@@ -1675,7 +1672,7 @@ public:
         btn_5_4->setMinimumSize(QSize(50, 50));
         btn_5_4->setMaximumSize(QSize(60, 50));
         btn_5_4->setStyleSheet(QString::fromUtf8(""));
-        btn_5_4->setFlat(true);
+        btn_5_4->setFlat(false);
         btn_5_1 = new QPushButton(pan);
         btn_5_1->setObjectName(QString::fromUtf8("btn_5_1"));
         btn_5_1->setEnabled(true);
@@ -1685,7 +1682,7 @@ public:
         btn_5_1->setMinimumSize(QSize(50, 50));
         btn_5_1->setMaximumSize(QSize(60, 50));
         btn_5_1->setStyleSheet(QString::fromUtf8(""));
-        btn_5_1->setFlat(true);
+        btn_5_1->setFlat(false);
         btn_7_11 = new QPushButton(pan);
         btn_7_11->setObjectName(QString::fromUtf8("btn_7_11"));
         btn_7_11->setEnabled(true);
@@ -1695,7 +1692,7 @@ public:
         btn_7_11->setMinimumSize(QSize(50, 50));
         btn_7_11->setMaximumSize(QSize(60, 50));
         btn_7_11->setStyleSheet(QString::fromUtf8(""));
-        btn_7_11->setFlat(true);
+        btn_7_11->setFlat(false);
         btn_4_5 = new QPushButton(pan);
         btn_4_5->setObjectName(QString::fromUtf8("btn_4_5"));
         btn_4_5->setEnabled(true);
@@ -1705,7 +1702,7 @@ public:
         btn_4_5->setMinimumSize(QSize(50, 50));
         btn_4_5->setMaximumSize(QSize(60, 50));
         btn_4_5->setStyleSheet(QString::fromUtf8(""));
-        btn_4_5->setFlat(true);
+        btn_4_5->setFlat(false);
         btn_4_0 = new QPushButton(pan);
         btn_4_0->setObjectName(QString::fromUtf8("btn_4_0"));
         btn_4_0->setEnabled(true);
@@ -1715,7 +1712,7 @@ public:
         btn_4_0->setMinimumSize(QSize(50, 50));
         btn_4_0->setMaximumSize(QSize(60, 50));
         btn_4_0->setStyleSheet(QString::fromUtf8(""));
-        btn_4_0->setFlat(true);
+        btn_4_0->setFlat(false);
         btn_10_1 = new QPushButton(pan);
         btn_10_1->setObjectName(QString::fromUtf8("btn_10_1"));
         btn_10_1->setEnabled(true);
@@ -1725,7 +1722,7 @@ public:
         btn_10_1->setMinimumSize(QSize(50, 50));
         btn_10_1->setMaximumSize(QSize(60, 50));
         btn_10_1->setStyleSheet(QString::fromUtf8(""));
-        btn_10_1->setFlat(true);
+        btn_10_1->setFlat(false);
         btn_12_2 = new QPushButton(pan);
         btn_12_2->setObjectName(QString::fromUtf8("btn_12_2"));
         btn_12_2->setEnabled(true);
@@ -1735,7 +1732,7 @@ public:
         btn_12_2->setMinimumSize(QSize(50, 50));
         btn_12_2->setMaximumSize(QSize(60, 50));
         btn_12_2->setStyleSheet(QString::fromUtf8(""));
-        btn_12_2->setFlat(true);
+        btn_12_2->setFlat(false);
         btn_5_10 = new QPushButton(pan);
         btn_5_10->setObjectName(QString::fromUtf8("btn_5_10"));
         btn_5_10->setEnabled(true);
@@ -1745,7 +1742,7 @@ public:
         btn_5_10->setMinimumSize(QSize(50, 50));
         btn_5_10->setMaximumSize(QSize(60, 50));
         btn_5_10->setStyleSheet(QString::fromUtf8(""));
-        btn_5_10->setFlat(true);
+        btn_5_10->setFlat(false);
         btn_12_0 = new QPushButton(pan);
         btn_12_0->setObjectName(QString::fromUtf8("btn_12_0"));
         btn_12_0->setEnabled(true);
@@ -1755,7 +1752,7 @@ public:
         btn_12_0->setMinimumSize(QSize(50, 50));
         btn_12_0->setMaximumSize(QSize(60, 50));
         btn_12_0->setStyleSheet(QString::fromUtf8(""));
-        btn_12_0->setFlat(true);
+        btn_12_0->setFlat(false);
         btn_7_10 = new QPushButton(pan);
         btn_7_10->setObjectName(QString::fromUtf8("btn_7_10"));
         btn_7_10->setEnabled(true);
@@ -1765,7 +1762,7 @@ public:
         btn_7_10->setMinimumSize(QSize(50, 50));
         btn_7_10->setMaximumSize(QSize(60, 50));
         btn_7_10->setStyleSheet(QString::fromUtf8(""));
-        btn_7_10->setFlat(true);
+        btn_7_10->setFlat(false);
         btn_10_4 = new QPushButton(pan);
         btn_10_4->setObjectName(QString::fromUtf8("btn_10_4"));
         btn_10_4->setEnabled(true);
@@ -1775,7 +1772,7 @@ public:
         btn_10_4->setMinimumSize(QSize(50, 50));
         btn_10_4->setMaximumSize(QSize(60, 50));
         btn_10_4->setStyleSheet(QString::fromUtf8(""));
-        btn_10_4->setFlat(true);
+        btn_10_4->setFlat(false);
         btn_9_10 = new QPushButton(pan);
         btn_9_10->setObjectName(QString::fromUtf8("btn_9_10"));
         btn_9_10->setEnabled(true);
@@ -1785,7 +1782,7 @@ public:
         btn_9_10->setMinimumSize(QSize(50, 50));
         btn_9_10->setMaximumSize(QSize(60, 50));
         btn_9_10->setStyleSheet(QString::fromUtf8(""));
-        btn_9_10->setFlat(true);
+        btn_9_10->setFlat(false);
         btn_2_4 = new QPushButton(pan);
         btn_2_4->setObjectName(QString::fromUtf8("btn_2_4"));
         btn_2_4->setEnabled(true);
@@ -1795,7 +1792,7 @@ public:
         btn_2_4->setMinimumSize(QSize(50, 50));
         btn_2_4->setMaximumSize(QSize(60, 50));
         btn_2_4->setStyleSheet(QString::fromUtf8(""));
-        btn_2_4->setFlat(true);
+        btn_2_4->setFlat(false);
         btn_12_8 = new QPushButton(pan);
         btn_12_8->setObjectName(QString::fromUtf8("btn_12_8"));
         btn_12_8->setEnabled(true);
@@ -1805,7 +1802,7 @@ public:
         btn_12_8->setMinimumSize(QSize(50, 50));
         btn_12_8->setMaximumSize(QSize(60, 50));
         btn_12_8->setStyleSheet(QString::fromUtf8(""));
-        btn_12_8->setFlat(true);
+        btn_12_8->setFlat(false);
         btn_10_3 = new QPushButton(pan);
         btn_10_3->setObjectName(QString::fromUtf8("btn_10_3"));
         btn_10_3->setEnabled(true);
@@ -1815,7 +1812,7 @@ public:
         btn_10_3->setMinimumSize(QSize(50, 50));
         btn_10_3->setMaximumSize(QSize(60, 50));
         btn_10_3->setStyleSheet(QString::fromUtf8(""));
-        btn_10_3->setFlat(true);
+        btn_10_3->setFlat(false);
         btn_3_0 = new QPushButton(pan);
         btn_3_0->setObjectName(QString::fromUtf8("btn_3_0"));
         btn_3_0->setEnabled(true);
@@ -1825,7 +1822,7 @@ public:
         btn_3_0->setMinimumSize(QSize(50, 50));
         btn_3_0->setMaximumSize(QSize(60, 50));
         btn_3_0->setStyleSheet(QString::fromUtf8(""));
-        btn_3_0->setFlat(true);
+        btn_3_0->setFlat(false);
         btn_3_5 = new QPushButton(pan);
         btn_3_5->setObjectName(QString::fromUtf8("btn_3_5"));
         btn_3_5->setEnabled(true);
@@ -1835,7 +1832,7 @@ public:
         btn_3_5->setMinimumSize(QSize(50, 50));
         btn_3_5->setMaximumSize(QSize(60, 50));
         btn_3_5->setStyleSheet(QString::fromUtf8(""));
-        btn_3_5->setFlat(true);
+        btn_3_5->setFlat(false);
         btn_11_7 = new QPushButton(pan);
         btn_11_7->setObjectName(QString::fromUtf8("btn_11_7"));
         btn_11_7->setEnabled(true);
@@ -1845,7 +1842,7 @@ public:
         btn_11_7->setMinimumSize(QSize(50, 50));
         btn_11_7->setMaximumSize(QSize(60, 50));
         btn_11_7->setStyleSheet(QString::fromUtf8(""));
-        btn_11_7->setFlat(true);
+        btn_11_7->setFlat(false);
         btn_12_6 = new QPushButton(pan);
         btn_12_6->setObjectName(QString::fromUtf8("btn_12_6"));
         btn_12_6->setEnabled(true);
@@ -1855,7 +1852,7 @@ public:
         btn_12_6->setMinimumSize(QSize(50, 50));
         btn_12_6->setMaximumSize(QSize(60, 50));
         btn_12_6->setStyleSheet(QString::fromUtf8(""));
-        btn_12_6->setFlat(true);
+        btn_12_6->setFlat(false);
         btn_11_5 = new QPushButton(pan);
         btn_11_5->setObjectName(QString::fromUtf8("btn_11_5"));
         btn_11_5->setEnabled(true);
@@ -1865,7 +1862,7 @@ public:
         btn_11_5->setMinimumSize(QSize(50, 50));
         btn_11_5->setMaximumSize(QSize(60, 50));
         btn_11_5->setStyleSheet(QString::fromUtf8(""));
-        btn_11_5->setFlat(true);
+        btn_11_5->setFlat(false);
         btn_2_5 = new QPushButton(pan);
         btn_2_5->setObjectName(QString::fromUtf8("btn_2_5"));
         btn_2_5->setEnabled(true);
@@ -1875,7 +1872,7 @@ public:
         btn_2_5->setMinimumSize(QSize(50, 50));
         btn_2_5->setMaximumSize(QSize(60, 50));
         btn_2_5->setStyleSheet(QString::fromUtf8(""));
-        btn_2_5->setFlat(true);
+        btn_2_5->setFlat(false);
         btn_2_1 = new QPushButton(pan);
         btn_2_1->setObjectName(QString::fromUtf8("btn_2_1"));
         btn_2_1->setEnabled(true);
@@ -1885,7 +1882,7 @@ public:
         btn_2_1->setMinimumSize(QSize(50, 50));
         btn_2_1->setMaximumSize(QSize(60, 50));
         btn_2_1->setStyleSheet(QString::fromUtf8(""));
-        btn_2_1->setFlat(true);
+        btn_2_1->setFlat(false);
         btn_0_1 = new QPushButton(pan);
         btn_0_1->setObjectName(QString::fromUtf8("btn_0_1"));
         btn_0_1->setEnabled(true);
@@ -1895,7 +1892,7 @@ public:
         btn_0_1->setMinimumSize(QSize(50, 50));
         btn_0_1->setMaximumSize(QSize(60, 50));
         btn_0_1->setStyleSheet(QString::fromUtf8(""));
-        btn_0_1->setFlat(true);
+        btn_0_1->setFlat(false);
         btn_6_3 = new QPushButton(pan);
         btn_6_3->setObjectName(QString::fromUtf8("btn_6_3"));
         btn_6_3->setEnabled(true);
@@ -1905,7 +1902,7 @@ public:
         btn_6_3->setMinimumSize(QSize(50, 50));
         btn_6_3->setMaximumSize(QSize(60, 50));
         btn_6_3->setStyleSheet(QString::fromUtf8(""));
-        btn_6_3->setFlat(true);
+        btn_6_3->setFlat(false);
         btn_2_11 = new QPushButton(pan);
         btn_2_11->setObjectName(QString::fromUtf8("btn_2_11"));
         btn_2_11->setEnabled(true);
@@ -1915,7 +1912,7 @@ public:
         btn_2_11->setMinimumSize(QSize(50, 50));
         btn_2_11->setMaximumSize(QSize(60, 50));
         btn_2_11->setStyleSheet(QString::fromUtf8(""));
-        btn_2_11->setFlat(true);
+        btn_2_11->setFlat(false);
         btn_8_8 = new QPushButton(pan);
         btn_8_8->setObjectName(QString::fromUtf8("btn_8_8"));
         btn_8_8->setEnabled(true);
@@ -1925,7 +1922,7 @@ public:
         btn_8_8->setMinimumSize(QSize(50, 50));
         btn_8_8->setMaximumSize(QSize(50, 50));
         btn_8_8->setStyleSheet(QString::fromUtf8(""));
-        btn_8_8->setFlat(true);
+        btn_8_8->setFlat(false);
         btn_11_1 = new QPushButton(pan);
         btn_11_1->setObjectName(QString::fromUtf8("btn_11_1"));
         btn_11_1->setEnabled(true);
@@ -1935,7 +1932,7 @@ public:
         btn_11_1->setMinimumSize(QSize(50, 50));
         btn_11_1->setMaximumSize(QSize(60, 50));
         btn_11_1->setStyleSheet(QString::fromUtf8(""));
-        btn_11_1->setFlat(true);
+        btn_11_1->setFlat(false);
         btn_3_2 = new QPushButton(pan);
         btn_3_2->setObjectName(QString::fromUtf8("btn_3_2"));
         btn_3_2->setEnabled(true);
@@ -1945,7 +1942,7 @@ public:
         btn_3_2->setMinimumSize(QSize(50, 50));
         btn_3_2->setMaximumSize(QSize(60, 50));
         btn_3_2->setStyleSheet(QString::fromUtf8(""));
-        btn_3_2->setFlat(true);
+        btn_3_2->setFlat(false);
         btn_5_11 = new QPushButton(pan);
         btn_5_11->setObjectName(QString::fromUtf8("btn_5_11"));
         btn_5_11->setEnabled(true);
@@ -1955,7 +1952,7 @@ public:
         btn_5_11->setMinimumSize(QSize(50, 50));
         btn_5_11->setMaximumSize(QSize(60, 50));
         btn_5_11->setStyleSheet(QString::fromUtf8(""));
-        btn_5_11->setFlat(true);
+        btn_5_11->setFlat(false);
         btn_11_10 = new QPushButton(pan);
         btn_11_10->setObjectName(QString::fromUtf8("btn_11_10"));
         btn_11_10->setEnabled(true);
@@ -1965,7 +1962,7 @@ public:
         btn_11_10->setMinimumSize(QSize(50, 50));
         btn_11_10->setMaximumSize(QSize(60, 50));
         btn_11_10->setStyleSheet(QString::fromUtf8(""));
-        btn_11_10->setFlat(true);
+        btn_11_10->setFlat(false);
         btn_3_12 = new QPushButton(pan);
         btn_3_12->setObjectName(QString::fromUtf8("btn_3_12"));
         btn_3_12->setEnabled(true);
@@ -1975,7 +1972,7 @@ public:
         btn_3_12->setMinimumSize(QSize(50, 50));
         btn_3_12->setMaximumSize(QSize(60, 50));
         btn_3_12->setStyleSheet(QString::fromUtf8(""));
-        btn_3_12->setFlat(true);
+        btn_3_12->setFlat(false);
         btn_10_10 = new QPushButton(pan);
         btn_10_10->setObjectName(QString::fromUtf8("btn_10_10"));
         btn_10_10->setEnabled(true);
@@ -1985,7 +1982,7 @@ public:
         btn_10_10->setMinimumSize(QSize(50, 50));
         btn_10_10->setMaximumSize(QSize(60, 50));
         btn_10_10->setStyleSheet(QString::fromUtf8(""));
-        btn_10_10->setFlat(true);
+        btn_10_10->setFlat(false);
         btn_6_7 = new QPushButton(pan);
         btn_6_7->setObjectName(QString::fromUtf8("btn_6_7"));
         btn_6_7->setEnabled(true);
@@ -1995,7 +1992,7 @@ public:
         btn_6_7->setMinimumSize(QSize(50, 50));
         btn_6_7->setMaximumSize(QSize(60, 50));
         btn_6_7->setStyleSheet(QString::fromUtf8(""));
-        btn_6_7->setFlat(true);
+        btn_6_7->setFlat(false);
         btn_black = new QPushButton(pan);
         btn_black->setObjectName(QString::fromUtf8("btn_black"));
         btn_black->setEnabled(false);
@@ -2016,6 +2013,12 @@ public:
         btn_white->setMaximumSize(QSize(60, 50));
         btn_white->setStyleSheet(QString::fromUtf8(""));
         btn_white->setFlat(true);
+        back = new QPushButton(pan);
+        back->setObjectName(QString::fromUtf8("back"));
+        back->setGeometry(QRect(1090, 10, 51, 51));
+        QFont font4;
+        font4.setBold(true);
+        back->setFont(font4);
 
         retranslateUi(pan);
 
@@ -2031,7 +2034,6 @@ public:
         btn_stop->setText(QCoreApplication::translate("pan", "\346\232\202\345\201\234\346\270\270\346\210\217", nullptr));
         btn_lose->setText(QCoreApplication::translate("pan", "\350\256\244\350\276\223", nullptr));
         btn_restart->setText(QCoreApplication::translate("pan", "\351\207\215\346\226\260\345\274\200\345\247\213", nullptr));
-        btn_isEnable->setText(QString());
         line_player_0->setText(QCoreApplication::translate("pan", "\344\270\201\347\234\237", nullptr));
         line_player_1->setText(QCoreApplication::translate("pan", "\350\260\267\347\210\261\345\207\214", nullptr));
         label_3->setText(QCoreApplication::translate("pan", "VS", nullptr));
@@ -2211,6 +2213,7 @@ public:
         btn_6_7->setText(QString());
         btn_black->setText(QString());
         btn_white->setText(QString());
+        back->setText(QCoreApplication::translate("pan", "back", nullptr));
     } // retranslateUi
 
 };

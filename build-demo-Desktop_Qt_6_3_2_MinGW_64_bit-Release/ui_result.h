@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -18,12 +19,16 @@ QT_BEGIN_NAMESPACE
 class Ui_result
 {
 public:
+    QLabel *label;
 
     void setupUi(QWidget *result)
     {
         if (result->objectName().isEmpty())
             result->setObjectName(QString::fromUtf8("result"));
-        result->resize(400, 300);
+        result->resize(492, 333);
+        label = new QLabel(result);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(0, 0, 69, 20));
 
         retranslateUi(result);
 
@@ -33,6 +38,7 @@ public:
     void retranslateUi(QWidget *result)
     {
         result->setWindowTitle(QCoreApplication::translate("result", "Form", nullptr));
+        label->setText(QCoreApplication::translate("result", "TextLabel", nullptr));
     } // retranslateUi
 
 };

@@ -20,6 +20,8 @@ private slots:
 
     void on_btn_wid_start_clicked();//进入棋盘
 
+    void on_btn_wid_load_clicked();
+
 private:
     Ui::Widget *ui;
 

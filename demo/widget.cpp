@@ -22,3 +22,15 @@ void Widget::on_btn_wid_start_clicked()
     this->close();
 }
 
+void pan::on_back_clicked()
+{
+    Widget *w = new Widget();
+    w->show();
+    this->close();
+}
+
+void Widget::on_btn_wid_load_clicked()
+{
+
+}
+

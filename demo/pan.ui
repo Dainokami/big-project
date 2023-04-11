@@ -115,19 +115,6 @@
     <string>重新开始</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="btn_isEnable">
-   <property name="geometry">
-    <rect>
-     <x>970</x>
-     <y>160</y>
-     <width>111</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="line_player_0">
    <property name="geometry">
     <rect>
@@ -284,7 +271,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_9">
@@ -324,7 +311,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_5">
@@ -364,7 +351,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_12">
@@ -404,7 +391,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_3">
@@ -444,7 +431,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_8">
@@ -484,7 +471,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_10">
@@ -524,7 +511,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_5">
@@ -564,7 +551,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_12">
@@ -604,7 +591,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_7">
@@ -644,7 +631,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_8">
@@ -684,7 +671,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_2">
@@ -724,7 +711,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_3">
@@ -764,7 +751,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_3">
@@ -804,7 +791,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_4">
@@ -844,7 +831,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_1">
@@ -884,7 +871,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_2">
@@ -924,7 +911,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_4">
@@ -964,7 +951,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_12">
@@ -1004,7 +991,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_6">
@@ -1044,7 +1031,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_10">
@@ -1084,7 +1071,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_5">
@@ -1124,7 +1111,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_11">
@@ -1164,7 +1151,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_4">
@@ -1204,7 +1191,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_1">
@@ -1244,7 +1231,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_9">
@@ -1284,7 +1271,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_1">
@@ -1324,7 +1311,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_0">
@@ -1364,7 +1351,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_3">
@@ -1404,7 +1391,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_0">
@@ -1444,7 +1431,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_5">
@@ -1484,7 +1471,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_0">
@@ -1524,7 +1511,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_3">
@@ -1564,7 +1551,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_5">
@@ -1604,7 +1591,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_2">
@@ -1644,7 +1631,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_9">
@@ -1684,7 +1671,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_9">
@@ -1724,7 +1711,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_2">
@@ -1764,7 +1751,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_2">
@@ -1804,7 +1791,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_12">
@@ -1844,7 +1831,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_10">
@@ -1884,7 +1871,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_6">
@@ -1924,7 +1911,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_3">
@@ -1964,7 +1951,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_10">
@@ -2004,7 +1991,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_9">
@@ -2044,7 +2031,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_1">
@@ -2084,7 +2071,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_7">
@@ -2124,7 +2111,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_8">
@@ -2164,7 +2151,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_11">
@@ -2204,7 +2191,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_6">
@@ -2244,7 +2231,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_6">
@@ -2284,7 +2271,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_4">
@@ -2324,7 +2311,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_7">
@@ -2364,7 +2351,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_6">
@@ -2404,7 +2391,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_12">
@@ -2444,7 +2431,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_11">
@@ -2484,7 +2471,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_0">
@@ -2524,7 +2511,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_10">
@@ -2564,7 +2551,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_7">
@@ -2604,7 +2591,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_1">
@@ -2644,7 +2631,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_7">
@@ -2684,7 +2671,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_10">
@@ -2724,7 +2711,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_7">
@@ -2764,7 +2751,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_12">
@@ -2804,7 +2791,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_5">
@@ -2844,7 +2831,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_3">
@@ -2884,7 +2871,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_9">
@@ -2924,7 +2911,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_8">
@@ -2964,7 +2951,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_6">
@@ -3004,7 +2991,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_1">
@@ -3044,7 +3031,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_12">
@@ -3084,7 +3071,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_0">
@@ -3124,7 +3111,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_9">
@@ -3164,7 +3151,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_7">
@@ -3204,7 +3191,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_7">
@@ -3244,7 +3231,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_6">
@@ -3284,7 +3271,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_5">
@@ -3324,7 +3311,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_3">
@@ -3364,7 +3351,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_8">
@@ -3404,7 +3391,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_12">
@@ -3444,7 +3431,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_9">
@@ -3484,7 +3471,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_7">
@@ -3524,7 +3511,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_11">
@@ -3564,7 +3551,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_11">
@@ -3604,7 +3591,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_1">
@@ -3644,7 +3631,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_0">
@@ -3684,7 +3671,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_12">
@@ -3724,7 +3711,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_2">
@@ -3764,7 +3751,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_8">
@@ -3804,7 +3791,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_6">
@@ -3844,7 +3831,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_5">
@@ -3884,7 +3871,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_9">
@@ -3924,7 +3911,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_6">
@@ -3964,7 +3951,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_4">
@@ -4004,7 +3991,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_4">
@@ -4044,7 +4031,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_2">
@@ -4084,7 +4071,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_5">
@@ -4124,7 +4111,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_0">
@@ -4164,7 +4151,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_6">
@@ -4204,7 +4191,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_3">
@@ -4244,7 +4231,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_10">
@@ -4284,7 +4271,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_7">
@@ -4324,7 +4311,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_8">
@@ -4364,7 +4351,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_0">
@@ -4404,7 +4391,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_12">
@@ -4444,7 +4431,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_1">
@@ -4484,7 +4471,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_7">
@@ -4524,7 +4511,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_2">
@@ -4564,7 +4551,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_9">
@@ -4604,7 +4591,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_6">
@@ -4644,7 +4631,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_9">
@@ -4684,7 +4671,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_9">
@@ -4724,7 +4711,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_4">
@@ -4764,7 +4751,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_0">
@@ -4804,7 +4791,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_6">
@@ -4844,7 +4831,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_11">
@@ -4884,7 +4871,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_0">
@@ -4924,7 +4911,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_9">
@@ -4964,7 +4951,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_2">
@@ -5004,7 +4991,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_4">
@@ -5044,7 +5031,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_3">
@@ -5084,7 +5071,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_2">
@@ -5124,7 +5111,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_11">
@@ -5164,7 +5151,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_12">
@@ -5204,7 +5191,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_8">
@@ -5244,7 +5231,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_3">
@@ -5284,7 +5271,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_4">
@@ -5324,7 +5311,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_12">
@@ -5364,7 +5351,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_10">
@@ -5404,7 +5391,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_2">
@@ -5444,7 +5431,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_11">
@@ -5484,7 +5471,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_11">
@@ -5524,7 +5511,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_8">
@@ -5564,7 +5551,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_11">
@@ -5604,7 +5591,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_8">
@@ -5644,7 +5631,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_4">
@@ -5684,7 +5671,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_4">
@@ -5724,7 +5711,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_1">
@@ -5764,7 +5751,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_11">
@@ -5804,7 +5791,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_5">
@@ -5844,7 +5831,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_0">
@@ -5884,7 +5871,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_1">
@@ -5924,7 +5911,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_2">
@@ -5964,7 +5951,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_10">
@@ -6004,7 +5991,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_0">
@@ -6044,7 +6031,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_10">
@@ -6084,7 +6071,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_4">
@@ -6124,7 +6111,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_9_10">
@@ -6164,7 +6151,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_4">
@@ -6204,7 +6191,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_8">
@@ -6244,7 +6231,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_3">
@@ -6284,7 +6271,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_0">
@@ -6324,7 +6311,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_5">
@@ -6364,7 +6351,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_7">
@@ -6404,7 +6391,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_12_6">
@@ -6444,7 +6431,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_5">
@@ -6484,7 +6471,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_5">
@@ -6524,7 +6511,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_1">
@@ -6564,7 +6551,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_1">
@@ -6604,7 +6591,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_3">
@@ -6644,7 +6631,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_11">
@@ -6684,7 +6671,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_8">
@@ -6724,7 +6711,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_1">
@@ -6764,7 +6751,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_2">
@@ -6804,7 +6791,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_11">
@@ -6844,7 +6831,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_11_10">
@@ -6884,7 +6871,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_12">
@@ -6924,7 +6911,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_10_10">
@@ -6964,7 +6951,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_7">
@@ -7004,7 +6991,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_black">
@@ -7085,6 +7072,24 @@
    </property>
    <property name="flat">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back">
+   <property name="geometry">
+    <rect>
+     <x>1090</x>
+     <y>10</y>
+     <width>51</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>back</string>
    </property>
   </widget>
  </widget>

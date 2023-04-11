@@ -99,10 +99,31 @@ void pan::OnTimerCountdown()
 
    if(now_time <= 0)
    {
-       if(now_player==  white_player)
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你超时了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-       else if(now_player== black_player)
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你超时了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+       fupan += "R";
+       if(now_player==black_player)
+       {
+           black_time += game_max_time;
+           all_time += game_max_time;
+           black_time /= (now_step/2);
+           white_time /= (now_step/2);
+
+           QString infom = "黑棋你超时了捏\n恭喜胜者："+ui->line_player_1->text()+"(执白)\n你们的对局是："+fupan+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
+           int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+           if(result == QMessageBox::Yes)
+               save();
+       }
+       else
+       {
+           white_time += game_max_time;
+           all_time += game_max_time;
+           black_time /= ((now_step+1)/2);
+           if(now_step!=1)
+               white_time /= ((now_step-1)/2);
+           QString infom = "白棋你超时了捏\n恭喜胜者："+ui->line_player_0->text()+"(执黑)\n你们的对局是："+fupan+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
+           int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+           if(result == QMessageBox::Yes)
+               save();
+       }
 
         clear_pan();
         ui->txtl_pan_time->setEnabled(true);
@@ -180,75 +201,31 @@ int pan::judge()//函数内部有分析
     {
         if(now_player== black_player)//黑白棋都没气且黑棋下了最后一步棋，判定黑棋无路可走而输
         {
-            /*m->stop();
-            game_state = off;*/
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你输了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+            QMessageBox::information(this, "嘻嘻嘻嘻", "黑棋你要输了捏，下次注意点", QMessageBox::Yes , QMessageBox::Yes);
             return no;
-            /*now_player = black_player;
-            clear_pan();
-            ui->txtl_pan_time->setEnabled(true);
-            ui->line_player_0->setEnabled(true);
-            ui->line_player_1->setEnabled(true);
-            ui->rad_9x9->setEnabled(true);
-            ui->rad_11x11->setEnabled(true);
-            ui->rad_13x13->setEnabled(true);
-            m->stop();*/
         }
         else//黑白棋都没气且白棋下了最后一步棋，判定白棋无路可走而输
         {
-            /*m->stop();
-            game_state = off;*/
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你输了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你要输了捏，下次注意点", QMessageBox::Yes , QMessageBox::Yes);
             return no;
-            /*now_player = black_player;
-            clear_pan();
-            ui->txtl_pan_time->setEnabled(true);
-            ui->line_player_0->setEnabled(true);
-            ui->line_player_1->setEnabled(true);
-            ui->rad_9x9->setEnabled(true);
-            ui->rad_11x11->setEnabled(true);
-            ui->rad_13x13->setEnabled(true);
-            m->stop();*/
         }
 
     }
     else if(black_flag==on)//黑棋没气了。黑棋围的，鉴定为紫砂；白棋围的，鉴定为白棋输
     {
-        /*m->stop();
-        game_state = off;*/
         if(now_player == black_player)
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你紫砂了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋要你紫砂了捏，下次注意点", QMessageBox::Yes , QMessageBox::Yes);
         else if(now_player == white_player)
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你输了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你要输了捏，下次注意点", QMessageBox::Yes , QMessageBox::Yes);
         return no;
-        /*now_player = black_player;
-        clear_pan();
-        ui->txtl_pan_time->setEnabled(true);
-        ui->line_player_0->setEnabled(true);
-        ui->line_player_1->setEnabled(true);
-        ui->rad_9x9->setEnabled(true);
-        ui->rad_11x11->setEnabled(true);
-        ui->rad_13x13->setEnabled(true);
-        m->stop();*/
     }
     else if(white_flag ==on)//白棋没气了。白棋围的，鉴定为紫砂；黑棋围的，鉴定为白棋输
     {
-        /*m->stop();
-        game_state = off;*/
         if(now_player == white_player)
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你紫砂了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你要紫砂了捏，下次注意点", QMessageBox::Yes , QMessageBox::Yes);
         else if(now_player == black_player)
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你输了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+            QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你要输了捏，下次注意点", QMessageBox::Yes , QMessageBox::Yes);
         return no;
-        /*now_player = black_player;
-        clear_pan();
-        ui->txtl_pan_time->setEnabled(true);
-        ui->line_player_0->setEnabled(true);
-        ui->line_player_1->setEnabled(true);
-        ui->rad_9x9->setEnabled(true);
-        ui->rad_11x11->setEnabled(true);
-        ui->rad_13x13->setEnabled(true);
-        m->stop();*/
     }
 
     return yes;
@@ -341,6 +318,11 @@ void pan::clear_pan()
     white_flag=off;
     now_step=0;
     loc = -1;
+    fupan = "";
+    black_time=0;
+    white_time=0;
+    all_time=0;
+
     for(int i=0;i<length;i++)
         for(int j=0;j<length;j++)
         {
@@ -362,7 +344,6 @@ void pan::clear_pan()
     if(ui->txtl_pan_time->isEnabled())
     {
         ui->txtl_pan_time->setEnabled(false);
-        ui->btn_isEnable->setChecked(false);
         set_time(ui->txtl_pan_time->text().toInt());
     }
     else
@@ -375,7 +356,6 @@ void pan::on_btn_startgame_clicked()
     if(ui->txtl_pan_time->isEnabled())
     {
         ui->txtl_pan_time->setEnabled(false);
-        ui->btn_isEnable->setChecked(false);
         set_time(ui->txtl_pan_time->text().toInt());
     }
     else
@@ -405,13 +385,6 @@ void pan::on_btn_stop_clicked()
 
 }
 
-void pan::on_btn_startgame_2_clicked()
-{
-    m->start();
-    game_state = on;
-
-}
-
 void pan::get_btn_sign(int idx)
 {
     qDebug()<<idx;
@@ -429,15 +402,29 @@ void pan::get_btn_sign(int idx)
 
         if(judge())
         {
+            now_step++;
+
+            if(now_player==black_player)
+                black_time += game_max_time - now_time;
+            else
+                white_time += game_max_time - now_time;
+            all_time += game_max_time - now_time;
             now_time = game_max_time;
-            QString now_btn_str = "btn_"+QString::number(i_)+"_"+QString::number(j_);
+
+
             if(loc == -1)
                 loc = idx;
+            QString now_btn_str = "btn_"+QString::number(i_)+"_"+QString::number(j_);
             QString last_btn_str = "btn_"+QString::number(loc/100)+"_"+QString::number(loc%100);
             QPushButton *now_btn = this->findChild<QPushButton*>(now_btn_str);
             QPushButton *last_btn = this->findChild<QPushButton*>(last_btn_str);
+
             play_the_Go(now_btn,last_btn);
+
+            char tem = 'A'+i_;
+            fupan = fupan + tem + QString::number(j_+1) + ' ';
             loc = idx;
+
             if(game_state == on)
             {
                 if(now_player == white_player)
@@ -445,7 +432,7 @@ void pan::get_btn_sign(int idx)
                 else if(now_player == black_player)
                     now_player = white_player;
             }
-            now_step++;
+
 
         }
         else
@@ -469,25 +456,66 @@ void pan::on_btn_restart_clicked()
 
 void pan::on_btn_lose_clicked()
 {
-    m->stop();
-    QMessageBox::information(NULL, "嘻嘻嘻嘻", "你投降了捏", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-    game_state = off;
-    now_player = black_player;
-    clear_pan();
-    ui->txtl_pan_time->setEnabled(true);
-    ui->line_player_0->setEnabled(true);
-    ui->line_player_1->setEnabled(true);
-    ui->rad_9x9->setEnabled(true);
-    ui->rad_11x11->setEnabled(true);
-    ui->rad_13x13->setEnabled(true);
-    m->stop();
+    if(game_state == on)
+    {
+        m->stop();
+        fupan += "G";
+        if(now_player==black_player)
+        {
+            black_time /= (now_step/2);
+            white_time /= (now_step/2);
+
+            QString infom = "恭喜胜者："+ui->line_player_1->text()+"(执白)\n你们的对局是："+fupan+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
+            int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+            if(result == QMessageBox::Yes)
+                save();
+        }
+        else
+        {
+            black_time /= ((now_step+1)/2);
+            if(now_step!=1)
+                white_time /= ((now_step-1)/2);
+            QString infom = "恭喜胜者："+ui->line_player_0->text()+"(执黑)\n你们的对局是："+fupan+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
+            int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+            if(result == QMessageBox::Yes)
+                save();
+        }
+        game_state = off;
+        now_player = black_player;
+        clear_pan();
+        ui->txtl_pan_time->setEnabled(true);
+        ui->line_player_0->setEnabled(true);
+        ui->line_player_1->setEnabled(true);
+        ui->rad_9x9->setEnabled(true);
+        ui->rad_11x11->setEnabled(true);
+        ui->rad_13x13->setEnabled(true);
+        m->stop();
+    }
 }
 
-void pan::on_btn_isEnable_clicked()
+void pan::save()
 {
-    if(ui->btn_isEnable->isChecked())
-        ui->txtl_pan_time->setEnabled(true);
+    QFileDialog fileDialog;
+    QString fileName = fileDialog.getSaveFileName(this,tr("Open File"),"/data",tr("Text File(*.txt)"));
+    if(fileName == "")
+    {
+        return;
+    }
+    QFile file(fileName);
+    if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QMessageBox::warning(this,tr("错误"),tr("打开文件失败"));
+        return;
+    }
     else
-        ui->txtl_pan_time->setEnabled(false);
+    {
+        QTextStream textStream(&file);
+        textStream<<fupan;
+        QMessageBox::warning(this,tr("提示"),tr("保存文件成功"));
+        file.close();
+    }
+
 }
+
+
 

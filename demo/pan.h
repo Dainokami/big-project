@@ -2,10 +2,6 @@
 #define PAN_H
 
 
-
-
-
-#include <QWidget>
 #include <QImage>
 #include <QTimer>
 #include <qsignalmapper.h>
@@ -16,7 +12,8 @@
 #include <QDebug>
 #include <QMediaPlayer>
 #include <QAudioOutput>
-
+#include <QFile>
+#include <QFileDialog>
 
 namespace Ui {
 class pan;
@@ -39,17 +36,13 @@ private slots :
 
     void on_btn_stop_clicked();//暂停游戏，如果已经暂停了就开始
 
-    void on_btn_startgame_2_clicked();//继续游戏，但没用就被删了，Qt删了这个函数后会有点bug，所以没删
-
     void on_btn_lose_clicked();//投降
 
     void get_btn_sign(int idx);//为了不给每个按钮写个函数，就通过传递按钮的坐标来起到对应的按钮反应
 
     void on_btn_restart_clicked();//重开游戏
 
-    void on_btn_isEnable_clicked();//控制倒计时框可不可以编辑，在游戏过程中默认不可以
-
-
+    void on_back_clicked();
 
 private:
     Ui::pan *ui;
@@ -69,8 +62,12 @@ private:
     void clear_pan();//恢复棋盘初始状态，包括清屏,清空气,重设时间
     void dfs(int x,int y,int flag);//深度搜索棋盘，是judge函数里面的一个小函数，具体见cpp。
     void change_pan();//设置棋盘是多大
+    void save();//保存文件
 
-
+    QString fupan;//保存复盘信息,我们定义超时时在结尾加上“R”
+    double black_time=0;
+    double white_time=0;
+    int all_time=0;
     int length=13;//棋盘的长度，默认是9x9
     int now_step=0;//现在是第几步棋
     int now_player = -1;//当前棋手
