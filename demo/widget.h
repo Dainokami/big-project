@@ -2,7 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
-
+#include <load.h>
 #include <pan.h>
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -24,7 +24,7 @@ private slots:
 
 private:
     Ui::Widget *ui;
-
+    load *l = nullptr;
     pan *p = nullptr;
 };
 #endif // WIDGET_H

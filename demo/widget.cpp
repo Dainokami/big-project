@@ -31,6 +31,15 @@ void pan::on_back_clicked()
 
 void Widget::on_btn_wid_load_clicked()
 {
-
+    l = new load();
+    l->show();
+    l->getter();
+    this->close();
 }
 
+void load::on_back_clicked()
+{
+    Widget *w = new Widget();
+    w->show();
+    this->close();
+}

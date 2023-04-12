@@ -509,9 +509,9 @@ void pan::save()
     }
     else
     {
-        QTextStream textStream(&file);
-        textStream<<fupan;
-        QMessageBox::warning(this,tr("提示"),tr("保存文件成功"));
+        QTextStream out(&file);
+        out<<fupan;
+        QMessageBox::warning(this,tr("提示"),tr("载入文件成功"));
         file.close();
     }
 
