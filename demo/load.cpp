@@ -44,7 +44,7 @@ void load::check()
                 now_btn_str += QString(fupan.at(load_loc+2));
             QPushButton *now_btn = this->findChild<QPushButton*>(now_btn_str);
 
-            qDebug()<<now_btn_str<<'\n'<<now_btn;
+            qDebug()<<now_btn_str;
 
             if(now_btn ==nullptr)
             {
@@ -60,8 +60,9 @@ void load::check()
             }
         }
         else
-            break;
+        {clear();break;}
     }
+
     load::update();
 }
 

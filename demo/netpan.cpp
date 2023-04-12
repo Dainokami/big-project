@@ -1,17 +1,14 @@
-#include "pan.h"
-#include "ui_pan.h"
+#include "netpan.h"
+#include "ui_netpan.h"
 
-pan::pan(QWidget *parent) :
+netpan::netpan(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::pan)
+    ui(new Ui::netpan)
 {
     ui->setupUi(this);
     setWindowTitle("NOGO");
 
 
-    connect(ui->rad_9x9,&QRadioButton::clicked,this,pan::change_pan);
-    connect(ui->rad_11x11,&QRadioButton::clicked,this,pan::change_pan);
-    connect(ui->rad_13x13,&QRadioButton::clicked,this,pan::change_pan);
     ui->btn_white->setStyleSheet("");
     ui->btn_black->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
 
@@ -19,12 +16,12 @@ pan::pan(QWidget *parent) :
     //以下设置定时器
     m = new QTimer(this);
     m->setInterval(1000);
-    connect(m,&QTimer::timeout,this,pan::OnTimerCountdown);
+    connect(m,&QTimer::timeout,this,netpan::OnTimerCountdown);
     ui->txtl_pan_time->setText("50");
 
     //以下关联按钮
     QSignalMapper *myMapper = new QSignalMapper(this);
-    QPushButton *button[13][13]={ui->btn_0_0,ui->btn_0_1,ui->btn_0_2,ui->btn_0_3,ui->btn_0_4,ui->btn_0_5,ui->btn_0_6,ui->btn_0_7,ui->btn_0_8,ui->btn_0_9,ui->btn_0_10,ui->btn_0_11,ui->btn_0_12,ui->btn_1_0,ui->btn_1_1,ui->btn_1_2,ui->btn_1_3,ui->btn_1_4,ui->btn_1_5,ui->btn_1_6,ui->btn_1_7,ui->btn_1_8,ui->btn_1_9,ui->btn_1_10,ui->btn_1_11,ui->btn_1_12,ui->btn_2_0,ui->btn_2_1,ui->btn_2_2,ui->btn_2_3,ui->btn_2_4,ui->btn_2_5,ui->btn_2_6,ui->btn_2_7,ui->btn_2_8,ui->btn_2_9,ui->btn_2_10,ui->btn_2_11,ui->btn_2_12,ui->btn_3_0,ui->btn_3_1,ui->btn_3_2,ui->btn_3_3,ui->btn_3_4,ui->btn_3_5,ui->btn_3_6,ui->btn_3_7,ui->btn_3_8,ui->btn_3_9,ui->btn_3_10,ui->btn_3_11,ui->btn_3_12,ui->btn_4_0,ui->btn_4_1,ui->btn_4_2,ui->btn_4_3,ui->btn_4_4,ui->btn_4_5,ui->btn_4_6,ui->btn_4_7,ui->btn_4_8,ui->btn_4_9,ui->btn_4_10,ui->btn_4_11,ui->btn_4_12,ui->btn_5_0,ui->btn_5_1,ui->btn_5_2,ui->btn_5_3,ui->btn_5_4,ui->btn_5_5,ui->btn_5_6,ui->btn_5_7,ui->btn_5_8,ui->btn_5_9,ui->btn_5_10,ui->btn_5_11,ui->btn_5_12,ui->btn_6_0,ui->btn_6_1,ui->btn_6_2,ui->btn_6_3,ui->btn_6_4,ui->btn_6_5,ui->btn_6_6,ui->btn_6_7,ui->btn_6_8,ui->btn_6_9,ui->btn_6_10,ui->btn_6_11,ui->btn_6_12,ui->btn_7_0,ui->btn_7_1,ui->btn_7_2,ui->btn_7_3,ui->btn_7_4,ui->btn_7_5,ui->btn_7_6,ui->btn_7_7,ui->btn_7_8,ui->btn_7_9,ui->btn_7_10,ui->btn_7_11,ui->btn_7_12,ui->btn_8_0,ui->btn_8_1,ui->btn_8_2,ui->btn_8_3,ui->btn_8_4,ui->btn_8_5,ui->btn_8_6,ui->btn_8_7,ui->btn_8_8,ui->btn_8_9,ui->btn_8_10,ui->btn_8_11,ui->btn_8_12,ui->btn_9_0,ui->btn_9_1,ui->btn_9_2,ui->btn_9_3,ui->btn_9_4,ui->btn_9_5,ui->btn_9_6,ui->btn_9_7,ui->btn_9_8,ui->btn_9_9,ui->btn_9_10,ui->btn_9_11,ui->btn_9_12,ui->btn_10_0,ui->btn_10_1,ui->btn_10_2,ui->btn_10_3,ui->btn_10_4,ui->btn_10_5,ui->btn_10_6,ui->btn_10_7,ui->btn_10_8,ui->btn_10_9,ui->btn_10_10,ui->btn_10_11,ui->btn_10_12,ui->btn_11_0,ui->btn_11_1,ui->btn_11_2,ui->btn_11_3,ui->btn_11_4,ui->btn_11_5,ui->btn_11_6,ui->btn_11_7,ui->btn_11_8,ui->btn_11_9,ui->btn_11_10,ui->btn_11_11,ui->btn_11_12,ui->btn_12_0,ui->btn_12_1,ui->btn_12_2,ui->btn_12_3,ui->btn_12_4,ui->btn_12_5,ui->btn_12_6,ui->btn_12_7,ui->btn_12_8,ui->btn_12_9,ui->btn_12_10,ui->btn_12_11,ui->btn_12_12};
+    QPushButton *button[9][9]={ui->btn_0_0,ui->btn_0_1,ui->btn_0_2,ui->btn_0_3,ui->btn_0_4,ui->btn_0_5,ui->btn_0_6,ui->btn_0_7,ui->btn_0_8,ui->btn_1_0,ui->btn_1_1,ui->btn_1_2,ui->btn_1_3,ui->btn_1_4,ui->btn_1_5,ui->btn_1_6,ui->btn_1_7,ui->btn_1_8,ui->btn_2_0,ui->btn_2_1,ui->btn_2_2,ui->btn_2_3,ui->btn_2_4,ui->btn_2_5,ui->btn_2_6,ui->btn_2_7,ui->btn_2_8,ui->btn_3_0,ui->btn_3_1,ui->btn_3_2,ui->btn_3_3,ui->btn_3_4,ui->btn_3_5,ui->btn_3_6,ui->btn_3_7,ui->btn_3_8,ui->btn_4_0,ui->btn_4_1,ui->btn_4_2,ui->btn_4_3,ui->btn_4_4,ui->btn_4_5,ui->btn_4_6,ui->btn_4_7,ui->btn_4_8,ui->btn_5_0,ui->btn_5_1,ui->btn_5_2,ui->btn_5_3,ui->btn_5_4,ui->btn_5_5,ui->btn_5_6,ui->btn_5_7,ui->btn_5_8,ui->btn_6_0,ui->btn_6_1,ui->btn_6_2,ui->btn_6_3,ui->btn_6_4,ui->btn_6_5,ui->btn_6_6,ui->btn_6_7,ui->btn_6_8,ui->btn_7_0,ui->btn_7_1,ui->btn_7_2,ui->btn_7_3,ui->btn_7_4,ui->btn_7_5,ui->btn_7_6,ui->btn_7_7,ui->btn_7_8,ui->btn_8_0,ui->btn_8_1,ui->btn_8_2,ui->btn_8_3,ui->btn_8_4,ui->btn_8_5,ui->btn_8_6,ui->btn_8_7,ui->btn_8_8};
     for(int i=0;i<length;i++)
         for(int j=0;j<length;j++)
         {
@@ -44,7 +41,7 @@ pan::pan(QWidget *parent) :
     player->play();
 }
 
-pan::~pan()
+netpan::~netpan()
 {
     if (m)
     {
@@ -58,7 +55,7 @@ pan::~pan()
     delete ui;
 }
 
-void pan::paintEvent(QPaintEvent *)
+void netpan::paintEvent(QPaintEvent *)
 {
     paint=new QPainter;
     paint->begin(this);
@@ -75,16 +72,16 @@ void pan::paintEvent(QPaintEvent *)
       //ui->setupUi()
 }
 
-void pan::set_time(int seted_time)
+void netpan::set_time(int seted_time)
 {
     game_max_time = seted_time;
     now_time = game_max_time;
-    pan::BeginCountdown();
+    netpan::BeginCountdown();
     QString temp = QString::number(seted_time);
     ui->txtl_pan_time->setText(temp);
 }
 
-void pan::BeginCountdown()
+void netpan::BeginCountdown()
 {
    if (m->isActive() == false)
    {
@@ -92,7 +89,7 @@ void pan::BeginCountdown()
    }
 }
 
-void pan::OnTimerCountdown()
+void netpan::OnTimerCountdown()
 {
    now_time -= 1;
    ui->txtl_pan_time->setText(QString::number(now_time));
@@ -129,16 +126,13 @@ void pan::OnTimerCountdown()
         ui->txtl_pan_time->setEnabled(true);
         ui->line_player_0->setEnabled(true);
         ui->line_player_1->setEnabled(true);
-        ui->rad_9x9->setEnabled(true);
-        ui->rad_11x11->setEnabled(true);
-        ui->rad_13x13->setEnabled(true);
         game_state = off;
         now_player = black_player;
         m->stop();
    }
 }
 
-void pan::delete_time()
+void netpan::delete_time()
 {
     if (m)
     {
@@ -151,7 +145,7 @@ void pan::delete_time()
     }
 }
 
-void pan::play_the_Go(QPushButton *now_btn,QPushButton *last_btn)
+void netpan::play_the_Go(QPushButton *now_btn,QPushButton *last_btn)
 {
     if(game_state == on)
     {
@@ -174,7 +168,7 @@ void pan::play_the_Go(QPushButton *now_btn,QPushButton *last_btn)
     }
 }
 
-int pan::judge()//函数内部有分析
+int netpan::judge()//函数内部有分析
 {
     for(int i=0;i<length;i++)
         for(int j=0;j<length;j++)
@@ -231,7 +225,7 @@ int pan::judge()//函数内部有分析
     return yes;
 }
 
-void pan::dfs(int x, int y,int flag)
+void netpan::dfs(int x, int y,int flag)
 //本质是通过dfs重新绘制一副棋盘，从未落子处开始，从未落子进入黑棋部分则是有气，从有气的黑棋进入为检查的黑棋也是有气，白棋同理。
 //flag是指上一个坐标是如何进入现在的坐标的，即二维数组step的第一维，flag=-1一位这个坐标是直接从judge传来的未落子坐标
 {
@@ -285,34 +279,8 @@ void pan::dfs(int x, int y,int flag)
 
 }
 
-void pan::change_pan()
-{
-    if(ui->rad_9x9->isChecked())
-        length = 9;
-    else if(ui->rad_11x11->isChecked())
-        length = 11;
-    else if(ui->rad_13x13->isChecked())
-        length = 13;
 
-    pan::update();
-    for(int i=0;i<13;i++)
-        for(int j=0;j<13;j++)
-        {
-            QString temp = "btn_"+QString::number(i)+"_"+QString::number(j);
-            QPushButton *button = this->findChild<QPushButton*>(temp);
-            button->setEnabled(false);
-        }
-    for(int i=0;i<length;i++)
-        for(int j=0;j<length;j++)
-        {
-            QString temp = "btn_"+QString::number(i)+"_"+QString::number(j);
-            QPushButton *button = this->findChild<QPushButton*>(temp);
-            button->setEnabled(true);
-        }
-
-}
-
-void pan::clear_pan()
+void netpan::clear_pan()
 {
     black_flag=off;
     white_flag=off;
@@ -351,7 +319,7 @@ void pan::clear_pan()
 
 }
 
-void pan::on_btn_startgame_clicked()
+void netpan::on_btn_startgame_clicked()
 {
     if(ui->txtl_pan_time->isEnabled())
     {
@@ -363,13 +331,10 @@ void pan::on_btn_startgame_clicked()
     ui->txtl_pan_time->setEnabled(false);
     ui->line_player_0->setEnabled(false);
     ui->line_player_1->setEnabled(false);
-    ui->rad_9x9->setEnabled(false);
-    ui->rad_11x11->setEnabled(false);
-    ui->rad_13x13->setEnabled(false);
     game_state = on;
 }
 
-void pan::on_btn_stop_clicked()
+void netpan::on_btn_stop_clicked()
 {
     if(game_state ==on)
     {
@@ -385,7 +350,7 @@ void pan::on_btn_stop_clicked()
 
 }
 
-void pan::get_btn_sign(int idx)
+void netpan::get_btn_sign(int idx)
 {
     qDebug()<<idx;
     int i_=idx/100;
@@ -447,14 +412,14 @@ void pan::get_btn_sign(int idx)
 
 }
 
-void pan::on_btn_restart_clicked()
+void netpan::on_btn_restart_clicked()
 {
     clear_pan();
     game_state = on;
     now_player = black_player;
 }
 
-void pan::on_btn_lose_clicked()
+void netpan::on_btn_lose_clicked()
 {
     if(game_state == on)
     {
@@ -487,14 +452,11 @@ void pan::on_btn_lose_clicked()
         ui->txtl_pan_time->setEnabled(true);
         ui->line_player_0->setEnabled(true);
         ui->line_player_1->setEnabled(true);
-        ui->rad_9x9->setEnabled(true);
-        ui->rad_11x11->setEnabled(true);
-        ui->rad_13x13->setEnabled(true);
         m->stop();
     }
 }
 
-void pan::save()
+void netpan::save()
 {
     QFileDialog fileDialog;
     QString fileName = fileDialog.getSaveFileName(this,tr("Open File"),"/data",tr("Text File(*.txt)"));
@@ -517,6 +479,3 @@ void pan::save()
     }
 
 }
-
-
-

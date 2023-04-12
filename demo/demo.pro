@@ -12,16 +12,19 @@ CONFIG += c++17
 SOURCES += \
     load.cpp \
     main.cpp \
+    netpan.cpp \
     pan.cpp \
     widget.cpp
 
 HEADERS += \
     load.h \
+    netpan.h \
     pan.h \
     widget.h
 
 FORMS += \
     load.ui \
+    netpan.ui \
     pan.ui \
     widget.ui
 

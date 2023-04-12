@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <load.h>
 #include <pan.h>
+#include <netpan.h>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE
@@ -22,9 +24,12 @@ private slots:
 
     void on_btn_wid_load_clicked();
 
+    void on_btn_wid_start_2_clicked();
+
 private:
     Ui::Widget *ui;
     load *l = nullptr;
     pan *p = nullptr;
+    netpan *np = nullptr;
 };
 #endif // WIDGET_H

@@ -1,5 +1,5 @@
-#ifndef PAN_H
-#define PAN_H
+#ifndef NETnetpan_H
+#define NETnetpan_H
 
 
 #include <QImage>
@@ -16,19 +16,19 @@
 #include <QFileDialog>
 
 namespace Ui {
-class pan;
+class netpan;
 }
 
-class pan : public QWidget
+class netpan : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit pan(QWidget *parent = nullptr);
-    ~pan();
+    explicit netpan(QWidget *parent = nullptr);
+    ~netpan();
 
     const int size=50;
-    const int x=35,y=35;
+    const int x=155,y=155;
 
 private slots :
 
@@ -45,7 +45,7 @@ private slots :
     void on_back_clicked();
 
 private:
-    Ui::pan *ui;
+    Ui::netpan *ui;
     QTimer *m;
     void paintEvent(QPaintEvent *);//绘图函数声明
     QPainter *paint;
@@ -61,14 +61,13 @@ private:
     int judge();//在每次落子后判断有无胜负,若会吃子或紫砂则传回no，反之则传yes
     void clear_pan();//恢复棋盘初始状态，包括清屏,清空气,重设时间
     void dfs(int x,int y,int flag);//深度搜索棋盘，是judge函数里面的一个小函数，具体见cpp。
-    void change_pan();//设置棋盘是多大
     void save();//保存文件
 
-    QString fupan;//保存复盘信息,我们定义超时时在结尾加上“R”,且由于超时方没有动作，我们不把超时作为一步
+    QString fupan;//保存复盘信息,我们定义超时时在结尾加上“R”
     double black_time=0;
     double white_time=0;
     int all_time=0;
-    int length=13;//棋盘的长度，默认是9x9
+    int length=9;//棋盘的长度，默认是9x9
     int now_step=0;//现在是第几步棋
     int now_player = -1;//当前棋手
     int Qi[13][13]={0};//母棋盘。
@@ -103,4 +102,5 @@ private:
 
 };
 
-#endif // PAN_H
+
+#endif // NETPAN_H

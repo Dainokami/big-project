@@ -218,7 +218,7 @@ public:
         if (pan->objectName().isEmpty())
             pan->setObjectName(QString::fromUtf8("pan"));
         pan->setEnabled(true);
-        pan->resize(1170, 711);
+        pan->resize(1200, 720);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/image/logo.png"), QSize(), QIcon::Normal, QIcon::Off);
         pan->setWindowIcon(icon);

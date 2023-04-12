@@ -22,18 +22,25 @@ void Widget::on_btn_wid_start_clicked()
     this->close();
 }
 
-void pan::on_back_clicked()
-{
-    Widget *w = new Widget();
-    w->show();
-    this->close();
-}
-
 void Widget::on_btn_wid_load_clicked()
 {
     l = new load();
     l->show();
     l->getter();
+    this->close();
+}
+
+void Widget::on_btn_wid_start_2_clicked()
+{
+    np = new netpan();
+    np->show();
+    this->close();
+}
+
+void pan::on_back_clicked()
+{
+    Widget *w = new Widget();
+    w->show();
     this->close();
 }
 
@@ -43,3 +50,13 @@ void load::on_back_clicked()
     w->show();
     this->close();
 }
+
+void netpan::on_back_clicked()
+{
+    Widget *w = new Widget();
+    w->show();
+    this->close();
+}
+
+
+
