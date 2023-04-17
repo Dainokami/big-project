@@ -460,12 +460,14 @@ void pan::on_btn_lose_clicked()
     {
         m->stop();
         fupan += "G";
-        now_step++;
         if(now_player==black_player)
         {
-            black_time /= (now_step/2);
-            white_time /= (now_step/2);
-
+            if(now_step != 0)
+            {
+                black_time /= (now_step/2);
+                white_time /= (now_step/2);
+            }
+            now_step++;
             QString infom = "恭喜胜者："+ui->line_player_1->text()+"(执白)\n你们的对局是："+fupan+"\n总步数为："+QString::number(now_step)+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
             int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
             if(result == QMessageBox::Yes)
@@ -473,9 +475,10 @@ void pan::on_btn_lose_clicked()
         }
         else
         {
-            black_time /= ((now_step+1)/2);
+            black_time /= ((now_step+1)/2.0);
             if(now_step!=1)
-                white_time /= ((now_step-1)/2);
+                white_time /= ((now_step-1)/2.0);
+            now_step++;
             QString infom = "恭喜胜者："+ui->line_player_0->text()+"(执黑)\n你们的对局是："+fupan+"\n总步数为："+QString::number(now_step)+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
             int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
             if(result == QMessageBox::Yes)
