@@ -1,0 +1,12 @@
+debug/chatroom.o
+debug/load.o
+debug/main.o
+debug/netpan.o
+debug/pan.o
+debug/widget.o
+debug/qrc_image_music.o
+debug/moc_chatroom.o
+debug/moc_load.o
+debug/moc_netpan.o
+debug/moc_pan.o
+debug/moc_widget.o

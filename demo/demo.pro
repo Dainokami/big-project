@@ -10,6 +10,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    chatroom.cpp \
     load.cpp \
     main.cpp \
     netpan.cpp \
@@ -17,12 +18,14 @@ SOURCES += \
     widget.cpp
 
 HEADERS += \
+    chatroom.h \
     load.h \
     netpan.h \
     pan.h \
     widget.h
 
 FORMS += \
+    chatroom.ui \
     load.ui \
     netpan.ui \
     pan.ui \
