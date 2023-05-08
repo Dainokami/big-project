@@ -55,6 +55,11 @@ pan::~pan()
         delete m;
         m= nullptr;
     }
+    player->stop();
+    delete player;
+    delete audioOutput;
+    player = nullptr;
+    audioOutput = nullptr;
     delete ui;
 }
 

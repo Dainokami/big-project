@@ -14,6 +14,11 @@
 #include <QAudioOutput>
 #include <QFile>
 #include <QFileDialog>
+#include "networkdata.h"
+#include "networkserver.h"
+#include "networksocket.h"
+#include <QSet>
+
 
 namespace Ui {
 class netpan;
@@ -28,21 +33,34 @@ public:
     ~netpan();
 
     const int size=50;
-    const int x=155,y=155;
+    const int x=295,y=165;
+    // 服务端
+    NetworkServer* server;
+    // 客户端
+    NetworkSocket* socket;
+    // 最后一个客户端
+    QTcpSocket* lastOne;
+    QString IP;
+    int PORT;
+    // 客户端池，NetworkServer 有一个 QList 的，但这里我想用 set，所以又弄了一个
+    QSet<QTcpSocket*> clients;
+    QString username = "team4";
 
 private slots :
 
     void on_btn_startgame_clicked();//开始游戏
-
-    void on_btn_stop_clicked();//暂停游戏，如果已经暂停了就开始
-
     void on_btn_lose_clicked();//投降
-
     void get_btn_sign(int idx);//为了不给每个按钮写个函数，就通过传递按钮的坐标来起到对应的按钮反应
-
-    void on_btn_restart_clicked();//重开游戏
-
+    void on_btn_stop_clicked();//暂停游戏，如果已经暂停了就开始
+    void get_online_sign(int idx);
     void on_back_clicked();
+    void on_sendbtn_clicked();
+    void receieveData(QTcpSocket* client, NetworkData data);
+    void receieveDataFromServer(NetworkData data);
+    void reStart();
+    void reConnect();
+    void reSet();
+    void chose_color_and_name();
 
 private:
     Ui::netpan *ui;
@@ -63,7 +81,7 @@ private:
     void dfs(int x,int y,int flag);//深度搜索棋盘，是judge函数里面的一个小函数，具体见cpp。
     void save();//保存文件
 
-    QString fupan;//保存复盘信息,我们定义超时时在结尾加上“R”
+    QString fupan;//保存复盘信息
     double black_time=0;
     double white_time=0;
     int all_time=0;
@@ -79,6 +97,11 @@ private:
     int now_time=0;//倒计时的当前时长
     bool game_state = 0;//该变量为1则游戏开始，为0则不然
     int loc=-1;//落子位置，用于高亮当前子和记录对局,-1指游戏开始未有落子
+    bool mode = 0;
+    int mycolor = black_player;
+    int GGtimes = 0;
+    QString fightername = "fighter";
+
 
     enum Chess
     {
@@ -100,6 +123,10 @@ private:
         off,on
     }state;//既是游戏的状态也用于whiteflag和blackstage的状态
 
+    enum MODE
+    {
+        SERVER,SOCKET
+    }Mode;
 };
 
 

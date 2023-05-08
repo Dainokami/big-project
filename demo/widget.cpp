@@ -41,7 +41,7 @@ void pan::on_back_clicked()
 {
     Widget *w = new Widget();
     w->show();
-    this->close();
+    delete this;
 }
 
 void load::on_back_clicked()
@@ -49,13 +49,21 @@ void load::on_back_clicked()
     Widget *w = new Widget();
     w->show();
     this->close();
+
 }
 
 void netpan::on_back_clicked()
 {
+    if(mode == SOCKET)
+        this->socket->send(NetworkData(OPCODE::LEAVE_OP,username,""));
+    else if(mode == SERVER)
+    {
+        if(lastOne)
+            this->server->send(lastOne,NetworkData(OPCODE::LEAVE_OP,username,""));
+    }
     Widget *w = new Widget();
     w->show();
-    this->close();
+    delete this;
 }
 
 

@@ -19,8 +19,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>180</y>
+     <x>570</x>
+     <y>190</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -50,7 +50,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_3">
@@ -59,8 +59,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>230</y>
+     <x>420</x>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -90,7 +90,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_5">
@@ -99,8 +99,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>480</y>
+     <x>520</x>
+     <y>490</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -130,7 +130,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_7">
@@ -139,8 +139,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>180</y>
+     <x>620</x>
+     <y>190</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -170,7 +170,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_5">
@@ -179,8 +179,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>380</y>
+     <x>520</x>
+     <y>390</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -210,7 +210,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_6">
@@ -219,8 +219,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>280</y>
+     <x>570</x>
+     <y>290</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -250,7 +250,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_0">
@@ -259,8 +259,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>180</y>
+     <x>270</x>
+     <y>190</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -290,7 +290,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_8">
@@ -299,8 +299,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>530</y>
+     <x>670</x>
+     <y>540</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -330,7 +330,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_3">
@@ -339,8 +339,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>530</y>
+     <x>420</x>
+     <y>540</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -370,7 +370,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_2">
@@ -379,8 +379,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>180</y>
+     <x>370</x>
+     <y>190</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -410,7 +410,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_5">
@@ -419,8 +419,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>530</y>
+     <x>520</x>
+     <y>540</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -450,7 +450,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_lose">
@@ -491,8 +491,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>330</y>
+     <x>320</x>
+     <y>340</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -522,7 +522,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_2">
@@ -531,8 +531,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>480</y>
+     <x>370</x>
+     <y>490</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -562,7 +562,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_8">
@@ -571,8 +571,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>380</y>
+     <x>670</x>
+     <y>390</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -602,7 +602,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_6">
@@ -611,8 +611,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>430</y>
+     <x>570</x>
+     <y>440</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -642,7 +642,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_startgame">
@@ -664,8 +664,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>280</y>
+     <x>420</x>
+     <y>290</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -695,7 +695,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_5">
@@ -704,8 +704,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>430</y>
+     <x>520</x>
+     <y>440</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -735,7 +735,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_7">
@@ -744,8 +744,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>230</y>
+     <x>620</x>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -775,7 +775,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_4">
@@ -784,8 +784,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>430</y>
+     <x>470</x>
+     <y>440</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -815,7 +815,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_5">
@@ -824,8 +824,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>230</y>
+     <x>520</x>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -855,7 +855,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_1">
@@ -864,8 +864,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>230</y>
+     <x>320</x>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -895,7 +895,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_0">
@@ -904,8 +904,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>280</y>
+     <x>270</x>
+     <y>290</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -935,7 +935,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_1">
@@ -944,8 +944,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>130</y>
+     <x>320</x>
+     <y>140</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -975,7 +975,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_3">
@@ -984,8 +984,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>130</y>
+     <x>420</x>
+     <y>140</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1015,7 +1015,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_1">
@@ -1024,8 +1024,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>380</y>
+     <x>320</x>
+     <y>390</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1055,7 +1055,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_1">
@@ -1064,8 +1064,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>430</y>
+     <x>320</x>
+     <y>440</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1095,7 +1095,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_5">
@@ -1104,8 +1104,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>180</y>
+     <x>520</x>
+     <y>190</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1135,7 +1135,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_4">
@@ -1144,8 +1144,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>380</y>
+     <x>470</x>
+     <y>390</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1175,7 +1175,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_8">
@@ -1184,8 +1184,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>480</y>
+     <x>670</x>
+     <y>490</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1215,7 +1215,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_7">
@@ -1224,8 +1224,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>530</y>
+     <x>620</x>
+     <y>540</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1255,7 +1255,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_4">
@@ -1264,8 +1264,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>230</y>
+     <x>470</x>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1295,7 +1295,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_1">
@@ -1304,8 +1304,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>530</y>
+     <x>320</x>
+     <y>540</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1335,7 +1335,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLineEdit" name="txtl_pan_time">
@@ -1368,8 +1368,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>280</y>
+     <x>520</x>
+     <y>290</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1399,7 +1399,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -1427,8 +1427,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>230</y>
+     <x>270</x>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1458,7 +1458,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_2">
@@ -1467,8 +1467,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>230</y>
+     <x>370</x>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1498,7 +1498,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_0">
@@ -1507,8 +1507,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>380</y>
+     <x>270</x>
+     <y>390</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1538,7 +1538,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_8">
@@ -1547,8 +1547,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>230</y>
+     <x>670</x>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1578,7 +1578,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_6">
@@ -1587,8 +1587,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>330</y>
+     <x>570</x>
+     <y>340</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1618,7 +1618,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_white">
@@ -1667,8 +1667,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>480</y>
+     <x>420</x>
+     <y>490</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1698,7 +1698,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_6">
@@ -1707,8 +1707,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>380</y>
+     <x>570</x>
+     <y>390</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1738,20 +1738,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_restart">
-   <property name="geometry">
-    <rect>
-     <x>900</x>
-     <y>330</y>
-     <width>91</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>重新开始</string>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_2_6">
@@ -1760,8 +1747,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>230</y>
+     <x>570</x>
+     <y>240</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1791,7 +1778,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_2">
@@ -1800,8 +1787,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>130</y>
+     <x>370</x>
+     <y>140</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1831,7 +1818,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_1">
@@ -1840,8 +1827,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>180</y>
+     <x>320</x>
+     <y>190</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1871,7 +1858,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_5">
@@ -1880,8 +1867,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>330</y>
+     <x>520</x>
+     <y>340</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1911,7 +1898,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_4">
@@ -1920,8 +1907,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>280</y>
+     <x>470</x>
+     <y>290</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1951,7 +1938,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_7">
@@ -1960,8 +1947,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>430</y>
+     <x>620</x>
+     <y>440</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -1991,7 +1978,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_7">
@@ -2000,8 +1987,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>330</y>
+     <x>620</x>
+     <y>340</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2031,7 +2018,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_0">
@@ -2040,8 +2027,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>330</y>
+     <x>270</x>
+     <y>340</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2071,7 +2058,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_0">
@@ -2080,8 +2067,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>530</y>
+     <x>270</x>
+     <y>540</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2111,7 +2098,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_2">
@@ -2120,8 +2107,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>280</y>
+     <x>370</x>
+     <y>290</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2151,7 +2138,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_0">
@@ -2160,8 +2147,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>130</y>
+     <x>270</x>
+     <y>140</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2191,7 +2178,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_8">
@@ -2200,8 +2187,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>280</y>
+     <x>670</x>
+     <y>290</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2231,7 +2218,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_7">
@@ -2240,8 +2227,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>130</y>
+     <x>620</x>
+     <y>140</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2271,7 +2258,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -2299,8 +2286,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>480</y>
+     <x>320</x>
+     <y>490</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2330,7 +2317,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_black">
@@ -2379,8 +2366,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>130</y>
+     <x>520</x>
+     <y>140</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2410,7 +2397,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_0">
@@ -2419,8 +2406,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>430</y>
+     <x>270</x>
+     <y>440</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2450,7 +2437,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_4">
@@ -2459,8 +2446,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>130</y>
+     <x>470</x>
+     <y>140</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2490,7 +2477,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_7">
@@ -2499,8 +2486,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>480</y>
+     <x>620</x>
+     <y>490</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2530,7 +2517,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_2">
@@ -2539,8 +2526,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>330</y>
+     <x>370</x>
+     <y>340</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2570,7 +2557,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_3">
@@ -2579,8 +2566,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>430</y>
+     <x>420</x>
+     <y>440</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2610,7 +2597,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_7">
@@ -2619,8 +2606,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>380</y>
+     <x>620</x>
+     <y>390</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2650,7 +2637,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_0">
@@ -2659,8 +2646,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>480</y>
+     <x>270</x>
+     <y>490</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2690,7 +2677,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_8">
@@ -2699,8 +2686,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>430</y>
+     <x>670</x>
+     <y>440</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2730,7 +2717,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_4">
@@ -2739,8 +2726,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>330</y>
+     <x>470</x>
+     <y>340</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2770,7 +2757,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_3">
@@ -2779,8 +2766,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>330</y>
+     <x>420</x>
+     <y>340</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2810,7 +2797,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_6">
@@ -2819,8 +2806,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>530</y>
+     <x>570</x>
+     <y>540</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2850,7 +2837,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_6_2">
@@ -2859,8 +2846,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>430</y>
+     <x>370</x>
+     <y>440</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2890,7 +2877,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_6">
@@ -2899,8 +2886,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>480</y>
+     <x>570</x>
+     <y>490</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -2930,7 +2917,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_stop">
@@ -2970,8 +2957,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>280</y>
+     <x>620</x>
+     <y>290</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3001,7 +2988,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_2">
@@ -3010,8 +2997,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>530</y>
+     <x>370</x>
+     <y>540</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3041,7 +3028,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_8">
@@ -3050,8 +3037,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>180</y>
+     <x>670</x>
+     <y>190</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3081,7 +3068,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_2">
@@ -3090,8 +3077,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>380</y>
+     <x>370</x>
+     <y>390</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3121,7 +3108,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLineEdit" name="line_player_1">
@@ -3149,8 +3136,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>130</y>
+     <x>670</x>
+     <y>140</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3180,7 +3167,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_7_4">
@@ -3189,8 +3176,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>480</y>
+     <x>470</x>
+     <y>490</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3220,7 +3207,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_4_8">
@@ -3229,8 +3216,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>330</y>
+     <x>670</x>
+     <y>340</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3260,7 +3247,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_0_6">
@@ -3269,8 +3256,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>130</y>
+     <x>570</x>
+     <y>140</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3300,7 +3287,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_3">
@@ -3309,8 +3296,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>180</y>
+     <x>420</x>
+     <y>190</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3340,7 +3327,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_3_1">
@@ -3349,8 +3336,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>280</y>
+     <x>320</x>
+     <y>290</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3380,7 +3367,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_5_3">
@@ -3389,8 +3376,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>380</y>
+     <x>420</x>
+     <y>390</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3420,7 +3407,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_1_4">
@@ -3429,8 +3416,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>180</y>
+     <x>470</x>
+     <y>190</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3460,7 +3447,7 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_8_4">
@@ -3469,8 +3456,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>530</y>
+     <x>470</x>
+     <y>540</y>
      <width>50</width>
      <height>50</height>
     </rect>
@@ -3500,8 +3487,205 @@
     <string/>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
+  </widget>
+  <widget class="QPushButton" name="sendbtn">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>550</y>
+     <width>61</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发送</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Chatline">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>560</y>
+     <width>171</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="Chatplain">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>140</y>
+     <width>231</width>
+     <height>401</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="PORTEdit">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="reSetButton">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>0</y>
+     <width>81</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>重设</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>69</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>IP：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>10</y>
+     <width>69</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>PORT：</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="reStartButton">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>60</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>接受邀请</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="connectLabel">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>60</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Connection fail</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="reConnectButton">
+   <property name="geometry">
+    <rect>
+     <x>179</x>
+     <y>60</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发送邀请</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="IPEdit">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>10</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>600</y>
+     <width>611</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>请选择你的用户名和颜色：</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="choseb">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>黑</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="chosew">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>白</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
