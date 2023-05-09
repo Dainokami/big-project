@@ -86,7 +86,7 @@ netpan::~netpan()
     delete audioOutput;
     player = nullptr;
     audioOutput = nullptr;
-
+    this->socket->bye();
 
     delete ui;
 }
@@ -457,12 +457,14 @@ void netpan::get_btn_sign(int idx)
         //传给对手
         char tem = 'A'+i_;
         QString temstr = tem + QString::number(j_+1);
+        qint64 timestamp = QDateTime::currentMSecsSinceEpoch();
+
         if(mode == SOCKET)
-            this->socket->send(NetworkData(OPCODE::MOVE_OP,temstr,""));
+            this->socket->send(NetworkData(OPCODE::MOVE_OP,temstr,QString::number(timestamp)));
         else if(mode == SERVER)
         {
             if(lastOne)
-                this->server->send(lastOne,NetworkData(OPCODE::MOVE_OP,temstr,""));
+                this->server->send(lastOne,NetworkData(OPCODE::MOVE_OP,temstr,QString::number(timestamp)));
         }
 
         if(judge())
@@ -474,7 +476,7 @@ void netpan::get_btn_sign(int idx)
             else
                 white_time += game_max_time - now_time;
             all_time += game_max_time - now_time;
-            now_time = game_max_time;
+            now_time = game_max_time ;
 
             //绘制棋子
             if(loc == -1)
@@ -510,7 +512,7 @@ void netpan::get_btn_sign(int idx)
     }
 }
 
-void netpan::get_online_sign(int idx)
+void netpan::get_online_sign(int idx,qint64 timestamp)
 {
     qDebug()<<idx;
     int i_=idx/100;
@@ -534,7 +536,7 @@ void netpan::get_online_sign(int idx)
             else
                 white_time += game_max_time - now_time;
             all_time += game_max_time - now_time;
-            now_time = game_max_time;
+            now_time = game_max_time- 2*(QDateTime::currentMSecsSinceEpoch() - timestamp)/1000;
 
 
             if(loc == -1)
@@ -687,7 +689,7 @@ void netpan::receieveData(QTcpSocket* client, NetworkData data)
         QByteArray ba = data.data1.left(1).toLatin1(); // must
         ch=ba.data();
         int idx = (*ch-'A') * 100 + data.data1.mid(1).toInt()-1;
-        get_online_sign(idx);
+        get_online_sign(idx,data.data2.toLongLong());
 
     }
     else if(data.op == OPCODE::READY_OP&&game_state == off)
@@ -758,6 +760,29 @@ void netpan::receieveData(QTcpSocket* client, NetworkData data)
     }
     else if(data.op == OPCODE::GIVEUP_OP)
     {
+
+        fupan += "G";
+        if(now_player==black_player)
+        {
+            if(now_step != 0)
+            {
+                black_time /= (now_step/2);
+                white_time /= (now_step/2);
+            }
+            now_step++;
+        }
+        else
+        {
+            black_time /= ((now_step+1)/2.0);
+            if(now_step!=1)
+                white_time /= ((now_step-1)/2.0);
+            now_step++;
+
+        }
+        QString infom = "对方输辣\n恭喜胜者："+username+"\n我们的对局是："+fupan+"\n总步数为："+QString::number(now_step)+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
+        int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+        if(result == QMessageBox::Yes)
+            save();
         if(lastOne)
             this->server->send(lastOne,NetworkData(OPCODE::GIVEUP_END_OP,username,""));
     }
@@ -768,9 +793,6 @@ void netpan::receieveData(QTcpSocket* client, NetworkData data)
             GGtimes++;
             if(lastOne)
                 this->server->send(lastOne,NetworkData(OPCODE::GIVEUP_END_OP,username,""));
-        }
-        else
-        {
             clear_pan();
             ui->txtl_pan_time->setEnabled(true);
             ui->line_player_0->setEnabled(true);
@@ -809,10 +831,7 @@ void netpan::receieveData(QTcpSocket* client, NetworkData data)
             m->stop();
         }
     }
-    else if(data.op == OPCODE::LEAVE_OP)
-    {
-        on_back_clicked();
-    }
+    else if(data.op == OPCODE::LEAVE_OP){}
 }
 
 void netpan::receieveDataFromServer(NetworkData data)
@@ -830,7 +849,7 @@ void netpan::receieveDataFromServer(NetworkData data)
         QByteArray ba = data.data1.left(1).toLatin1(); // must
         ch=ba.data();
         int idx = (*ch-'A') * 100 + data.data1.mid(1).toInt()-1;
-        get_online_sign(idx);
+        get_online_sign(idx,data.data2.toLongLong());
     }
     else if(data.op == OPCODE::READY_OP)
     {
@@ -873,6 +892,31 @@ void netpan::receieveDataFromServer(NetworkData data)
     }
     else if(data.op == OPCODE::GIVEUP_OP)
     {
+
+
+        fupan += "G";
+        if(now_player==black_player)
+        {
+            if(now_step != 0)
+            {
+                black_time /= (now_step/2);
+                white_time /= (now_step/2);
+            }
+            now_step++;
+        }
+        else
+        {
+            black_time /= ((now_step+1)/2.0);
+            if(now_step!=1)
+                white_time /= ((now_step-1)/2.0);
+            now_step++;
+
+        }
+        QString infom = "对方输辣\n恭喜胜者："+username+"\n我们的对局是："+fupan+"\n总步数为："+QString::number(now_step)+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
+        int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+        if(result == QMessageBox::Yes)
+            save();
+
         this->socket->send(NetworkData(OPCODE::GIVEUP_END_OP,username,""));
     }
     else if(data.op == OPCODE::GIVEUP_END_OP)
@@ -881,9 +925,6 @@ void netpan::receieveDataFromServer(NetworkData data)
         {
             GGtimes++;
             this->socket->send(NetworkData(OPCODE::GIVEUP_END_OP,username,""));
-        }
-        else
-        {
             clear_pan();
             ui->txtl_pan_time->setEnabled(true);
             ui->line_player_0->setEnabled(true);
@@ -923,13 +964,16 @@ void netpan::receieveDataFromServer(NetworkData data)
     }
     else if(data.op == OPCODE::LEAVE_OP)
     {
-        on_back_clicked();
+        this->socket->bye();
     }
 
 }
 
 void netpan::reStart()
 {
+    if(mode == SOCKET)
+        this->socket->bye();
+
     mode = SERVER;
     qDebug()<<"restart the server.";
     //this->ui->lastOneLabel->setText("LastOne: ");
@@ -946,6 +990,12 @@ void netpan::reStart()
 
 void netpan::reConnect()
 {
+    if(mode == SERVER)
+    {
+        disconnect(this->server,&NetworkServer::receive,this,&netpan::receieveData);
+        clients.clear();
+        delete this->server;
+    }
     mode = SOCKET;
     qDebug()<<"client reconnect to the server.";
     this->ui->connectLabel->setText("connection fail");

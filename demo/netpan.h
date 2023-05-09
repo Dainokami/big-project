@@ -18,7 +18,7 @@
 #include "networkserver.h"
 #include "networksocket.h"
 #include <QSet>
-
+#include <QDateTime>
 
 namespace Ui {
 class netpan;
@@ -52,7 +52,7 @@ private slots :
     void on_btn_lose_clicked();//投降
     void get_btn_sign(int idx);//为了不给每个按钮写个函数，就通过传递按钮的坐标来起到对应的按钮反应
     void on_btn_stop_clicked();//暂停游戏，如果已经暂停了就开始
-    void get_online_sign(int idx);
+    void get_online_sign(int idx,qint64 timestamp);
     void on_back_clicked();
     void on_sendbtn_clicked();
     void receieveData(QTcpSocket* client, NetworkData data);

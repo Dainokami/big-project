@@ -54,13 +54,16 @@ void load::check()
             }
             else
             {
+                qDebug()<<"yes";
                 play_the_Go(now_btn);
                 load_loc = ptr;
                 now_player*=-1;
             }
         }
         else
-        {clear();break;}
+        {
+            break;
+        }
     }
 
     load::update();
