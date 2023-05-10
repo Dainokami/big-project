@@ -1,0 +1,55 @@
+(2023-05-10 20:30:47 Wed) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64)
+ 
+(2023-05-10 20:30:47 Wed) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-05-10 20:31:25 Wed) 
+Debug: File:() Line:(0) 
+trying connect
+ 
+(2023-05-10 20:31:25 Wed) 
+Debug: File:() Line:(0) 
+"1683721885869qt端连接服务器成功\n"
+ 
+(2023-05-10 20:31:32 Wed) 
+Debug: File:() Line:(0) 
+"1  send to  fighter  READY_OP  "
+ 
+(2023-05-10 20:31:35 Wed) 
+Debug: File:() Line:(0) 
+Client:  200000   "NOGO端"   "" 
+
+ 
+(2023-05-10 20:31:35 Wed) 
+Debug: File:() Line:(0) 
+"1  get  fighter  READY_OP  NOGO端  "
+ 
+(2023-05-10 20:31:39 Wed) 
+Debug: File:() Line:(0) 
+"1  send to  NOGO端  MOVE_OP  A7"
+ 
+(2023-05-10 20:31:45 Wed) 
+Debug: File:() Line:(0) 
+Client:  200003   "NOGO端"   "" 
+
+ 
+(2023-05-10 20:31:45 Wed) 
+Debug: File:() Line:(0) 
+"2  get  NOGO端  GIVEUP_OP  NOGO端  "
+ 
+(2023-05-10 20:31:50 Wed) 
+Debug: File:() Line:(0) 
+"3  send to  NOGO端  GIVEUP_END_OP  "
+ 
+(2023-05-10 20:31:50 Wed) 
+Debug: File:() Line:(0) 
+Client:  200006   "NOGO端"   "" 
+
+ 
+(2023-05-10 20:31:50 Wed) 
+Debug: File:() Line:(0) 
+"3  get  NOGO端  GIVEUP_END_OP  NOGO端  "
+ 

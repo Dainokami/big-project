@@ -30,7 +30,7 @@ netpan::netpan(QWidget *parent) :
     // 创建一个客户端
     this->socket = new NetworkSocket(new QTcpSocket(),this);
 
-    connect(this->socket->base(),&QTcpSocket::connected,this,[&](){this->ui->connectLabel->setText("connection succeed");});
+    connect(this->socket->base(),&QTcpSocket::connected,this,[&](){this->ui->connectLabel->setText("connection succeed");netlog = QString::number(QDateTime::currentMSecsSinceEpoch()) + username + "连接服务器成功\n";qDebug()<<netlog;});
     connect(this->socket,&NetworkSocket::receive,this,&netpan::receieveDataFromServer);
     connect(this->server,&NetworkServer::receive,this,&netpan::receieveData);
     connect(this->ui->reSetButton,&QPushButton::clicked,this,&netpan::reSet);
@@ -63,7 +63,7 @@ netpan::netpan(QWidget *parent) :
     player = new QMediaPlayer;
     audioOutput = new QAudioOutput;
     player->setAudioOutput(audioOutput);
-    connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
+    connect(player, SIGNAL(QMediaPlayer::positionChanged(qint64)), this, SLOT(QMediaPlayer::positionChanged(qint64)));
     player->setSource(QUrl::fromLocalFile("E:\\Qt_project\\big_project\\demo\\image\\bgm.mp3"));
     audioOutput->setVolume(50);
     player->setLoops(INFINITY);
@@ -86,7 +86,20 @@ netpan::~netpan()
     delete audioOutput;
     player = nullptr;
     audioOutput = nullptr;
-    this->socket->bye();
+
+    netlog = QString::number(now_step+1) + "  send to  " +fightername + "  LEAVE_OP  ";
+    qDebug()<<netlog;
+
+    if(mode == SOCKET)
+        this->socket->send(NetworkData(OPCODE::LEAVE_OP,username,""));
+    else if(mode == SERVER)
+    {
+        if(lastOne)
+            this->server->send(lastOne,NetworkData(OPCODE::LEAVE_OP,username,""));
+    }
+
+
+        this->socket->bye();
 
     delete ui;
 }
@@ -106,6 +119,7 @@ void netpan::paintEvent(QPaintEvent *)
           paint->drawLine(x+size*i,y,x+size*i,y+size*(length-1));
         }
       //ui->setupUi()
+     paint->end();
 }
 
 void netpan::set_time(int seted_time)
@@ -156,6 +170,9 @@ void netpan::OnTimerCountdown()
                 }
 
                 //告知对方超时
+                netlog = QString::number(now_step+1) + "  send to  " +fightername + "  TIMEOUT_END_OP  ";
+                qDebug()<<netlog;
+
                 if(mode == SOCKET)
                     this->socket->send(NetworkData(OPCODE::TIMEOUT_END_OP,username,""));
                 else if(mode == SERVER)
@@ -163,7 +180,7 @@ void netpan::OnTimerCountdown()
                     if(lastOne)
                         this->server->send(lastOne,NetworkData(OPCODE::TIMEOUT_END_OP,username,""));
                 }
-
+                GGtimes++;
 
                 QString infom = "哈哈"+fightername+"超时了捏\n我赢辣："+"\n我们的对局是："+fupan+"\n总步数为："+QString::number(now_step)+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
                 int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
@@ -171,38 +188,12 @@ void netpan::OnTimerCountdown()
                 save();
                 clear_pan();
             }
-            else
-            {
-                if(mycolor == black_player)
-                {
-                    black_time += game_max_time;
-                    all_time += game_max_time;
-                    black_time /= (now_step/2);
-                    white_time /= (now_step/2);
-                }
-                else
-                {
-                    white_time += game_max_time;
-                    all_time += game_max_time;
-                    black_time /= ((now_step+1)/2);
-                    if(now_step!=1)
-                        white_time /= ((now_step-1)/2);
-                }
-
-                QString infom = "NOOOOO我超时了\n恭喜胜者："+fightername+"(执黑)\n我们的对局是："+fupan+"\n总步数为："+QString::number(now_step)+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
-                int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-                if(result == QMessageBox::Yes)
-                save();
-            }
-
 
             ui->txtl_pan_time->setEnabled(true);
             ui->line_player_0->setEnabled(true);
             ui->line_player_1->setEnabled(true);
             game_state = off;
             m->stop();
-
-
         }
     }
 }
@@ -277,12 +268,7 @@ int netpan::judge()//函数内部有分析
                 black_flag = on;
         }//检查一遍子棋盘，康康有没有棋子没气了
 
-    for(int i=0;i<length;i++)
-        qDebug()<<Qi[i][0]<<Qi[i][1]<<Qi[i][2]<<Qi[i][3]<<Qi[i][4]<<Qi[i][5]<<Qi[i][6]<<Qi[i][7]<<Qi[i][8]<<Qi[i][9]<<Qi[i][10]<<Qi[i][11]<<Qi[i][12];
-;
-    for(int i=0;i<length;i++)
-        qDebug()<<copy_Qi[now_step][i][0]<<copy_Qi[now_step][i][1]<<copy_Qi[now_step][i][2]<<copy_Qi[now_step][i][3]<<copy_Qi[now_step][i][4]<<copy_Qi[now_step][i][5]<<copy_Qi[now_step][i][6]<<copy_Qi[now_step][i][7]<<copy_Qi[now_step][i][8];
-    if(black_flag== on && white_flag== on)
+     if(black_flag== on && white_flag== on)
     {
         if(now_player== black_player)//黑白棋都没气且黑棋下了最后一步棋，判定黑棋无路可走而输
         {
@@ -381,6 +367,9 @@ void netpan::clear_pan()
     white_time=0;
     all_time=0;
     GGtimes=0;
+    netlog = "";
+    isWinner = 0;
+    isbeginner = 0;
 
     for(int i=0;i<length;i++)
         for(int j=0;j<length;j++)
@@ -412,9 +401,12 @@ void netpan::clear_pan()
 
 void netpan::on_btn_startgame_clicked()
 {
-     now_player = black_player;
+    now_player = black_player;
+    isbeginner = 1;
     if(mode == SOCKET && game_state == off)
     {
+        netlog = QString::number(now_step+1) + "  send to  " +fightername + "  READY_OP  ";
+        qDebug()<<netlog;
         if(mycolor == black_player)
             this->socket->send(NetworkData(OPCODE::READY_OP,username,"b"));
         else
@@ -441,7 +433,6 @@ void netpan::on_btn_startgame_clicked()
 
 void netpan::get_btn_sign(int idx)
 {
-    qDebug()<<idx;
     int i_=idx/100;
     int j_=idx%100;
     if(Qi[i_][j_] == empty_unchecked && game_state == on && now_player==mycolor)
@@ -457,15 +448,16 @@ void netpan::get_btn_sign(int idx)
         //传给对手
         char tem = 'A'+i_;
         QString temstr = tem + QString::number(j_+1);
-        qint64 timestamp = QDateTime::currentMSecsSinceEpoch();
 
         if(mode == SOCKET)
-            this->socket->send(NetworkData(OPCODE::MOVE_OP,temstr,QString::number(timestamp)));
+            this->socket->send(NetworkData(OPCODE::MOVE_OP,temstr,""));
         else if(mode == SERVER)
         {
             if(lastOne)
-                this->server->send(lastOne,NetworkData(OPCODE::MOVE_OP,temstr,QString::number(timestamp)));
+                this->server->send(lastOne,NetworkData(OPCODE::MOVE_OP,temstr,""));
         }
+        netlog = QString::number(now_step+1) + "  send to  " +fightername + "  MOVE_OP  "+temstr;
+        qDebug()<<netlog;
 
         if(judge())
         {
@@ -486,7 +478,7 @@ void netpan::get_btn_sign(int idx)
             QPushButton *now_btn = this->findChild<QPushButton*>(now_btn_str);
             QPushButton *last_btn = this->findChild<QPushButton*>(last_btn_str);
             play_the_Go(now_btn,last_btn);
-
+            ui->btn_lose->setEnabled(false);
 
 
             //制作复盘
@@ -512,9 +504,8 @@ void netpan::get_btn_sign(int idx)
     }
 }
 
-void netpan::get_online_sign(int idx,qint64 timestamp)
+void netpan::get_online_sign(int idx)
 {
-    qDebug()<<idx;
     int i_=idx/100;
     int j_=idx%100;
     if(Qi[i_][j_] == empty_unchecked && game_state == on)
@@ -536,7 +527,7 @@ void netpan::get_online_sign(int idx,qint64 timestamp)
             else
                 white_time += game_max_time - now_time;
             all_time += game_max_time - now_time;
-            now_time = game_max_time- 2*(QDateTime::currentMSecsSinceEpoch() - timestamp)/1000;
+            now_time = game_max_time;
 
 
             if(loc == -1)
@@ -545,8 +536,8 @@ void netpan::get_online_sign(int idx,qint64 timestamp)
             QString last_btn_str = "btn_"+QString::number(loc/100)+"_"+QString::number(loc%100);
             QPushButton *now_btn = this->findChild<QPushButton*>(now_btn_str);
             QPushButton *last_btn = this->findChild<QPushButton*>(last_btn_str);
-
             play_the_Go(now_btn,last_btn);
+            ui->btn_lose->setEnabled(true);
 
             char tem = 'A'+i_;
             fupan = fupan + tem + QString::number(j_+1) + ' ';
@@ -567,6 +558,9 @@ void netpan::get_online_sign(int idx,qint64 timestamp)
             Qi[i_][j_]= empty_unchecked;
             white_flag=off;
             black_flag=off;
+
+            netlog = QString::number(now_step+1) + "  send to  " +fightername + "  SUICIDE_OP  ";
+            qDebug()<<netlog;
 
             if(mode == SOCKET)
                 this->socket->send(NetworkData(OPCODE::SUICIDE_END_OP,username,""));
@@ -609,6 +603,9 @@ void netpan::on_btn_lose_clicked()
         if(result == QMessageBox::Yes)
             save();
 
+        netlog = QString::number(now_step+1) + "  send to  " +fightername + "  GIVEUP_OP  ";
+        qDebug()<<netlog;
+
         if(mode == SOCKET)
             this->socket->send(NetworkData(OPCODE::GIVEUP_OP,username,""));
         else if(mode == SERVER)
@@ -618,10 +615,6 @@ void netpan::on_btn_lose_clicked()
         }
 
         game_state = off;
-        clear_pan();
-        ui->txtl_pan_time->setEnabled(true);
-        ui->line_player_0->setEnabled(true);
-        ui->line_player_1->setEnabled(true);
         m->stop();
     }
 }
@@ -652,6 +645,9 @@ void netpan::save()
 
 void netpan::on_sendbtn_clicked()
 {
+    netlog = QString::number(now_step+1) + "  send to  " +fightername + "  CHAT_OP  ";
+    qDebug()<<netlog;
+
     if(mode == SOCKET)
         this->socket->send(NetworkData(OPCODE::CHAT_OP,this->ui->Chatline->text(),"send by client"));
     else if(mode == SERVER)
@@ -663,223 +659,152 @@ void netpan::on_sendbtn_clicked()
     QString text = this->ui->Chatline->text();
     QString data = username + "\t" + text;
     this->ui->Chatline->setText("");
-    qDebug()<<data;
     this->ui->Chatplain->appendPlainText(data+"\n");
 }
 
 void netpan::receieveData(QTcpSocket* client, NetworkData data)
 {
-    qDebug()<<"Server get a data: "<<client<<" "<<data.encode();
     lastOne=client;
     // 获得地址的字符串表示，调试用
     QString ptrStr = QString("0x%1").arg((quintptr)client,
                         QT_POINTER_SIZE, 16, QChar('0'));
-    qDebug()<<ptrStr;
     //this->ui->lastOneLabel->setText("LastOne: "+ptrStr);
     this->clients.insert(client);
     if(data.op == OPCODE::CHAT_OP)
     {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  CHAT_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
         QString temdata = fightername + "\t" + data.data1;
-        qDebug()<<temdata;
         this->ui->Chatplain->appendPlainText(temdata+"\n");
     }
     else if(data.op == OPCODE::MOVE_OP && game_state == on && now_player!=mycolor)
     {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  MOVE_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
         char*  ch;
         QByteArray ba = data.data1.left(1).toLatin1(); // must
         ch=ba.data();
         int idx = (*ch-'A') * 100 + data.data1.mid(1).toInt()-1;
-        get_online_sign(idx,data.data2.toLongLong());
+        get_online_sign(idx);
 
     }
     else if(data.op == OPCODE::READY_OP&&game_state == off)
     {
-        QString temstr = "";
-        if(data.data2 == 'w')
-            temstr = data.data1  + "(执白)向你发送对局邀请";
-        else
-            temstr = data.data1  + "(执黑)向你发送对局邀请";
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  READY_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
+        fightername = data.data1;
 
-
-        int result = QMessageBox::information(NULL, temstr, "是否接受", QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-        if(result == QMessageBox::Yes)
+        if(isbeginner)
         {
-            fightername = data.data1;
-            if(lastOne)
-                this->server->send(lastOne,NetworkData(OPCODE::READY_OP,username,""));
 
-
-            if(data.data2 == 'w')
-            {
-                mycolor = black_player;                
-                ui->line_player_0->setText(username);
+            if(mycolor == black_player)
                 ui->line_player_1->setText(fightername);
-                ui->choseb->click();
-            }
             else
-            {
-                mycolor = white_player;
-                ui->line_player_1->setText(username);
                 ui->line_player_0->setText(fightername);
-                ui->chosew->click();
-            }
+
             game_state = on;
             on_btn_startgame_clicked();
             ui->choseb->setEnabled(false);
             ui->chosew->setEnabled(false);
         }
-        else if(result == QMessageBox::No)
+        else
         {
-            if(lastOne)
-                this->server->send(lastOne,NetworkData(OPCODE::REJECT_OP,username,""));
+            QString temstr = "";
+            if(data.data2 == 'w')
+                temstr = data.data1  + "(执白)向你发送对局邀请";
+            else
+                temstr = data.data1  + "(执黑)向你发送对局邀请";
+            fightername = data.data1;
+
+            int result = QMessageBox::information(NULL, temstr, "是否接受", QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+            if(result == QMessageBox::Yes)
+            {
+
+
+                netlog = QString::number(now_step+1) + "  send to  " +fightername + "  READY_OP  ";
+                qDebug()<<netlog;
+
+                if(lastOne)
+                    this->server->send(lastOne,NetworkData(OPCODE::READY_OP,username,""));
+
+
+                if(data.data2 == 'w')
+                {
+                    mycolor = black_player;
+                    ui->line_player_0->setText(username);
+                    ui->line_player_1->setText(fightername);
+                    ui->choseb->click();
+                }
+                else
+                {
+                    mycolor = white_player;
+                    ui->line_player_1->setText(username);
+                    ui->line_player_0->setText(fightername);
+                    ui->chosew->click();
+                }
+                game_state = on;
+                on_btn_startgame_clicked();
+                ui->choseb->setEnabled(false);
+                ui->chosew->setEnabled(false);
+            }
+            else if(result == QMessageBox::No)
+            {
+                netlog = QString::number(now_step+1) + "  send to  " +fightername + "  REJECT_OP  ";
+                qDebug()<<netlog;
+
+                if(lastOne)
+                    this->server->send(lastOne,NetworkData(OPCODE::REJECT_OP,username,""));
+            }
         }
+    }
+    else if(data.op == OPCODE::REJECT_OP)
+    {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  REJECT_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
     }
     else if(data.op == OPCODE::TIMEOUT_END_OP)
     {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  TIMEOUT_END_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
         if(now_time<=1 && now_player == mycolor && GGtimes == 0)
         {
+            netlog = QString::number(now_step+1) + "  send to  " +fightername + "  TIMEOUT_END_OP  ";
+            qDebug()<<netlog;
             if(lastOne)
                 this->server->send(lastOne,NetworkData(OPCODE::TIMEOUT_END_OP,username,"这仇我记下了"));
-            clear_pan();
-            ui->txtl_pan_time->setEnabled(true);
-            ui->line_player_0->setEnabled(true);
-            ui->line_player_1->setEnabled(true);
-            game_state = off;
-            m->stop();
-        }
-        else if(now_time>1 && now_player == mycolor && GGtimes == 0){m->stop();}
-        else if(GGtimes>0)
-        {
-            clear_pan();
-            ui->txtl_pan_time->setEnabled(true);
-            ui->line_player_0->setEnabled(true);
-            ui->line_player_1->setEnabled(true);
-            game_state = off;
-            m->stop();
-        }
-    }
-    else if(data.op == OPCODE::GIVEUP_OP)
-    {
 
-        fupan += "G";
-        if(now_player==black_player)
-        {
-            if(now_step != 0)
+
+            m->stop();
+            if(mycolor == black_player)
             {
+                black_time += game_max_time;
+                all_time += game_max_time;
                 black_time /= (now_step/2);
                 white_time /= (now_step/2);
             }
-            now_step++;
-        }
-        else
-        {
-            black_time /= ((now_step+1)/2.0);
-            if(now_step!=1)
-                white_time /= ((now_step-1)/2.0);
-            now_step++;
+            else
+            {
+                white_time += game_max_time;
+                all_time += game_max_time;
+                black_time /= ((now_step+1)/2);
+                if(now_step!=1)
+                    white_time /= ((now_step-1)/2);
+            }
 
-        }
-        QString infom = "对方输辣\n恭喜胜者："+username+"\n我们的对局是："+fupan+"\n总步数为："+QString::number(now_step)+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
-        int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-        if(result == QMessageBox::Yes)
+            QString infom = "NOOOOO我超时了\n恭喜胜者："+fightername+"(执黑)\n我们的对局是："+fupan+"\n总步数为："+QString::number(now_step)+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
+            int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+            if(result == QMessageBox::Yes)
             save();
-        if(lastOne)
-            this->server->send(lastOne,NetworkData(OPCODE::GIVEUP_END_OP,username,""));
-    }
-    else if(data.op == OPCODE::GIVEUP_END_OP)
-    {
-        if(GGtimes==0)
-        {
-            GGtimes++;
-            if(lastOne)
-                this->server->send(lastOne,NetworkData(OPCODE::GIVEUP_END_OP,username,""));
             clear_pan();
             ui->txtl_pan_time->setEnabled(true);
             ui->line_player_0->setEnabled(true);
             ui->line_player_1->setEnabled(true);
             game_state = off;
-            m->stop();
-        }
-    }
-    else if(data.op == OPCODE::SUICIDE_END_OP)
-    {
-        if(GGtimes == 0)
-        {
-           m->stop();
-           QString temstr = data.data1  + "认为你落子非法输了";
-           int result = QMessageBox::information(NULL, temstr, "是否接受", QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-           if(result == QMessageBox::Yes)
-           {
-               if(lastOne)
-                   this->server->send(lastOne,NetworkData(OPCODE::SUICIDE_END_OP,username,""));
-               clear_pan();
-               ui->txtl_pan_time->setEnabled(true);
-               ui->line_player_0->setEnabled(true);
-               ui->line_player_1->setEnabled(true);
-               game_state = off;
-               m->stop();
-           }
-           else if(result == QMessageBox::No){}
-        }
-        else
-        {
-            clear_pan();
-            ui->txtl_pan_time->setEnabled(true);
-            ui->line_player_0->setEnabled(true);
-            ui->line_player_1->setEnabled(true);
-            game_state = off;
-            m->stop();
-        }
-    }
-    else if(data.op == OPCODE::LEAVE_OP){}
-}
 
-void netpan::receieveDataFromServer(NetworkData data)
-{
-    qDebug()<<"Client get a data: "<<data.encode();
-    if(data.op == OPCODE::CHAT_OP)
-    {
-        QString temdata = fightername + "\t" + data.data1;
-        qDebug()<<temdata;
-        this->ui->Chatplain->appendPlainText(temdata+"\n");
-    }
-    else if(data.op == OPCODE::MOVE_OP && game_state == on && now_player!=mycolor)
-    {
-        char*  ch;
-        QByteArray ba = data.data1.left(1).toLatin1(); // must
-        ch=ba.data();
-        int idx = (*ch-'A') * 100 + data.data1.mid(1).toInt()-1;
-        get_online_sign(idx,data.data2.toLongLong());
-    }
-    else if(data.op == OPCODE::READY_OP)
-    {
-        fightername = data.data1;
 
-        if(mycolor == black_player)
-            ui->line_player_1->setText(fightername);
-        else
-            ui->line_player_0->setText(fightername);
-
-        game_state = on;
-        on_btn_startgame_clicked();
-        ui->choseb->setEnabled(false);
-        ui->chosew->setEnabled(false);
-    }
-    else if(data.op == OPCODE::REJECT_OP){}
-    else if(data.op == OPCODE::TIMEOUT_END_OP)
-    {
-        if(now_time<=1 && now_player == mycolor && GGtimes == 0)
-        {
-            this->socket->send(NetworkData(OPCODE::TIMEOUT_END_OP,username,"这仇我记下了"));
-            clear_pan();
-            ui->txtl_pan_time->setEnabled(true);
-            ui->line_player_0->setEnabled(true);
-            ui->line_player_1->setEnabled(true);
-            game_state = off;
-            m->stop();
         }
         else if(now_time>1 && now_player == mycolor && GGtimes == 0){m->stop();}
-        else if(GGtimes >0)
+        else if(GGtimes>0)
         {
             clear_pan();
             ui->txtl_pan_time->setEnabled(true);
@@ -892,9 +817,10 @@ void netpan::receieveDataFromServer(NetworkData data)
     }
     else if(data.op == OPCODE::GIVEUP_OP)
     {
-
-
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  GIVEUP_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
         fupan += "G";
+        isWinner = 1;
         if(now_player==black_player)
         {
             if(now_step != 0)
@@ -916,25 +842,39 @@ void netpan::receieveDataFromServer(NetworkData data)
         int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
         if(result == QMessageBox::Yes)
             save();
+        netlog = QString::number(now_step+1) + "  send to  " +fightername + "  GIVEUP_END_OP  ";
+        qDebug()<<netlog;
 
-        this->socket->send(NetworkData(OPCODE::GIVEUP_END_OP,username,""));
+        if(lastOne)
+            this->server->send(lastOne,NetworkData(OPCODE::GIVEUP_END_OP,username,""));
+
+
+
+
     }
     else if(data.op == OPCODE::GIVEUP_END_OP)
     {
-        if(GGtimes==0)
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  GIVEUP_END_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
+
+        if(!isWinner)
         {
-            GGtimes++;
-            this->socket->send(NetworkData(OPCODE::GIVEUP_END_OP,username,""));
-            clear_pan();
-            ui->txtl_pan_time->setEnabled(true);
-            ui->line_player_0->setEnabled(true);
-            ui->line_player_1->setEnabled(true);
-            game_state = off;
-            m->stop();
+            netlog = QString::number(now_step+1) + "  send to  " +fightername + "  GIVEUP_END_OP  ";
+            qDebug()<<netlog;
+            if(lastOne)
+                this->server->send(lastOne,NetworkData(OPCODE::GIVEUP_END_OP,username,""));
         }
+        clear_pan();
+        ui->txtl_pan_time->setEnabled(true);
+        ui->line_player_0->setEnabled(true);
+        ui->line_player_1->setEnabled(true);
+        game_state = off;
+        m->stop();
     }
     else if(data.op == OPCODE::SUICIDE_END_OP)
     {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  SUICIDE_END_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
         if(GGtimes == 0)
         {
            m->stop();
@@ -942,7 +882,10 @@ void netpan::receieveDataFromServer(NetworkData data)
            int result = QMessageBox::information(NULL, temstr, "是否接受", QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
            if(result == QMessageBox::Yes)
            {
-                this->socket->send(NetworkData(OPCODE::SUICIDE_END_OP,username,""));
+               netlog = QString::number(now_step+1) + "  send to  " +fightername + "  SUICIDE_OP  ";
+               qDebug()<<netlog;
+               if(lastOne)
+                   this->server->send(lastOne,NetworkData(OPCODE::SUICIDE_END_OP,username,""));
                clear_pan();
                ui->txtl_pan_time->setEnabled(true);
                ui->line_player_0->setEnabled(true);
@@ -950,7 +893,7 @@ void netpan::receieveDataFromServer(NetworkData data)
                game_state = off;
                m->stop();
            }
-           else if(result == QMessageBox::No){}
+           else if(result == QMessageBox::No){m->stop();}
         }
         else
         {
@@ -964,7 +907,309 @@ void netpan::receieveDataFromServer(NetworkData data)
     }
     else if(data.op == OPCODE::LEAVE_OP)
     {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  LEAVE_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
+        if(game_state == on)
+        {
+            m->stop();
+            fupan += "G";
+            if(now_player==black_player)
+            {
+                if(now_step != 0)
+                {
+                    black_time /= (now_step/2);
+                    white_time /= (now_step/2);
+                }
+                now_step++;
+            }
+            else
+            {
+                black_time /= ((now_step+1)/2.0);
+                if(now_step!=1)
+                    white_time /= ((now_step-1)/2.0);
+                now_step++;
+
+            }
+
+            QString infom = "对方离开了比赛\n恭喜胜者："+username+"\n我们的对局是："+fupan+"\n总步数为："+QString::number(now_step)+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
+            int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+            if(result == QMessageBox::Yes)
+                save();
+            game_state = off;
+            clear_pan();
+            ui->txtl_pan_time->setEnabled(true);
+            ui->line_player_0->setEnabled(true);
+            ui->line_player_1->setEnabled(true);
+            m->stop();
+        }
+    }
+
+}
+
+void netpan::receieveDataFromServer(NetworkData data)
+{
+    if(data.op == OPCODE::CHAT_OP)
+    {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  CHAT_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
+        QString temdata = fightername + "\t" + data.data1;
+        this->ui->Chatplain->appendPlainText(temdata+"\n");
+    }
+    else if(data.op == OPCODE::MOVE_OP && game_state == on && now_player!=mycolor)
+    {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  MOVE_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
+        char*  ch;
+        QByteArray ba = data.data1.left(1).toLatin1(); // must
+        ch=ba.data();
+        int idx = (*ch-'A') * 100 + data.data1.mid(1).toInt()-1;
+        get_online_sign(idx);
+    }
+    else if(data.op == OPCODE::READY_OP)
+    {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  READY_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
+        fightername = data.data1;
+
+        if(isbeginner)
+        {
+
+            if(mycolor == black_player)
+                ui->line_player_1->setText(fightername);
+            else
+                ui->line_player_0->setText(fightername);
+
+            game_state = on;
+            on_btn_startgame_clicked();
+            ui->choseb->setEnabled(false);
+            ui->chosew->setEnabled(false);
+        }
+        else
+        {
+            QString temstr = "";
+            if(data.data2 == 'w')
+                temstr = data.data1  + "(执白)向你发送对局邀请";
+            else
+                temstr = data.data1  + "(执黑)向你发送对局邀请";
+
+
+            int result = QMessageBox::information(NULL, temstr, "是否接受", QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+            if(result == QMessageBox::Yes)
+            {
+                netlog = QString::number(now_step+1) + "  send to  " +fightername + "  READY_OP  ";
+                qDebug()<<netlog;
+
+                this->socket->send(NetworkData(OPCODE::READY_OP,username,""));
+                if(data.data2 == 'w')
+                {
+                    mycolor = black_player;
+                    ui->line_player_0->setText(username);
+                    ui->line_player_1->setText(fightername);
+                    ui->choseb->click();
+                }
+                else
+                {
+                    mycolor = white_player;
+                    ui->line_player_1->setText(username);
+                    ui->line_player_0->setText(fightername);
+                    ui->chosew->click();
+                }
+                game_state = on;
+                on_btn_startgame_clicked();
+                ui->choseb->setEnabled(false);
+                ui->chosew->setEnabled(false);
+            }
+            else if(result == QMessageBox::No)
+            {
+                netlog = QString::number(now_step+1) + "  send to  " +fightername + "  REJECT_OP  ";
+                qDebug()<<netlog;
+                if(lastOne)
+                    this->socket->send(NetworkData(OPCODE::REJECT_OP,username,""));
+            }
+        }
+    }
+    else if(data.op == OPCODE::REJECT_OP)
+    {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  REJECT_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
+    }
+    else if(data.op == OPCODE::TIMEOUT_END_OP)
+    {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  TIMEOUT_END_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
+        if(now_time<=1 && now_player == mycolor && GGtimes == 0)
+        {
+            netlog = QString::number(now_step+1) + "  send to  " +fightername + "  TIMEOUT_END_OP  ";
+            qDebug()<<netlog;
+            if(lastOne)
+                this->socket->send(NetworkData(OPCODE::TIMEOUT_END_OP,username,"这仇我记下了"));
+
+
+            m->stop();
+            if(mycolor == black_player)
+            {
+                black_time += game_max_time;
+                all_time += game_max_time;
+                black_time /= (now_step/2);
+                white_time /= (now_step/2);
+            }
+            else
+            {
+                white_time += game_max_time;
+                all_time += game_max_time;
+                black_time /= ((now_step+1)/2);
+                if(now_step!=1)
+                    white_time /= ((now_step-1)/2);
+            }
+
+            QString infom = "NOOOOO我超时了\n恭喜胜者："+fightername+"(执黑)\n我们的对局是："+fupan+"\n总步数为："+QString::number(now_step)+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
+            int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+            if(result == QMessageBox::Yes)
+            save();
+            clear_pan();
+            ui->txtl_pan_time->setEnabled(true);
+            ui->line_player_0->setEnabled(true);
+            ui->line_player_1->setEnabled(true);
+            game_state = off;
+
+
+        }
+        else if(now_time>1 && now_player == mycolor && GGtimes == 0){m->stop();}
+        else if(GGtimes>0)
+        {
+            clear_pan();
+            ui->txtl_pan_time->setEnabled(true);
+            ui->line_player_0->setEnabled(true);
+            ui->line_player_1->setEnabled(true);
+            game_state = off;
+            m->stop();
+        }
+        GGtimes++;
+    }
+    else if(data.op == OPCODE::GIVEUP_OP)
+    {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  GIVEUP_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
+
+        fupan += "G";
+        isWinner = 1;
+        if(now_player==black_player)
+        {
+            if(now_step != 0)
+            {
+                black_time /= (now_step/2);
+                white_time /= (now_step/2);
+            }
+            now_step++;
+        }
+        else
+        {
+            black_time /= ((now_step+1)/2.0);
+            if(now_step!=1)
+                white_time /= ((now_step-1)/2.0);
+            now_step++;
+
+        }
+        QString infom = "对方输辣\n恭喜胜者："+username+"\n我们的对局是："+fupan+"\n总步数为："+QString::number(now_step)+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
+        int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+        if(result == QMessageBox::Yes)
+            save();
+        netlog = QString::number(now_step+1) + "  send to  " +fightername + "  GIVEUP_END_OP  ";
+        qDebug()<<netlog;
+        this->socket->send(NetworkData(OPCODE::GIVEUP_END_OP,username,""));
+
+
+
+    }
+    else if(data.op == OPCODE::GIVEUP_END_OP)
+    {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  GIVEUP_END_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
+        if(!isWinner)
+        {
+            netlog = QString::number(now_step+1) + "  send to  " +fightername + "  GIVEUP_END_OP  ";
+            qDebug()<<netlog;
+            this->socket->send(NetworkData(OPCODE::GIVEUP_END_OP,username,""));
+        }
+            clear_pan();
+            ui->txtl_pan_time->setEnabled(true);
+            ui->line_player_0->setEnabled(true);
+            ui->line_player_1->setEnabled(true);
+            game_state = off;
+            m->stop();
+
+    }
+    else if(data.op == OPCODE::SUICIDE_END_OP)
+    {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  SUICIDE_END_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
+        if(GGtimes == 0)
+        {
+           m->stop();
+           QString temstr = data.data1  + "认为你落子非法输了";
+           int result = QMessageBox::information(NULL, temstr, "是否接受", QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+           if(result == QMessageBox::Yes)
+           {
+               netlog = QString::number(now_step+1) + "  send to  " +fightername + "  SUICIDE_OP  ";
+               qDebug()<<netlog;
+               this->socket->send(NetworkData(OPCODE::SUICIDE_END_OP,username,""));
+               clear_pan();
+               ui->txtl_pan_time->setEnabled(true);
+               ui->line_player_0->setEnabled(true);
+               ui->line_player_1->setEnabled(true);
+               game_state = off;
+               m->stop();
+           }
+           else if(result == QMessageBox::No){m->stop();}
+        }
+        else
+        {
+            clear_pan();
+            ui->txtl_pan_time->setEnabled(true);
+            ui->line_player_0->setEnabled(true);
+            ui->line_player_1->setEnabled(true);
+            game_state = off;
+            m->stop();
+        }
+    }
+    else if(data.op == OPCODE::LEAVE_OP)
+    {
+        netlog = QString::number(now_step+1) + "  get  " +fightername + "  LEAVE_OP  "+data.data1 +"  "+data.data2;
+        qDebug()<<netlog;
         this->socket->bye();
+        if(game_state == on)
+        {
+            m->stop();
+            fupan += "G";
+            if(now_player==black_player)
+            {
+                if(now_step != 0)
+                {
+                    black_time /= (now_step/2);
+                    white_time /= (now_step/2);
+                }
+                now_step++;
+            }
+            else
+            {
+                black_time /= ((now_step+1)/2.0);
+                if(now_step!=1)
+                    white_time /= ((now_step-1)/2.0);
+                now_step++;
+
+            }
+
+            QString infom = "对方离开了比赛\n恭喜胜者："+username+"\n我们的对局是："+fupan+"\n总步数为："+QString::number(now_step)+"\n黑方平均思考时间："+QString::number(black_time)+"\n白方平均思考时间："+QString::number(white_time)+"\n总思考时间："+QString::number(all_time)+"\n是否保存对局到本地？";
+            int result = QMessageBox::information(NULL, "游戏结束啦！", infom, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+            if(result == QMessageBox::Yes)
+                save();
+            game_state = off;
+            clear_pan();
+            ui->txtl_pan_time->setEnabled(true);
+            ui->line_player_0->setEnabled(true);
+            ui->line_player_1->setEnabled(true);
+            m->stop();
+        }
     }
 
 }
@@ -975,8 +1220,6 @@ void netpan::reStart()
         this->socket->bye();
 
     mode = SERVER;
-    qDebug()<<"restart the server.";
-    //this->ui->lastOneLabel->setText("LastOne: ");
     this->ui->connectLabel->setText("disconnect");
     disconnect(this->server,&NetworkServer::receive,this,&netpan::receieveData);
     clients.clear();
@@ -990,6 +1233,7 @@ void netpan::reStart()
 
 void netpan::reConnect()
 {
+    qDebug("trying connect");
     if(mode == SERVER)
     {
         disconnect(this->server,&NetworkServer::receive,this,&netpan::receieveData);
@@ -997,12 +1241,10 @@ void netpan::reConnect()
         delete this->server;
     }
     mode = SOCKET;
-    qDebug()<<"client reconnect to the server.";
     this->ui->connectLabel->setText("connection fail");
     this->socket->bye();
     this->socket->hello(IP,PORT);
     if(!this->socket->base()->waitForConnected(3000)){
-        qDebug()<<"reconnect fail";
     }
 }
 

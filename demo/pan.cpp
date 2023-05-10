@@ -37,7 +37,7 @@ pan::pan(QWidget *parent) :
     player = new QMediaPlayer;
     audioOutput = new QAudioOutput;
     player->setAudioOutput(audioOutput);
-    connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
+    connect(player, SIGNAL(QMediaPlayer::positionChanged(qint64)), this, SLOT(QMediaPlayer::positionChanged(qint64)));
     player->setSource(QUrl::fromLocalFile("E:\\Qt_project\\big_project\\demo\\image\\bgm.mp3"));
     audioOutput->setVolume(50);
     player->setLoops(INFINITY);
@@ -78,6 +78,7 @@ void pan::paintEvent(QPaintEvent *)
           paint->drawLine(x+size*i,y,x+size*i,y+size*(length-1));
         }
       //ui->setupUi()
+      paint->end();
 }
 
 void pan::set_time(int seted_time)
