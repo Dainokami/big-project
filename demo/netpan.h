@@ -104,6 +104,7 @@ private:
     QString fightername = "fighter";
     QString netlog = "";
     bool isbeginner = 0;
+    bool firstmove=false;
 
     enum Chess
     {

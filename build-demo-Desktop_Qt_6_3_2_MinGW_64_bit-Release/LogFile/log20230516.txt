@@ -1,0 +1,220 @@
+(2023-05-16 12:21:55 Tue) 
+Debug: File:() Line:(0) 
+"1  send to  Zhou  MOVE_OP  B5"
+ 
+(2023-05-16 12:21:56 Tue) 
+Debug: File:() Line:(0) 
+Client:  200002   "C6"   "" 
+
+ 
+(2023-05-16 12:21:56 Tue) 
+Debug: File:() Line:(0) 
+"2  get  Zhou  MOVE_OP  C6  "
+ 
+(2023-05-16 12:21:59 Tue) 
+Debug: File:() Line:(0) 
+Client:  200004   "Zhou"   "" 
+
+ 
+(2023-05-16 12:21:59 Tue) 
+Debug: File:() Line:(0) 
+"3  get  Zhou  TIMEOUT_END_OP  Zhou  "
+ 
+(2023-05-16 12:23:00 Tue) 
+Debug: File:() Line:(0) 
+Client:  200007   ""   "" 
+
+ 
+(2023-05-16 12:23:00 Tue) 
+Debug: File:() Line:(0) 
+"1  get  Zhou  LEAVE_OP    "
+ 
+(2023-05-16 12:24:04 Tue) 
+Debug: File:() Line:(0) 
+"1  send to  Zhou  LEAVE_OP  "
+ 
+(2023-05-16 12:24:14 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64)
+ 
+(2023-05-16 12:24:14 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-05-16 12:26:10 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64)
+ 
+(2023-05-16 12:26:10 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-05-16 12:27:13 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64)
+ 
+(2023-05-16 12:27:13 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-05-16 12:28:03 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64)
+ 
+(2023-05-16 12:28:03 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-05-16 12:36:14 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64)
+ 
+(2023-05-16 12:36:14 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-05-16 12:39:09 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64)
+ 
+(2023-05-16 12:39:09 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-05-16 12:39:20 Tue) 
+Debug: File:() Line:(0) 
+"1  send to  fighter  CHAT_OP  "
+ 
+(2023-05-16 12:39:42 Tue) 
+Debug: File:() Line:(0) 
+"1  send to  fighter  LEAVE_OP  "
+ 
+(2023-05-16 12:40:34 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64)
+ 
+(2023-05-16 12:40:34 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-05-16 12:41:10 Tue) 
+Debug: File:() Line:(0) 
+"1  send to  fighter  CHAT_OP  "
+ 
+(2023-05-16 12:41:39 Tue) 
+Debug: File:() Line:(0) 
+trying connect
+ 
+(2023-05-16 12:41:44 Tue) 
+Debug: File:() Line:(0) 
+trying connect
+ 
+(2023-05-16 12:41:48 Tue) 
+Debug: File:() Line:(0) 
+trying connect
+ 
+(2023-05-16 12:41:48 Tue) 
+Debug: File:() Line:(0) 
+"1684212108824丁真连接服务器成功\n"
+ 
+(2023-05-16 12:41:53 Tue) 
+Debug: File:() Line:(0) 
+"1  send to  fighter  READY_OP  "
+ 
+(2023-05-16 12:41:54 Tue) 
+Debug: File:() Line:(0) 
+Client:  200000   "h"   "" 
+
+ 
+(2023-05-16 12:41:54 Tue) 
+Debug: File:() Line:(0) 
+"1  get  fighter  READY_OP  h  "
+ 
+(2023-05-16 12:41:55 Tue) 
+Debug: File:() Line:(0) 
+"1  send to  h  MOVE_OP  C5"
+ 
+(2023-05-16 12:42:10 Tue) 
+Debug: File:() Line:(0) 
+Client:  200002   "F4 "   "1684212130293" 
+
+ 
+(2023-05-16 12:42:10 Tue) 
+Debug: File:() Line:(0) 
+"2  get  h  MOVE_OP  F4   1684212130293"
+ 
+(2023-05-16 12:42:22 Tue) 
+Debug: File:() Line:(0) 
+"3  send to  h  LEAVE_OP  "
+ 
+(2023-05-16 12:44:44 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64)
+ 
+(2023-05-16 12:44:44 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-05-16 12:45:44 Tue) 
+Debug: File:() Line:(0) 
+"1  send to  fighter  LEAVE_OP  "
+ 
+(2023-05-16 12:45:47 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64)
+ 
+(2023-05-16 12:45:47 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-05-16 12:46:21 Tue) 
+Debug: File:() Line:(0) 
+trying connect
+ 
+(2023-05-16 12:46:21 Tue) 
+Debug: File:() Line:(0) 
+"1684212381511team4连接服务器成功\n"
+ 
+(2023-05-16 12:48:09 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64)
+ 
+(2023-05-16 12:48:09 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-05-16 12:52:15 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64)
+ 
+(2023-05-16 12:52:15 Tue) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-05-16 12:53:38 Tue) 
+Debug: File:() Line:(0) 
+Server:  200000   "team4"   "b" 
+
+ 
+(2023-05-16 12:53:38 Tue) 
+Debug: File:() Line:(0) 
+"1  get  fighter  READY_OP  team4  b"
+ 
+(2023-05-16 12:53:41 Tue) 
+Debug: File:() Line:(0) 
+"1  send to  team4  READY_OP  "
+ 
+(2023-05-16 12:53:41 Tue) 
+Debug: File:() Line:(0) 
+send  200000 "team4" "" 
+
+ 
+(2023-05-16 12:53:45 Tue) 
+Debug: File:() Line:(0) 
+"1  send to  team4  LEAVE_OP  "
+ 
+(2023-05-16 12:53:45 Tue) 
+Debug: File:() Line:(0) 
+send  200007 "team4" "" 
+
+ 

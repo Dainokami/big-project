@@ -141,11 +141,14 @@ void netpan::BeginCountdown()
 
 void netpan::OnTimerCountdown()
 {
-    if(game_state == on)
+    if(game_state == on &&firstmove==1)
     {
 
         now_time -= 1;
         ui->txtl_pan_time->setText(QString::number(now_time));
+        if(now_player==mycolor)
+            ui->btn_lose->setEnabled(true);
+
 
         if(now_time <= 0)
         {
@@ -370,6 +373,7 @@ void netpan::clear_pan()
     netlog = "";
     isWinner = 0;
     isbeginner = 0;
+    firstmove=false;
 
     for(int i=0;i<length;i++)
         for(int j=0;j<length;j++)
@@ -388,6 +392,9 @@ void netpan::clear_pan()
 
     ui->btn_white->setStyleSheet("");
     ui->btn_black->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
+    ui->choseb->setEnabled(true);
+    ui->chosew->setEnabled(true);
+    ui->btn_lose->setEnabled(false);
 
     if(ui->txtl_pan_time->isEnabled())
     {
@@ -412,6 +419,21 @@ void netpan::on_btn_startgame_clicked()
         else
             this->socket->send(NetworkData(OPCODE::READY_OP,username,"w"));
 
+    }
+    else if(mode == SERVER && game_state == off)
+    {
+        netlog = QString::number(now_step+1) + "  send to  " +fightername + "  READY_OP  ";
+        qDebug()<<netlog;
+        if(mycolor == black_player)
+        {
+            if(lastOne)
+                this->server->send(lastOne,NetworkData(OPCODE::READY_OP,username,"b"));
+        }
+        else
+        {
+            if(lastOne)
+                this->server->send(lastOne,NetworkData(OPCODE::READY_OP,username,"w"));
+        }
     }
     else if(game_state == on)
     {
@@ -448,6 +470,8 @@ void netpan::get_btn_sign(int idx)
         //传给对手
         char tem = 'A'+i_;
         QString temstr = tem + QString::number(j_+1);
+        if(!firstmove)
+            firstmove=true;
 
         if(mode == SOCKET)
             this->socket->send(NetworkData(OPCODE::MOVE_OP,temstr,""));
@@ -679,6 +703,8 @@ void netpan::receieveData(QTcpSocket* client, NetworkData data)
     }
     else if(data.op == OPCODE::MOVE_OP && game_state == on && now_player!=mycolor)
     {
+        if(!firstmove)
+            firstmove=true;
         netlog = QString::number(now_step+1) + "  get  " +fightername + "  MOVE_OP  "+data.data1 +"  "+data.data2;
         qDebug()<<netlog;
         char*  ch;
@@ -761,6 +787,7 @@ void netpan::receieveData(QTcpSocket* client, NetworkData data)
     {
         netlog = QString::number(now_step+1) + "  get  " +fightername + "  REJECT_OP  "+data.data1 +"  "+data.data2;
         qDebug()<<netlog;
+        isbeginner=0;
     }
     else if(data.op == OPCODE::TIMEOUT_END_OP)
     {
@@ -957,6 +984,9 @@ void netpan::receieveDataFromServer(NetworkData data)
     }
     else if(data.op == OPCODE::MOVE_OP && game_state == on && now_player!=mycolor)
     {
+        if(!firstmove)
+            firstmove=true;
+
         netlog = QString::number(now_step+1) + "  get  " +fightername + "  MOVE_OP  "+data.data1 +"  "+data.data2;
         qDebug()<<netlog;
         char*  ch;
@@ -1032,6 +1062,7 @@ void netpan::receieveDataFromServer(NetworkData data)
     {
         netlog = QString::number(now_step+1) + "  get  " +fightername + "  REJECT_OP  "+data.data1 +"  "+data.data2;
         qDebug()<<netlog;
+        isbeginner=0;
     }
     else if(data.op == OPCODE::TIMEOUT_END_OP)
     {
@@ -1247,6 +1278,40 @@ void netpan::reConnect()
     if(!this->socket->base()->waitForConnected(3000)){
     }
 }
+/*void netpan::reStart()
+{
+    if(mode == SOCKET)
+        this->socket->bye();
+
+    mode = SERVER;
+    this->ui->connectLabel->setText("disconnect");
+
+    disconnect(this->server,&NetworkServer::receive,this,&netpan::receieveData);
+    clients.clear();
+    delete this->server;
+    this->server = new NetworkServer(this);
+    // 端口相当于传信息的窗户，收的人要在这守着
+    this->server->listen(QHostAddress::Any,PORT);
+    lastOne = nullptr;
+    connect(this->server,&NetworkServer::receive,this,&netpan::receieveData);
+}
+
+void netpan::reConnect()
+{
+    qDebug("trying connect");
+    if(mode == SERVER)
+    {
+        disconnect(this->server,&NetworkServer::receive,this,&netpan::receieveData);
+        clients.clear();
+        delete this->server;
+    }
+    mode = SOCKET;
+    this->ui->connectLabel->setText("connection fail");
+    this->socket->bye();
+    this->socket->hello(IP,PORT);
+    if(!this->socket->base()->waitForConnected(3000)){
+    }
+}*/
 
 void netpan::reSet()
 {
