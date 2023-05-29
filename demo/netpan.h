@@ -20,6 +20,7 @@
 #include <QSet>
 #include <QDateTime>
 
+#include <AI.h>
 #include <ai.h>
 #include <qcheckbox.h>
 #include <QCheckBox>
@@ -73,7 +74,7 @@ private:
     QPainter *paint;
     QMediaPlayer *player;//用于音乐
     QAudioOutput *audioOutput;//用于音乐
-    AI *A;
+    AI *ai=new AI();
 
     void set_time(int seted_time = 50);//设置倒计时时间
     void BeginCountdown();//打开计时器
@@ -84,6 +85,8 @@ private:
     void clear_pan();//恢复棋盘初始状态，包括清屏,清空气,重设时间
     void dfs(int x,int y,int flag);//深度搜索棋盘，是judge函数里面的一个小函数，具体见cpp。
     void save();//保存文件
+    void onCheckBoxAIStateChanged(int state);
+
 
     QString fupan;//保存复盘信息
     double black_time=0;

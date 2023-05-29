@@ -1,20 +1,23 @@
 #ifndef AI_H
 #define AI_H
-#include <netpan.h>
-
+//#include <netpan.h>
+#include <algorithm>
 class AI
 {
 public:
    static constexpr int length = 9;
-    AI(int (&b)[length][length], int MAX, int MIN) : depth(4), maxPlayer(MAX), minPlayer(MIN) {
+
+   AI(int (&b)[length][length]);
+    /*AI(int (&b)[length][length], int MAX, int MIN) : depth(4), maxPlayer(MAX), minPlayer(MIN) {
 
          for(int i=0;i<length;i++){
                for(int j=0;j<length;j++){
                    board[i][j] = b[i][j];
                }
            }
-     }
-    virtual int AImakeMove(int &row, int &col, int board[length][length]);
+     }*/
+    virtual int AImakeMove( int board[length][length]);
+    //virtual int AImakeMove(int &row, int &col, int board[length][length]);
     int row;
     int col;
     //这个不知道是否必要
@@ -26,6 +29,7 @@ private:
     //int length=9;
     int dx[4] = {-1, 0, 1, 0};
     int dy[4] = {0, 1, 0, -1};
+    const int INF = 0x3f3f3f3f;
     const int EMPTY = 0;
 
     int evaluate(int board[length][length], int player); // 估值函数

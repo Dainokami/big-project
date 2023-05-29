@@ -51,7 +51,7 @@ private:
     QTimer *m;
     void paintEvent(QPaintEvent *);//绘图函数声明
     QPainter *paint;
-    AI *A1,*A2;
+    AI A1,A2;
     QMediaPlayer *player;//用于音乐
     QAudioOutput *audioOutput;//用于音乐
 
@@ -66,6 +66,8 @@ private:
     void dfs(int x,int y,int flag);//深度搜索棋盘，是judge函数里面的一个小函数，具体见cpp。
     void change_pan();//设置棋盘是多大
     void save();//保存文件
+    void onCheckBox2StateChanged(int state);
+    void onCheckBox1StateChanged(int state);
 
     QString fupan;//保存复盘信息,我们定义超时时在结尾加上“R”,且由于超时方没有动作，我们不把超时作为一步
     double black_time=0;
@@ -85,6 +87,7 @@ private:
     int now_time=0;//倒计时的当前时长
     bool game_state = 0;//该变量为1则游戏开始，为0则不然
     int loc=-1;//落子位置，用于高亮当前子和记录对局,-1指游戏开始未有落子
+
     int checkAI1_state;
     int checkAI2_state;
     enum Chess

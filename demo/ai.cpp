@@ -1,25 +1,25 @@
 #include "ai.h"
 
-AI::AI(int board[][9],int MAX,int MIN,int &LE)
+AI::AI(int (&b)[length][length], int MAX, int MIN) : depth(4), maxPlayer(MAX), minPlayer(MIN)
 {
-    this->setPlayer(now_player);
-    this->depth = depth;
+    this->depth = 4;
     this->maxPlayer = MAX;
     this->minPlayer = MIN;
     for(int i=0;i<length;i++){
          for(int j=0;j<length;j++){
-             this->board[i][j] = board[i][j];
+             this->board[i][j] = b[i][j];
          }
      }
 }
 
+
 int AI::AImakeMove(int board[length][length])
 //计算落子点坐标
 {
-    int &row=0;
-    int &col=0;
+    int row=0;
+    int col=0;
     int bestRow, bestCol;
-    MiniMax(board, this->getPlayer(), this->depth, -INF, INF, bestRow, bestCol);
+    MiniMax(board, this->maxPlayer, this->depth, -INF, INF, bestRow, bestCol);
     row = bestRow;
     col = bestCol;
     return 100*row+col;
@@ -55,7 +55,7 @@ int AI::getLiberty(int board[][length],int i, int j)
     if (j <= length-1 && board[i][j+1] == 0) ++liberty;
     return liberty;
 }
-}
+
 
 int AI::evaluate(int board[][length], int player)
 //估值函数
