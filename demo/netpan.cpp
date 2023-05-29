@@ -13,6 +13,7 @@ netpan::netpan(QWidget *parent) :
     ui->btn_black->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
     connect(this->ui->choseb,&QRadioButton::clicked,this,&netpan::chose_color_and_name);
     connect(this->ui->chosew,&QRadioButton::clicked,this,&netpan::chose_color_and_name);
+    connect(this->ui->checkai, &QCheckBox::stateChanged, this, &netpan::onCheckBoxAIStateChanged);
 
     // 本地 IP，所有电脑都可以用这个 IP 指向自己
     IP = "127.0.0.1";
@@ -47,7 +48,7 @@ netpan::netpan(QWidget *parent) :
     m->setInterval(1000);
     connect(m,&QTimer::timeout,this,netpan::OnTimerCountdown);
     ui->txtl_pan_time->setText("50");
-
+    ai=new AI();
     //以下关联按钮
     QSignalMapper *myMapper = new QSignalMapper(this);
     QPushButton *button[9][9]={ui->btn_0_0,ui->btn_0_1,ui->btn_0_2,ui->btn_0_3,ui->btn_0_4,ui->btn_0_5,ui->btn_0_6,ui->btn_0_7,ui->btn_0_8,ui->btn_1_0,ui->btn_1_1,ui->btn_1_2,ui->btn_1_3,ui->btn_1_4,ui->btn_1_5,ui->btn_1_6,ui->btn_1_7,ui->btn_1_8,ui->btn_2_0,ui->btn_2_1,ui->btn_2_2,ui->btn_2_3,ui->btn_2_4,ui->btn_2_5,ui->btn_2_6,ui->btn_2_7,ui->btn_2_8,ui->btn_3_0,ui->btn_3_1,ui->btn_3_2,ui->btn_3_3,ui->btn_3_4,ui->btn_3_5,ui->btn_3_6,ui->btn_3_7,ui->btn_3_8,ui->btn_4_0,ui->btn_4_1,ui->btn_4_2,ui->btn_4_3,ui->btn_4_4,ui->btn_4_5,ui->btn_4_6,ui->btn_4_7,ui->btn_4_8,ui->btn_5_0,ui->btn_5_1,ui->btn_5_2,ui->btn_5_3,ui->btn_5_4,ui->btn_5_5,ui->btn_5_6,ui->btn_5_7,ui->btn_5_8,ui->btn_6_0,ui->btn_6_1,ui->btn_6_2,ui->btn_6_3,ui->btn_6_4,ui->btn_6_5,ui->btn_6_6,ui->btn_6_7,ui->btn_6_8,ui->btn_7_0,ui->btn_7_1,ui->btn_7_2,ui->btn_7_3,ui->btn_7_4,ui->btn_7_5,ui->btn_7_6,ui->btn_7_7,ui->btn_7_8,ui->btn_8_0,ui->btn_8_1,ui->btn_8_2,ui->btn_8_3,ui->btn_8_4,ui->btn_8_5,ui->btn_8_6,ui->btn_8_7,ui->btn_8_8};
@@ -72,6 +73,7 @@ netpan::netpan(QWidget *parent) :
 
 netpan::~netpan()
 {
+    delete ai;
     if (m)
     {
         if (m->isActive() == true)
@@ -102,6 +104,11 @@ netpan::~netpan()
         this->socket->bye();
 
     delete ui;
+}
+
+void netpan::onCheckBoxAIStateChanged(int state)
+{
+    checkAI_state=state;
 }
 
 void netpan::paintEvent(QPaintEvent *)
@@ -201,7 +208,7 @@ void netpan::OnTimerCountdown()
     }
 }
 
-void netpan::on_btn_stop_clicked()
+/*void netpan::on_btn_stop_clicked()
 {
     if(game_state ==on)
     {
@@ -216,7 +223,7 @@ void netpan::on_btn_stop_clicked()
 
 
 }
-
+*/
 void netpan::delete_time()
 {
     if (m)
@@ -595,6 +602,12 @@ void netpan::get_online_sign(int idx)
             }
             GGtimes++;
         }
+    }
+
+    //
+    if(checkAI_state == Qt::Checked)
+    {
+        get_btn_sign(ai.AImakeMove(Qi[9][9]));
     }
 }
 

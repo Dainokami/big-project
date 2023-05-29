@@ -20,6 +20,10 @@
 #include <QSet>
 #include <QDateTime>
 
+#include <ai.h>
+#include <qcheckbox.h>
+#include <QCheckBox>
+
 namespace Ui {
 class netpan;
 }
@@ -51,7 +55,7 @@ private slots :
     void on_btn_startgame_clicked();//开始游戏
     void on_btn_lose_clicked();//投降
     void get_btn_sign(int idx);//为了不给每个按钮写个函数，就通过传递按钮的坐标来起到对应的按钮反应
-    void on_btn_stop_clicked();//暂停游戏，如果已经暂停了就开始
+   // void on_btn_stop_clicked();//暂停游戏，如果已经暂停了就开始
     void get_online_sign(int idx);
     void on_back_clicked();
     void on_sendbtn_clicked();
@@ -61,7 +65,7 @@ private slots :
     void reConnect();
     void reSet();
     void chose_color_and_name();
-
+    void onCheckboxAIStateChanged(int state);
 private:
     Ui::netpan *ui;
     QTimer *m;
@@ -69,7 +73,7 @@ private:
     QPainter *paint;
     QMediaPlayer *player;//用于音乐
     QAudioOutput *audioOutput;//用于音乐
-
+    AI *A;
 
     void set_time(int seted_time = 50);//设置倒计时时间
     void BeginCountdown();//打开计时器
@@ -105,6 +109,9 @@ private:
     QString netlog = "";
     bool isbeginner = 0;
     bool firstmove=false;
+
+    int checkAI_state;
+
 
     enum Chess
     {

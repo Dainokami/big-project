@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
+    <width>1097</width>
     <height>720</height>
    </rect>
   </property>
@@ -456,9 +456,9 @@
   <widget class="QPushButton" name="btn_lose">
    <property name="geometry">
     <rect>
-     <x>790</x>
-     <y>330</y>
-     <width>91</width>
+     <x>840</x>
+     <y>340</y>
+     <width>111</width>
      <height>61</height>
     </rect>
    </property>
@@ -648,9 +648,9 @@
   <widget class="QPushButton" name="btn_startgame">
    <property name="geometry">
     <rect>
-     <x>790</x>
+     <x>840</x>
      <y>260</y>
-     <width>91</width>
+     <width>111</width>
      <height>61</height>
     </rect>
    </property>
@@ -2920,24 +2920,11 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_stop">
-   <property name="geometry">
-    <rect>
-     <x>900</x>
-     <y>260</y>
-     <width>91</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>暂停游戏</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="back">
    <property name="geometry">
     <rect>
-     <x>1090</x>
-     <y>10</y>
+     <x>1030</x>
+     <y>30</y>
      <width>51</width>
      <height>51</height>
     </rect>
@@ -3641,7 +3628,7 @@
     <rect>
      <x>560</x>
      <y>600</y>
-     <width>611</width>
+     <width>531</width>
      <height>28</height>
     </rect>
    </property>
@@ -3686,6 +3673,19 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QCheckBox" name="checkai">
+   <property name="geometry">
+    <rect>
+     <x>840</x>
+     <y>430</y>
+     <width>111</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>让派蒙帮帮你吧</string>
+   </property>
   </widget>
  </widget>
  <resources/>

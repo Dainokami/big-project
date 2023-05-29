@@ -14,7 +14,9 @@
 #include <QAudioOutput>
 #include <QFile>
 #include <QFileDialog>
-
+#include <ai.h>
+#include <qcheckbox.h>
+#include <QCheckBox>
 namespace Ui {
 class pan;
 }
@@ -49,6 +51,7 @@ private:
     QTimer *m;
     void paintEvent(QPaintEvent *);//绘图函数声明
     QPainter *paint;
+    AI *A1,*A2;
     QMediaPlayer *player;//用于音乐
     QAudioOutput *audioOutput;//用于音乐
 
@@ -71,7 +74,9 @@ private:
     int length=13;//棋盘的长度，默认是9x9
     int now_step=0;//现在是第几步棋
     int now_player = -1;//当前棋手
+
     int Qi[13][13]={0};//母棋盘。
+
     int copy_Qi[170][13][13]={0};//供dfs的子棋盘，在dfs前会copy成母棋盘，dfs后会变成相对应的子棋盘
     int black_flag=0;//若dfs后有loseQi的黑棋则变为on（值为1），不然就一直是off（值为0）
     int white_flag=0;////同上
@@ -80,7 +85,8 @@ private:
     int now_time=0;//倒计时的当前时长
     bool game_state = 0;//该变量为1则游戏开始，为0则不然
     int loc=-1;//落子位置，用于高亮当前子和记录对局,-1指游戏开始未有落子
-
+    int checkAI1_state;
+    int checkAI2_state;
     enum Chess
     {
         black_loseQi_or_unchecked = -1,empty_unchecked,white_loseQi_or_unchecked,empty_checked,white_have_Qi,black_have_Qi

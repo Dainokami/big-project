@@ -7092,6 +7092,32 @@
     <string>后退</string>
    </property>
   </widget>
+  <widget class="QCheckBox" name="checkai1">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>420</y>
+     <width>101</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>黑ai</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkai2">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>420</y>
+     <width>111</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>白ai</string>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="image_music.qrc"/>
