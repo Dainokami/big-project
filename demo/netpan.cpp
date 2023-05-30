@@ -13,7 +13,7 @@ netpan::netpan(QWidget *parent) :
     ui->btn_black->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
     connect(this->ui->choseb,&QRadioButton::clicked,this,&netpan::chose_color_and_name);
     connect(this->ui->chosew,&QRadioButton::clicked,this,&netpan::chose_color_and_name);
-    connect(this->ui->checkai, &QCheckBox::stateChanged, this, &netpan::onCheckBoxAIStateChanged);
+
 
     // 本地 IP，所有电脑都可以用这个 IP 指向自己
     IP = "127.0.0.1";
@@ -106,10 +106,6 @@ netpan::~netpan()
     delete ui;
 }
 
-void netpan::onCheckBoxAIStateChanged(int state)
-{
-    checkAI_state=state;
-}
 
 void netpan::paintEvent(QPaintEvent *)
 {
@@ -607,7 +603,10 @@ void netpan::get_online_sign(int idx)
     //
     if(checkAI_state == Qt::Checked)
     {
-        get_btn_sign(ai->AImakeMove(&Qi[13],black_player,white_player));
+        if(mycolor == black_player)
+            get_btn_sign(ai->AImakeMove(Qi,black_player,white_player,length));
+        else
+            get_btn_sign(ai->AImakeMove(Qi,white_player,black_player,length));
     }
 }
 
@@ -1350,4 +1349,10 @@ void netpan::chose_color_and_name()
     }
 }
 
+
+
+void netpan::on_checkai_stateChanged(int arg1)
+{
+    checkAI_state = arg1;
+}
 

@@ -1,3 +1,4 @@
+release/ai.o
 release/load.o
 release/main.o
 release/netpan.o

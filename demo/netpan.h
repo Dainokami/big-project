@@ -19,11 +19,8 @@
 #include "networksocket.h"
 #include <QSet>
 #include <QDateTime>
-
-#include <AI.h>
 #include <ai.h>
-#include <qcheckbox.h>
-#include <QCheckBox>
+
 
 namespace Ui {
 class netpan;
@@ -66,15 +63,11 @@ private slots :
     void reConnect();
     void reSet();
     void chose_color_and_name();
-    void onCheckboxAIStateChanged(int state);
+
+    void on_checkai_stateChanged(int arg1);
+
 private:
-    Ui::netpan *ui;
-    QTimer *m;
-    void paintEvent(QPaintEvent *);//绘图函数声明
-    QPainter *paint;
-    QMediaPlayer *player;//用于音乐
-    QAudioOutput *audioOutput;//用于音乐
-    AI *ai=new AI( (&Qi)[length][length], black_player, white_player);
+
 
     void set_time(int seted_time = 50);//设置倒计时时间
     void BeginCountdown();//打开计时器
@@ -112,9 +105,15 @@ private:
     QString netlog = "";
     bool isbeginner = 0;
     bool firstmove=false;
-
     int checkAI_state;
 
+    Ui::netpan *ui;
+    QTimer *m;
+    void paintEvent(QPaintEvent *);//绘图函数声明
+    QPainter *paint;
+    QMediaPlayer *player;//用于音乐
+    QAudioOutput *audioOutput;//用于音乐
+    AI *ai=new AI;
 
     enum Chess
     {

@@ -12,8 +12,7 @@ pan::pan(QWidget *parent) :
     connect(ui->rad_9x9,&QRadioButton::clicked,this,pan::change_pan);
     connect(ui->rad_11x11,&QRadioButton::clicked,this,pan::change_pan);
     connect(ui->rad_13x13,&QRadioButton::clicked,this,pan::change_pan);
-    connect(ui->checkai1, &QCheckBox::stateChanged, this, pan::onCheckBox1StateChanged);
-    connect(ui->checkai2, &QCheckBox::stateChanged, this, pan::onCheckBox2StateChanged);
+
 
     ui->btn_white->setStyleSheet("");
     ui->btn_black->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
@@ -64,15 +63,6 @@ pan::~pan()
     player = nullptr;
     audioOutput = nullptr;
     delete ui;
-}
-
-void pan::onCheckBox1StateChanged(int state)
-{
-    checkAI1_state=state;
-}
-void pan::onCheckBox2StateChanged(int state)
-{
-    checkAI2_state=state;
 }
 
 void pan::paintEvent(QPaintEvent *)
@@ -126,13 +116,17 @@ void pan::OnTimerCountdown()
    {
     get_btn_sign(A2.AImakeMove((Qi,black_player,white_player));
    }*/
-   if(now_player==black_player&&checkAI1_state==Qt::Checked)
+   if(now_player==black_player&&checkAI1_state==Qt::Checked && !is_ai1_thinking)
    {
-       get_btn_sign(A1.AImakeMove(Qi, black_player, white_player));
+       is_ai1_thinking = 1;
+       get_btn_sign(A1.AImakeMove(Qi, black_player, white_player,length));
+       is_ai1_thinking = 0;
    }
-   else if(now_player==white_player&&checkAI2_state==Qt::Checked)
+   else if(now_player==white_player&&checkAI2_state==Qt::Checked && is_ai2_thinking)
    {
-       get_btn_sign(A2.AImakeMove(Qi, black_player, white_player));
+       is_ai2_thinking = 1;
+       get_btn_sign(A2.AImakeMove(Qi, black_player, white_player,length));
+       is_ai2_thinking = 0;
    }
 
    if(now_time <= 0)
@@ -559,4 +553,16 @@ void pan::save()
 }
 
 
+
+
+void pan::on_checkai1_stateChanged(int arg1)
+{
+    checkAI1_state = arg1;
+}
+
+
+void pan::on_checkai2_stateChanged(int arg1)
+{
+    checkAI2_state = arg1;
+}
 

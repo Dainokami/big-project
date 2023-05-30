@@ -1,25 +1,21 @@
 #include "ai.h"
-
-AI::AI(int (&b)[length][length], int MAX, int MIN) : depth(4), maxPlayer(MAX), minPlayer(MIN)
-{
-    this->depth = 4;
-    this->maxPlayer = MAX;
-    this->minPlayer = MIN;
-    for(int i=0;i<length;i++){
-         for(int j=0;j<length;j++){
-             this->board[i][j] = b[i][j];
-         }
-     }
-}
+AI::AI(){}
 
 
-int AI::AImakeMove(int board[length][length],int maxplayer,int minplayer)
+
+int AI::AImakeMove(int Board[13][13],int Maxplayer,int Minplayer,int Length)
 //计算落子点坐标
 {
+    length = Length;
+    for(int i=0;i<length;i++)
+        for(int j=0;j<length;j++)
+            board[i][j] = Board[i][j];
     int row=0;
     int col=0;
     int bestRow, bestCol;
-    MiniMax(board, this->maxPlayer, this->depth, -INF, INF, bestRow, bestCol);
+    maxPlayer = Maxplayer;
+    minPlayer = Minplayer;
+    MiniMax(this->maxPlayer,depth,-INF, INF, bestRow, bestCol);
     row = bestRow;
     col = bestCol;
     return 100*row+col;
@@ -44,7 +40,7 @@ bool AI::isValid(int x, int y)
     }
     return false;
 }
-int AI::getLiberty(int board[][length],int i, int j)
+int AI::getLiberty(int i, int j)
 //计算周围气数
 {
     int liberty = 0;
@@ -57,7 +53,7 @@ int AI::getLiberty(int board[][length],int i, int j)
 }
 
 
-int AI::evaluate(int board[][length], int player)
+int AI::evaluate(int player)
 //估值函数
 {
     int score = 0;
@@ -74,13 +70,13 @@ int AI::evaluate(int board[][length], int player)
                     int y = j + dy[k];
                     if (isValid(x, y) && board[x][y] != EMPTY)
                     {
-                        if (board[x][y] == maxPlayer)
+                        if (board[x][y] == player)
                         {
-                            emptyScore += getLiberty(board, x, y);
+                            emptyScore += getLiberty(x, y);
                         }
                         else
                         {
-                            emptyScore -= getLiberty(board, x, y);
+                            emptyScore -= getLiberty(x, y);
                         }
                     }
                 }
@@ -95,7 +91,7 @@ int AI::evaluate(int board[][length], int player)
                     int y = j + dy[k];
                     if (isValid(x, y) && board[x][y] == EMPTY)
                     {
-                        stoneScore += getLiberty(board, i, j);
+                        stoneScore += getLiberty(i, j);
                     }
                 }
                 score += stoneScore;
@@ -109,7 +105,7 @@ int AI::evaluate(int board[][length], int player)
                     int y = j + dy[k];
                     if (isValid(x, y) && board[x][y] == EMPTY)
                     {
-                        oppStoneScore -= getLiberty(board, x, y);
+                        oppStoneScore -= getLiberty(x, y);
                     }
                 }
                 score += oppStoneScore;
@@ -120,12 +116,12 @@ int AI::evaluate(int board[][length], int player)
 }
 
 
-int AI::MiniMax(int board[length][length], int player,int depth, int alpha, int beta, int &bestRow, int &bestCol)
+int AI::MiniMax(int player,int Depth,int alpha, int beta, int &bestRow, int &bestCol)
 {
     //minmax算法
-    if (depth == 0 /*|| isGameOver(board)*/)
+    if (Depth == 0 /*|| isGameOver(board)*/)
     {
-        return evaluate(board, this->maxPlayer);
+        return evaluate(this->maxPlayer);
     }
 
     int bestScore;
@@ -139,7 +135,7 @@ int AI::MiniMax(int board[length][length], int player,int depth, int alpha, int 
                 if (board[i][j] == 0)
                 {
                     board[i][j] = player;
-                    int score = MiniMax(board, this->minPlayer, depth - 1, alpha, beta, bestRow, bestCol);
+                    int score = MiniMax(this->minPlayer, Depth - 1, alpha, beta, bestRow, bestCol);
                     board[i][j] = 0;
                     if (score > bestScore)
                     {
@@ -166,7 +162,7 @@ int AI::MiniMax(int board[length][length], int player,int depth, int alpha, int 
                 if (board[i][j] == 0)
                 {
                     board[i][j] = player;
-                    int score = MiniMax(board, this->maxPlayer, depth - 1, alpha, beta, bestRow, bestCol);
+                    int score = MiniMax( this->maxPlayer, Depth - 1, alpha, beta, bestRow, bestCol);
                     board[i][j] = 0;
                     if (score < bestScore)
                     {
