@@ -74,7 +74,7 @@ private:
     QPainter *paint;
     QMediaPlayer *player;//用于音乐
     QAudioOutput *audioOutput;//用于音乐
-    AI *ai=new AI();
+    AI *ai=new AI( (&Qi)[length][length], black_player, white_player);
 
     void set_time(int seted_time = 50);//设置倒计时时间
     void BeginCountdown();//打开计时器

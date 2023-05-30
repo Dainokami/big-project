@@ -13,7 +13,7 @@ AI::AI(int (&b)[length][length], int MAX, int MIN) : depth(4), maxPlayer(MAX), m
 }
 
 
-int AI::AImakeMove(int board[length][length])
+int AI::AImakeMove(int board[length][length],int maxplayer,int minplayer)
 //计算落子点坐标
 {
     int row=0;
@@ -123,7 +123,7 @@ int AI::evaluate(int board[][length], int player)
 int AI::MiniMax(int board[length][length], int player,int depth, int alpha, int beta, int &bestRow, int &bestCol)
 {
     //minmax算法
-    if (depth == 0 || isGameOver(board))
+    if (depth == 0 /*|| isGameOver(board)*/)
     {
         return evaluate(board, this->maxPlayer);
     }

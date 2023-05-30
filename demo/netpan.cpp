@@ -607,7 +607,7 @@ void netpan::get_online_sign(int idx)
     //
     if(checkAI_state == Qt::Checked)
     {
-        get_btn_sign(ai->AImakeMove(Qi[9][9]));
+        get_btn_sign(ai->AImakeMove(&Qi[13],black_player,white_player));
     }
 }
 

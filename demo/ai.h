@@ -5,9 +5,9 @@
 class AI
 {
 public:
-   static constexpr int length = 9;
+   static constexpr int length = 13;
 
-   AI(int (&b)[length][length]);
+   AI(int (&b)[length][length], int MAX, int MIN);
     /*AI(int (&b)[length][length], int MAX, int MIN) : depth(4), maxPlayer(MAX), minPlayer(MIN) {
 
          for(int i=0;i<length;i++){
@@ -16,7 +16,7 @@ public:
                }
            }
      }*/
-    virtual int AImakeMove( int board[length][length]);
+    virtual int AImakeMove( int board[length][length],int maxplayer,int minplayer);
     //virtual int AImakeMove(int &row, int &col, int board[length][length]);
     int row;
     int col;
@@ -31,7 +31,9 @@ private:
     int dy[4] = {0, 1, 0, -1};
     const int INF = 0x3f3f3f3f;
     const int EMPTY = 0;
-
+    int (&b)[length][length];
+    int MAX;
+    int MIN;
     int evaluate(int board[length][length], int player); // 估值函数
     bool isValid(int x, int y);//判断合法
     int getLiberty(int board[length][length],int i, int j) ;//气数判定
