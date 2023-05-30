@@ -118,15 +118,23 @@ void pan::OnTimerCountdown()
    }*/
    if(now_player==black_player&&checkAI1_state==Qt::Checked && !is_ai1_thinking)
    {
+<<<<<<< HEAD
        is_ai1_thinking = 1;
        get_btn_sign(A1.AImakeMove(Qi, black_player, white_player,length));
        is_ai1_thinking = 0;
+=======
+       get_btn_sign(A1.AImakeMove(Qi, black_player));
+>>>>>>> 44d386abdd9f81d582d30b32044ec42b29141922
    }
    else if(now_player==white_player&&checkAI2_state==Qt::Checked && is_ai2_thinking)
    {
+<<<<<<< HEAD
        is_ai2_thinking = 1;
        get_btn_sign(A2.AImakeMove(Qi, black_player, white_player,length));
        is_ai2_thinking = 0;
+=======
+       get_btn_sign(A2.AImakeMove(Qi, white_player));
+>>>>>>> 44d386abdd9f81d582d30b32044ec42b29141922
    }
 
    if(now_time <= 0)

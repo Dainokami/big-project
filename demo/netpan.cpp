@@ -603,10 +603,14 @@ void netpan::get_online_sign(int idx)
     //
     if(checkAI_state == Qt::Checked)
     {
+<<<<<<< HEAD
         if(mycolor == black_player)
             get_btn_sign(ai->AImakeMove(Qi,black_player,white_player,length));
         else
             get_btn_sign(ai->AImakeMove(Qi,white_player,black_player,length));
+=======
+        get_btn_sign(ai->AImakeMove(&Qi[13],now_player));
+>>>>>>> 44d386abdd9f81d582d30b32044ec42b29141922
     }
 }
 

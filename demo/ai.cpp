@@ -2,8 +2,12 @@
 AI::AI(){}
 
 
+<<<<<<< HEAD
 
 int AI::AImakeMove(int Board[13][13],int Maxplayer,int Minplayer,int Length)
+=======
+int AI::AImakeMove(int board[length][length],int player)
+>>>>>>> 44d386abdd9f81d582d30b32044ec42b29141922
 //计算落子点坐标
 {
     length = Length;
@@ -13,9 +17,13 @@ int AI::AImakeMove(int Board[13][13],int Maxplayer,int Minplayer,int Length)
     int row=0;
     int col=0;
     int bestRow, bestCol;
+<<<<<<< HEAD
     maxPlayer = Maxplayer;
     minPlayer = Minplayer;
     MiniMax(this->maxPlayer,depth,-INF, INF, bestRow, bestCol);
+=======
+    MiniMax(board, player, this->depth, -INF, INF, bestRow, bestCol);
+>>>>>>> 44d386abdd9f81d582d30b32044ec42b29141922
     row = bestRow;
     col = bestCol;
     return 100*row+col;
@@ -53,7 +61,11 @@ int AI::getLiberty(int i, int j)
 }
 
 
+<<<<<<< HEAD
 int AI::evaluate(int player)
+=======
+int AI::evaluate(int board[][length])
+>>>>>>> 44d386abdd9f81d582d30b32044ec42b29141922
 //估值函数
 {
     int score = 0;
@@ -121,7 +133,11 @@ int AI::MiniMax(int player,int Depth,int alpha, int beta, int &bestRow, int &bes
     //minmax算法
     if (Depth == 0 /*|| isGameOver(board)*/)
     {
+<<<<<<< HEAD
         return evaluate(this->maxPlayer);
+=======
+        return evaluate(board);
+>>>>>>> 44d386abdd9f81d582d30b32044ec42b29141922
     }
 
     int bestScore;
