@@ -128,11 +128,11 @@ void pan::OnTimerCountdown()
    }*/
    if(now_player==black_player&&checkAI1_state==Qt::Checked)
    {
-       get_btn_sign(A1.AImakeMove(Qi, black_player, white_player));
+       get_btn_sign(A1.AImakeMove(Qi, black_player));
    }
    else if(now_player==white_player&&checkAI2_state==Qt::Checked)
    {
-       get_btn_sign(A2.AImakeMove(Qi, black_player, white_player));
+       get_btn_sign(A2.AImakeMove(Qi, white_player));
    }
 
    if(now_time <= 0)
