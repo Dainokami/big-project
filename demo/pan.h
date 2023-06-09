@@ -1,7 +1,7 @@
 #ifndef PAN_H
 #define PAN_H
 
-
+#include <algorithm>
 #include <QImage>
 #include <QTimer>
 #include <qsignalmapper.h>
@@ -15,9 +15,8 @@
 #include <QFile>
 #include <QFileDialog>
 #include <ai.h>
-
-
-
+#include <qcheckbox.h>
+#include <QCheckBox>
 namespace Ui {
 class pan;
 }
@@ -47,10 +46,6 @@ private slots :
 
     void on_back_clicked();
 
-    void on_checkai1_stateChanged(int arg1);
-
-    void on_checkai2_stateChanged(int arg1);
-
 private:
     Ui::pan *ui;
     QTimer *m;
@@ -71,7 +66,8 @@ private:
     void dfs(int x,int y,int flag);//深度搜索棋盘，是judge函数里面的一个小函数，具体见cpp。
     void change_pan();//设置棋盘是多大
     void save();//保存文件
-
+    void onCheckBox2StateChanged(int state);
+    void onCheckBox1StateChanged(int state);
 
     QString fupan;//保存复盘信息,我们定义超时时在结尾加上“R”,且由于超时方没有动作，我们不把超时作为一步
     double black_time=0;
@@ -80,8 +76,6 @@ private:
     int length=13;//棋盘的长度，默认是9x9
     int now_step=0;//现在是第几步棋
     int now_player = -1;//当前棋手
-    int is_ai1_thinking=0;
-    int is_ai2_thinking=0;
 
     int Qi[13][13]={0};//母棋盘。
 
@@ -94,8 +88,11 @@ private:
     bool game_state = 0;//该变量为1则游戏开始，为0则不然
     int loc=-1;//落子位置，用于高亮当前子和记录对局,-1指游戏开始未有落子
 
+    const int INF = 0x3f3f3f3f;
     int checkAI1_state;
     int checkAI2_state;
+    int is_ai1_thinking=0;
+    int is_ai2_thinking=0;
     enum Chess
     {
         black_loseQi_or_unchecked = -1,empty_unchecked,white_loseQi_or_unchecked,empty_checked,white_have_Qi,black_have_Qi

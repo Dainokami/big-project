@@ -12,7 +12,8 @@ pan::pan(QWidget *parent) :
     connect(ui->rad_9x9,&QRadioButton::clicked,this,pan::change_pan);
     connect(ui->rad_11x11,&QRadioButton::clicked,this,pan::change_pan);
     connect(ui->rad_13x13,&QRadioButton::clicked,this,pan::change_pan);
-
+    connect(ui->checkai1, &QCheckBox::stateChanged, this, pan::onCheckBox1StateChanged);
+    connect(ui->checkai2, &QCheckBox::stateChanged, this, pan::onCheckBox2StateChanged);
 
     ui->btn_white->setStyleSheet("");
     ui->btn_black->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
@@ -65,6 +66,15 @@ pan::~pan()
     delete ui;
 }
 
+void pan::onCheckBox1StateChanged(int state)
+{
+    checkAI1_state=state;
+}
+void pan::onCheckBox2StateChanged(int state)
+{
+    checkAI2_state=state;
+}
+
 void pan::paintEvent(QPaintEvent *)
 {
     paint=new QPainter;
@@ -105,8 +115,6 @@ void pan::OnTimerCountdown()
    now_time -= 1;
    ui->txtl_pan_time->setText(QString::number(now_time));
 
-
-
    //加函数
   /* if(now_player==black_player&&checkAI1_state==Qt::Checked)
    {
@@ -116,27 +124,32 @@ void pan::OnTimerCountdown()
    {
     get_btn_sign(A2.AImakeMove((Qi,black_player,white_player));
    }*/
-   if(now_player==black_player&&checkAI1_state==Qt::Checked && !is_ai1_thinking)
+   //是否恢复状态？
+   //
+   if(now_player==black_player&&checkAI1_state==Qt::Checked&&!is_ai1_thinking)
    {
-<<<<<<< HEAD
+       if(A1.AImakeMove(Qi, black_player,length)==-INF)
+       {
+           black_flag=on;
+           white_flag=on;
+       }
        is_ai1_thinking = 1;
-       get_btn_sign(A1.AImakeMove(Qi, black_player, white_player,length));
+       get_btn_sign(A1.AImakeMove(Qi, black_player,length));
        is_ai1_thinking = 0;
-=======
-       get_btn_sign(A1.AImakeMove(Qi, black_player));
->>>>>>> 44d386abdd9f81d582d30b32044ec42b29141922
    }
-   else if(now_player==white_player&&checkAI2_state==Qt::Checked && is_ai2_thinking)
+   else if(now_player==white_player&&checkAI2_state==Qt::Checked&&!is_ai2_thinking)
    {
-<<<<<<< HEAD
+       if(A1.AImakeMove(Qi, white_player,length)==-INF)
+       {
+           white_flag=on;
+           black_flag=on;
+       }
        is_ai2_thinking = 1;
-       get_btn_sign(A2.AImakeMove(Qi, black_player, white_player,length));
+       get_btn_sign(A2.AImakeMove(Qi, white_player,length));
        is_ai2_thinking = 0;
-=======
-       get_btn_sign(A2.AImakeMove(Qi, white_player));
->>>>>>> 44d386abdd9f81d582d30b32044ec42b29141922
    }
 
+   //
    if(now_time <= 0)
    {
        fupan += "R";
@@ -232,12 +245,7 @@ int pan::judge()//函数内部有分析
                 black_flag = on;
         }//检查一遍子棋盘，康康有没有棋子没气了
 
-    for(int i=0;i<length;i++)
-        qDebug()<<Qi[i][0]<<Qi[i][1]<<Qi[i][2]<<Qi[i][3]<<Qi[i][4]<<Qi[i][5]<<Qi[i][6]<<Qi[i][7]<<Qi[i][8]<<Qi[i][9]<<Qi[i][10]<<Qi[i][11]<<Qi[i][12];
-;
-    for(int i=0;i<length;i++)
-        qDebug()<<copy_Qi[now_step][i][0]<<copy_Qi[now_step][i][1]<<copy_Qi[now_step][i][2]<<copy_Qi[now_step][i][3]<<copy_Qi[now_step][i][4]<<copy_Qi[now_step][i][5]<<copy_Qi[now_step][i][6]<<copy_Qi[now_step][i][7]<<copy_Qi[now_step][i][8];
-    if(black_flag== on && white_flag== on)
+   if(black_flag== on && white_flag== on)
     {
         if(now_player== black_player)//黑白棋都没气且黑棋下了最后一步棋，判定黑棋无路可走而输
         {
@@ -426,7 +434,7 @@ void pan::on_btn_stop_clicked()
 
 void pan::get_btn_sign(int idx)
 {
-    qDebug()<<idx;
+   // qDebug()<<idx;
     int i_=idx/100;
     int j_=idx%100;
     if(Qi[i_][j_] == empty_unchecked && game_state == on)
@@ -469,7 +477,26 @@ void pan::get_btn_sign(int idx)
                 if(now_player == white_player)
                     now_player = black_player;
                 else if(now_player == black_player)
+
+                    //
                     now_player = white_player;
+
+                /*if(now_player==white_player&&checkAI1_state==Qt::Checked)
+                {
+                    //is_ai1_thinking = 1;
+                    get_btn_sign(A1.AImakeMove(Qi, white_player));
+                    //is_ai1_thinking = 0;
+                     now_player = black_player;
+                }
+                else if(now_player==black_player&&checkAI2_state==Qt::Checked)
+                {
+                    //is_ai2_thinking = 1;
+                    get_btn_sign(A2.AImakeMove(Qi, black_player));
+                    //is_ai2_thinking = 0;
+                     now_player = white_player;
+                }
+*/
+                //
             }
 
 
@@ -561,16 +588,4 @@ void pan::save()
 }
 
 
-
-
-void pan::on_checkai1_stateChanged(int arg1)
-{
-    checkAI1_state = arg1;
-}
-
-
-void pan::on_checkai2_stateChanged(int arg1)
-{
-    checkAI2_state = arg1;
-}
 

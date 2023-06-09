@@ -13,12 +13,12 @@ netpan::netpan(QWidget *parent) :
     ui->btn_black->setStyleSheet("background-color:black;border-radius:25px;border:2px groove gray;border-style:outset;");
     connect(this->ui->choseb,&QRadioButton::clicked,this,&netpan::chose_color_and_name);
     connect(this->ui->chosew,&QRadioButton::clicked,this,&netpan::chose_color_and_name);
-
+    connect(this->ui->checkai, &QCheckBox::stateChanged, this, &netpan::onCheckBoxAIStateChanged);
 
     // 本地 IP，所有电脑都可以用这个 IP 指向自己
     IP = "127.0.0.1";
     // 端口，不要太简单，要避免和别的软件冲突
-    PORT = 16667;
+    PORT = 16677;
 
     this->ui->IPEdit->setText(IP);
     this->ui->PORTEdit->setText(QString::number(PORT));
@@ -88,7 +88,7 @@ netpan::~netpan()
     delete audioOutput;
     player = nullptr;
     audioOutput = nullptr;
-
+    checkAI_state=0;
     netlog = QString::number(now_step+1) + "  send to  " +fightername + "  LEAVE_OP  ";
     qDebug()<<netlog;
 
@@ -106,6 +106,10 @@ netpan::~netpan()
     delete ui;
 }
 
+void netpan::onCheckBoxAIStateChanged(int state)
+{
+    checkAI_state=state;
+}
 
 void netpan::paintEvent(QPaintEvent *)
 {
@@ -460,7 +464,9 @@ void netpan::get_btn_sign(int idx)
 {
     int i_=idx/100;
     int j_=idx%100;
-    if(Qi[i_][j_] == empty_unchecked && game_state == on && now_player==mycolor)
+    if(!(j_>=0&&j_<13) && !(i_>=0&&i_<13))
+        return;
+    if(game_state == on && now_player==mycolor)
     {
 
         Qi[i_][j_] = now_player;
@@ -545,7 +551,7 @@ void netpan::get_online_sign(int idx)
                 copy_Qi[now_step][i][j] = Qi[i][j];
 
 
-        if(judge())
+        if(j_>=0 && j_<13 && i_>=0 && i_<13 &&judge())
         {
             now_step++;
 
@@ -603,14 +609,7 @@ void netpan::get_online_sign(int idx)
     //
     if(checkAI_state == Qt::Checked)
     {
-<<<<<<< HEAD
-        if(mycolor == black_player)
-            get_btn_sign(ai->AImakeMove(Qi,black_player,white_player,length));
-        else
-            get_btn_sign(ai->AImakeMove(Qi,white_player,black_player,length));
-=======
-        get_btn_sign(ai->AImakeMove(&Qi[13],now_player));
->>>>>>> 44d386abdd9f81d582d30b32044ec42b29141922
+        get_btn_sign(ai->AImakeMove(Qi,now_player,length));
     }
 }
 
@@ -1353,10 +1352,4 @@ void netpan::chose_color_and_name()
     }
 }
 
-
-
-void netpan::on_checkai_stateChanged(int arg1)
-{
-    checkAI_state = arg1;
-}
 
