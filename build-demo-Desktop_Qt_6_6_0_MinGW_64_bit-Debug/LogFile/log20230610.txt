@@ -1,0 +1,2259 @@
+(2023-06-10 21:15:38 Sat) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64) in ..\demo\netpan.cpp:67
+ 
+(2023-06-10 21:15:38 Sat) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-06-10 21:16:06 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200000   "team4"   "b" 
+
+ 
+(2023-06-10 21:16:06 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(741) 
+"1  get  fighter  READY_OP  team4  b"
+ 
+(2023-06-10 21:16:08 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(772) 
+"1  send to  team4  READY_OP  "
+ 
+(2023-06-10 21:16:08 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200000 "team4" "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "F8"   "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"1  get  team4  MOVE_OP  F8  "
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_5_7" "btn_5_7"
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 0
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "A1" "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"2  send to  team4  MOVE_OP  A1"
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "A3"   "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"3  get  team4  MOVE_OP  A3  "
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_0_2" "btn_0_0"
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 200
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C1" "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"4  send to  team4  MOVE_OP  C1"
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "A4"   "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"5  get  team4  MOVE_OP  A4  "
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_0_3" "btn_2_0"
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 400
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E1" "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"6  send to  team4  MOVE_OP  E1"
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "A5"   "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"7  get  team4  MOVE_OP  A5  "
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_0_4" "btn_4_0"
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 600
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G1" "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"8  send to  team4  MOVE_OP  G1"
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "A6"   "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"9  get  team4  MOVE_OP  A6  "
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_0_5" "btn_6_0"
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 800
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I1" "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"10  send to  team4  MOVE_OP  I1"
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "A7"   "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"11  get  team4  MOVE_OP  A7  "
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_0_6" "btn_8_0"
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 1
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "A2" "" 
+
+ 
+(2023-06-10 21:16:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"12  send to  team4  MOVE_OP  A2"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "A8"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"13  get  team4  MOVE_OP  A8  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_0_7" "btn_0_1"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 8
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "A9" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"14  send to  team4  MOVE_OP  A9"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B3"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"15  get  team4  MOVE_OP  B3  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_1_2" "btn_0_8"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 201
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C2" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"16  send to  team4  MOVE_OP  C2"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B4"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"17  get  team4  MOVE_OP  B4  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_1_3" "btn_2_1"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 202
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C3" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"18  send to  team4  MOVE_OP  C3"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B5"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"19  get  team4  MOVE_OP  B5  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_1_4" "btn_2_2"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 203
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C4" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"20  send to  team4  MOVE_OP  C4"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B6"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"21  get  team4  MOVE_OP  B6  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_1_5" "btn_2_3"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 204
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C5" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"22  send to  team4  MOVE_OP  C5"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B7"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"23  get  team4  MOVE_OP  B7  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_1_6" "btn_2_4"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 205
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C6" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"24  send to  team4  MOVE_OP  C6"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B8"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"25  get  team4  MOVE_OP  B8  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_1_7" "btn_2_5"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 206
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C7" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"26  send to  team4  MOVE_OP  C7"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "C8"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"27  get  team4  MOVE_OP  C8  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_2_7" "btn_2_6"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 208
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C9" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"28  send to  team4  MOVE_OP  C9"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D4"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"29  get  team4  MOVE_OP  D4  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_3_3" "btn_2_8"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 401
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E2" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"30  send to  team4  MOVE_OP  E2"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D5"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"31  get  team4  MOVE_OP  D5  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_3_4" "btn_4_1"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 402
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E3" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"32  send to  team4  MOVE_OP  E3"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D6"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"33  get  team4  MOVE_OP  D6  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_3_5" "btn_4_2"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 403
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E4" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"34  send to  team4  MOVE_OP  E4"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D7"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"35  get  team4  MOVE_OP  D7  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_3_6" "btn_4_3"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 404
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E5" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"36  send to  team4  MOVE_OP  E5"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D8"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"37  get  team4  MOVE_OP  D8  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_3_7" "btn_4_4"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 405
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E6" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"38  send to  team4  MOVE_OP  E6"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "E7"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"39  get  team4  MOVE_OP  E7  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_4_6" "btn_4_5"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 407
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E8" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"40  send to  team4  MOVE_OP  E8"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "F4"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"41  get  team4  MOVE_OP  F4  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_5_3" "btn_4_7"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 408
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E9" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"42  send to  team4  MOVE_OP  E9"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "F5"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"43  get  team4  MOVE_OP  F5  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_5_4" "btn_4_8"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 601
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G2" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"44  send to  team4  MOVE_OP  G2"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "F6"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"45  get  team4  MOVE_OP  F6  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_5_5" "btn_6_1"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 602
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G3" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"46  send to  team4  MOVE_OP  G3"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "G4"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"47  get  team4  MOVE_OP  G4  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_6_3" "btn_6_2"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 604
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G5" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"48  send to  team4  MOVE_OP  G5"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "G6"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"49  get  team4  MOVE_OP  G6  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_6_5" "btn_6_4"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 606
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G7" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"50  send to  team4  MOVE_OP  G7"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "G9"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"51  get  team4  MOVE_OP  G9  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_6_8" "btn_6_6"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 607
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G8" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"52  send to  team4  MOVE_OP  G8"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "H3"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"53  get  team4  MOVE_OP  H3  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_7_2" "btn_6_7"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 801
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I2" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"54  send to  team4  MOVE_OP  I2"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "H4"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"55  get  team4  MOVE_OP  H4  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_7_3" "btn_8_1"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 802
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I3" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"56  send to  team4  MOVE_OP  I3"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "H6"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"57  get  team4  MOVE_OP  H6  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_7_5" "btn_8_2"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 803
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I4" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"58  send to  team4  MOVE_OP  I4"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "H7"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"59  get  team4  MOVE_OP  H7  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_7_6" "btn_8_3"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 804
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I5" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"60  send to  team4  MOVE_OP  I5"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "H8"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"61  get  team4  MOVE_OP  H8  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_7_7" "btn_8_4"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 805
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I6" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"62  send to  team4  MOVE_OP  I6"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "I7"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"63  get  team4  MOVE_OP  I7  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_8_6" "btn_8_5"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 807
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I8" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"64  send to  team4  MOVE_OP  I8"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D3"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"65  get  team4  MOVE_OP  D3  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_3_2" "btn_8_7"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 100
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "B1" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"66  send to  team4  MOVE_OP  B1"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D9"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"67  get  team4  MOVE_OP  D9  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_3_8" "btn_1_0"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 300
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "D1" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"68  send to  team4  MOVE_OP  D1"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "F3"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"69  get  team4  MOVE_OP  F3  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_5_2" "btn_3_0"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 500
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "F1" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"70  send to  team4  MOVE_OP  F1"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "H1"   "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(730) 
+"71  get  team4  MOVE_OP  H1  "
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(573) 
+"btn_7_0" "btn_5_0"
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(617) 
+ai启动
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(44) 
+使用随机数
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E7" "" 
+
+ 
+(2023-06-10 21:16:13 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(494) 
+"72  send to  team4  MOVE_OP  E7"
+ 
+(2023-06-10 21:16:23 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(184) 
+"73  send to  team4  TIMEOUT_END_OP  "
+ 
+(2023-06-10 21:16:23 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200004 "team4" "" 
+
+ 
+(2023-06-10 21:21:30 Sat) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64) in ..\demo\netpan.cpp:67
+ 
+(2023-06-10 21:21:30 Sat) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-06-10 21:21:50 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200000   "team4"   "b" 
+
+ 
+(2023-06-10 21:21:50 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(742) 
+"1  get  fighter  READY_OP  team4  b"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(773) 
+"1  send to  team4  READY_OP  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200000 "team4" "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "C3"   "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"1  get  team4  MOVE_OP  C3  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_2_2" "btn_2_2"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 0
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "A1" "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"2  send to  team4  MOVE_OP  A1"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "A3"   "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"3  get  team4  MOVE_OP  A3  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_0_2" "btn_0_0"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 200
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C1" "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"4  send to  team4  MOVE_OP  C1"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "A4"   "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"5  get  team4  MOVE_OP  A4  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_0_3" "btn_2_0"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 400
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E1" "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"6  send to  team4  MOVE_OP  E1"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "A5"   "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"7  get  team4  MOVE_OP  A5  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_0_4" "btn_4_0"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 600
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G1" "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"8  send to  team4  MOVE_OP  G1"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "A6"   "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"9  get  team4  MOVE_OP  A6  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_0_5" "btn_6_0"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 800
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I1" "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"10  send to  team4  MOVE_OP  I1"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "A7"   "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"11  get  team4  MOVE_OP  A7  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_0_6" "btn_8_0"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 1
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "A2" "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"12  send to  team4  MOVE_OP  A2"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "A8"   "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"13  get  team4  MOVE_OP  A8  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_0_7" "btn_0_1"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 8
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "A9" "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"14  send to  team4  MOVE_OP  A9"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B3"   "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"15  get  team4  MOVE_OP  B3  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_1_2" "btn_0_8"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 201
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C2" "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"16  send to  team4  MOVE_OP  C2"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B4"   "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"17  get  team4  MOVE_OP  B4  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_1_3" "btn_2_1"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 203
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C4" "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"18  send to  team4  MOVE_OP  C4"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B5"   "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"19  get  team4  MOVE_OP  B5  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_1_4" "btn_2_3"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 204
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C5" "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"20  send to  team4  MOVE_OP  C5"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B6"   "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"21  get  team4  MOVE_OP  B6  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_1_5" "btn_2_4"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 205
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C6" "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"22  send to  team4  MOVE_OP  C6"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B7"   "" 
+
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"23  get  team4  MOVE_OP  B7  "
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_1_6" "btn_2_5"
+ 
+(2023-06-10 21:21:52 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 206
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C7" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"24  send to  team4  MOVE_OP  C7"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B8"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"25  get  team4  MOVE_OP  B8  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_1_7" "btn_2_6"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 207
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C8" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"26  send to  team4  MOVE_OP  C8"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D3"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"27  get  team4  MOVE_OP  D3  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_3_2" "btn_2_7"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 208
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C9" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"28  send to  team4  MOVE_OP  C9"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D4"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"29  get  team4  MOVE_OP  D4  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_3_3" "btn_2_8"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 401
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E2" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"30  send to  team4  MOVE_OP  E2"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D5"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"31  get  team4  MOVE_OP  D5  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_3_4" "btn_4_1"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 402
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E3" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"32  send to  team4  MOVE_OP  E3"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D6"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"33  get  team4  MOVE_OP  D6  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_3_5" "btn_4_2"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 403
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E4" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"34  send to  team4  MOVE_OP  E4"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D7"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"35  get  team4  MOVE_OP  D7  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_3_6" "btn_4_3"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 404
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E5" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"36  send to  team4  MOVE_OP  E5"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D8"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"37  get  team4  MOVE_OP  D8  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_3_7" "btn_4_4"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 405
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E6" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"38  send to  team4  MOVE_OP  E6"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "E7"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"39  get  team4  MOVE_OP  E7  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_4_6" "btn_4_5"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 407
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E8" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"40  send to  team4  MOVE_OP  E8"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "F4"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"41  get  team4  MOVE_OP  F4  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_5_3" "btn_4_7"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 408
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "E9" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"42  send to  team4  MOVE_OP  E9"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "F5"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"43  get  team4  MOVE_OP  F5  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_5_4" "btn_4_8"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 601
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G2" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"44  send to  team4  MOVE_OP  G2"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "F6"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"45  get  team4  MOVE_OP  F6  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_5_5" "btn_6_1"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 602
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G3" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"46  send to  team4  MOVE_OP  G3"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "F7"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"47  get  team4  MOVE_OP  F7  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_5_6" "btn_6_2"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 603
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G4" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"48  send to  team4  MOVE_OP  G4"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "F8"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"49  get  team4  MOVE_OP  F8  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_5_7" "btn_6_3"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 604
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G5" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"50  send to  team4  MOVE_OP  G5"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "G6"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"51  get  team4  MOVE_OP  G6  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_6_5" "btn_6_4"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 606
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G7" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"52  send to  team4  MOVE_OP  G7"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "G8"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"53  get  team4  MOVE_OP  G8  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_6_7" "btn_6_6"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 608
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "G9" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"54  send to  team4  MOVE_OP  G9"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "H4"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"55  get  team4  MOVE_OP  H4  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_7_3" "btn_6_8"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 801
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I2" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"56  send to  team4  MOVE_OP  I2"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "H5"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"57  get  team4  MOVE_OP  H5  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_7_4" "btn_8_1"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 802
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I3" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"58  send to  team4  MOVE_OP  I3"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "H6"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"59  get  team4  MOVE_OP  H6  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_7_5" "btn_8_2"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 803
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I4" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"60  send to  team4  MOVE_OP  I4"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "H8"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"61  get  team4  MOVE_OP  H8  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_7_7" "btn_8_3"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 804
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I5" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"62  send to  team4  MOVE_OP  I5"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "I8"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"63  get  team4  MOVE_OP  I8  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_8_7" "btn_8_4"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 805
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I6" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"64  send to  team4  MOVE_OP  I6"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "B1"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"65  get  team4  MOVE_OP  B1  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_1_0" "btn_8_5"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(32) 
+使用ai 806
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "I7" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"66  send to  team4  MOVE_OP  I7"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200002   "D1"   "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(731) 
+"67  get  team4  MOVE_OP  D1  "
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(574) 
+"btn_3_0" "btn_8_6"
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(618) 
+ai启动
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\ai.cpp) Line:(44) 
+使用随机数
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200002 "C1" "" 
+
+ 
+(2023-06-10 21:21:53 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(495) 
+"68  send to  team4  MOVE_OP  C1"
+ 
+(2023-06-10 21:22:03 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(184) 
+"69  send to  team4  TIMEOUT_END_OP  "
+ 
+(2023-06-10 21:22:03 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(34) 
+send  200004 "team4" "" 
+
+ 
+(2023-06-10 21:22:03 Sat) 
+Debug: File:(..\demo\networkserver.cpp) Line:(22) 
+Server:  200004   "team4"   "" 
+
+ 
+(2023-06-10 21:22:03 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(817) 
+"69  get  team4  TIMEOUT_END_OP  team4  "
+ 
+(2023-06-10 21:53:33 Sat) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64) in ..\demo\netpan.cpp:67
+ 
+(2023-06-10 21:53:33 Sat) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-06-10 21:54:30 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:54:33 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:54:47 Sat) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64) in ..\demo\netpan.cpp:67
+ 
+(2023-06-10 21:54:47 Sat) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 
+(2023-06-10 21:55:12 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:55:21 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:55:22 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:55:25 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:55:38 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:55:41 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:55:49 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:55:50 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:55:51 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:55:51 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:55:54 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(423) 
+"1  send to  fighter  READY_OP  "
+ 
+(2023-06-10 21:56:04 Sat) 
+Debug: File:(..\demo\netpan.cpp) Line:(1289) 
+trying connect
+ 
+(2023-06-10 21:56:34 Sat) 
+Warning: File:() Line:(0) 
+QObject::connect: No such signal QMediaPlayer::QMediaPlayer::positionChanged(qint64) in ..\demo\netpan.cpp:67
+ 
+(2023-06-10 21:56:34 Sat) 
+Warning: File:() Line:(0) 
+QObject::connect:  (receiver name: 'netpan')
+ 

@@ -467,6 +467,7 @@ void netpan::get_btn_sign(int idx)
     int j_=idx%100;
     if(!(j_>=0&&j_<13) && !(i_>=0&&i_<13)&&Qi[i_][j_]!=0)
         return;
+
     if(game_state == on && now_player==mycolor)
     {
 
@@ -614,6 +615,7 @@ void netpan::get_online_sign(int idx)
     //
     if(checkAI_state == Qt::Checked)
     {
+        qDebug()<<"ai启动";
         get_btn_sign(ai->AImakeMove(Qi,now_player,length));
     }
 }

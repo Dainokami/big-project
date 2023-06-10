@@ -27,7 +27,7 @@ int AI::AImakeMove(int board1[13][13],int player,int len)
     if(board[globestRow][globestCol] == 0)
     {
         board[globestRow][globestCol] = player;
-        if(judge()/*&&isValid(globestRow,globestCol)*/)
+        if(judge())
         {
             qDebug()<<"使用ai"<< 100*globestRow+globestCol;
         return 100*globestRow+globestCol;
@@ -115,6 +115,7 @@ int AI::getPotential(int x, int y, int player)
 
 
 int AI::evaluate(int player)
+//估值函数1，按四角和边缘给分
 {
     int score = 0;
 
@@ -154,7 +155,7 @@ int AI::evaluate(int player)
 }
 
 //int AI::evaluate(int now_player)
-////估值函数，计算己方棋子气数作为+分，对方气数-分，最后计算总分
+////估值函数2，计算己方棋子气数作为+分，对方气数-分，最后计算总分
 //{
 //    int score = 0;
 //       int maxScore = 0;
@@ -195,11 +196,11 @@ int AI::MiniMax(int player, int depth, int alpha, int beta)
 
                   if (isValid(i, j)) {
                       board[i][j] = player;
-                     /* if(!judge())
+                     if(!judge())
                       {board[i][j] = EMPTY;
                           flag0[i][j]=1;
                          break;
-                      }*/
+                      }
                       int score = MiniMax(minPlayer, depth - 1, alpha, beta);
 
                       board[i][j] = EMPTY;
@@ -223,11 +224,11 @@ int AI::MiniMax(int player, int depth, int alpha, int beta)
 
                   if (isValid(i, j)) {
                       board[i][j] = player;
-                     /* if(!judge())
+                      if(!judge())
                       {board[i][j] = EMPTY;
                           flag0[i][j]=1;
                           break;
-                      }*/
+                      }
                       int score = MiniMax(maxPlayer, depth - 1, alpha, beta);
                       board[i][j] = EMPTY;
                       if (score < bestScore) {
