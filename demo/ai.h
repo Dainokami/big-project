@@ -40,7 +40,7 @@ private:
     int length=0;
     int globestRow=1;
     int globestCol=1;
-    int ji=0;
+    //int ji=0;
 
     int evaluate(int now_player); // 估值函数
     bool isValid(int x, int y);//判断合法

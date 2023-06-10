@@ -22,14 +22,14 @@ int AI::AImakeMove(int board1[13][13],int player,int len)
     globestCol = -1;
     while(true)
     {
-
+    int ji=0;
     MiniMax(player, 2, -INF, INF);
     if(board[globestRow][globestCol] == 0)
     {
         board[globestRow][globestCol] = player;
-        if(judge())
+        if(judge()/*&&isValid(globestRow,globestCol)*/)
         {
-            qDebug()<<"使用ai";
+            qDebug()<<"使用ai"<< 100*globestRow+globestCol;
         return 100*globestRow+globestCol;
         }
         else
@@ -44,7 +44,7 @@ int AI::AImakeMove(int board1[13][13],int player,int len)
                 qDebug()<<"使用随机数";
                 return 100*globestRow+globestCol;
             }
-            }
+        }
             continue;
         }
     }
@@ -55,7 +55,7 @@ int AI::AImakeMove(int board1[13][13],int player,int len)
 
 
 bool AI::isValid(int x, int y)
-//判断落子合法
+//判断落子是否合法
 {
 
     if (x < 0 || x >=length || y < 0 || y >= length || board[x][y] != EMPTY||flag0[x][y]==1) {
@@ -65,7 +65,7 @@ bool AI::isValid(int x, int y)
 }
 
 int AI::getLiberty(int i, int j)
-//计算周围气数
+//计算传入点周围气数
 {
     int liberty = 0;
        if (isValid(i - 1, j)) ++liberty;
@@ -79,6 +79,7 @@ int AI::getLiberty(int i, int j)
 
 
 int AI::getPotential(int x, int y, int player)
+//判断潜力函数
 {
     int potential = 0;
 
@@ -113,44 +114,145 @@ int AI::getPotential(int x, int y, int player)
 }
 
 
-//int AI::evaluate(int player)
+int AI::evaluate(int player)
+{
+    int score = 0;
+
+    for (int i = 0; i < 9; i++)
+    {
+        for (int j = 0; j < 9; j++)
+        {
+            if (board[i][j] == player)
+            {
+                if ((i == 0&&j==0) || (i == 8&&j==0) || (j == 8&&i==0 )||( j == 8&&i==8))
+                {
+                    score += 100; // 四角位置得分
+                }
+                if (i == 0 || i == 8 || j == 8 || j == 0)
+                {
+                    score += 7; // 边缘位置得分
+                }
+                else if (i == 1 || i == 7 || j == 1 || j == 7)
+                {
+                    score += 5; // 靠近边缘位置得分
+                }
+                else
+                {
+                    score += 2; // 中间位置得分
+                }
+
+                int liberty = getLiberty(i, j);
+                score += liberty;
+
+                int potential = getPotential(i, j, player);
+                score += potential;
+            }
+        }
+    }
+
+    return score;
+}
+
+//int AI::evaluate(int now_player)
+////估值函数，计算己方棋子气数作为+分，对方气数-分，最后计算总分
 //{
 //    int score = 0;
+//       int maxScore = 0;
+//       int minScore = 0;
 
-//    for (int i = 0; i < 9; i++)
-//    {
-//        for (int j = 0; j < 9; j++)
-//        {
-//            if (board[i][j] == player)
-//            {
-//                if (i == 0&&j==0 || i == 8&&j==0 || j == 8&&i==0 || j == 8&&i==8)
-//                {
-//                    score += 100; // 四角位置得分
-//                }
-//                if (i == 0 || i == 8 || j == 8 || j == 0)
-//                {
-//                    score += 7; // 边缘位置得分
-//                }
-//                else if (i == 1 || i == 7 || j == 1 || j == 7)
-//                {
-//                    score += 5; // 靠近边缘位置得分
-//                }
-//                else
-//                {
-//                    score += 2; // 中间位置得分
-//                }
+//       for (int i = 0; i < length; i++) {
+//           for (int j = 0; j < length; j++) {
+//               if (board[i][j] == now_player) {
+//                   int stoneScore = getLiberty(i, j);
+//                   score += stoneScore;
+//                   maxScore = std::max(maxScore, stoneScore);
 
-//                int liberty = getLiberty(i, j);
-//                score += liberty;
+//               } else if (board[i][j] == -now_player) {
+//                   int oppStoneScore = getLiberty(i, j);
+//                   score -= oppStoneScore;
+//                   minScore = std::max(minScore, oppStoneScore);
 
-//                int potential = getPotential(i, j, player);
-//                score += potential;
-//            }
-//        }
-//    }
+//               }
+//           }
+//       }
 
-//    return score;
+//       return score;
 //}
+
+
+int AI::MiniMax(int player, int depth, int alpha, int beta)
+//minimax算法
+{
+    if (depth == 0) {
+          return evaluate(player);
+      }
+ //qDebug()<<globestRow<<" "<<globestCol;
+      int bestScore;
+      if (player == maxPlayer) {
+          bestScore = -INF;
+          for (int i = 0; i < length; i++) {
+              for (int j = 0; j < length; j++) {
+
+                  if (isValid(i, j)) {
+                      board[i][j] = player;
+                     /* if(!judge())
+                      {board[i][j] = EMPTY;
+                          flag0[i][j]=1;
+                         break;
+                      }*/
+                      int score = MiniMax(minPlayer, depth - 1, alpha, beta);
+
+                      board[i][j] = EMPTY;
+                      if (score > bestScore) {
+                          bestScore = score;
+                          globestRow = i;
+                          globestCol = j;
+                          //这里更新最佳位置横纵坐标
+                      }
+                      alpha = std::max(alpha, bestScore);
+                      if (beta <= alpha) {
+                          break;
+                      }
+                  }
+              }
+          }
+      } else {
+          bestScore = INF;
+          for (int i = 0; i < length; i++) {
+              for (int j = 0; j < length; j++) {
+
+                  if (isValid(i, j)) {
+                      board[i][j] = player;
+                     /* if(!judge())
+                      {board[i][j] = EMPTY;
+                          flag0[i][j]=1;
+                          break;
+                      }*/
+                      int score = MiniMax(maxPlayer, depth - 1, alpha, beta);
+                      board[i][j] = EMPTY;
+                      if (score < bestScore) {
+                          bestScore = score;
+                          globestRow = i;
+                          globestCol = j;
+                          //这里更新最佳位置横纵坐标
+                      }
+                      beta = std::min(beta, bestScore);
+                      if (beta <= alpha) {
+                          break;
+                      }
+                  }
+              }
+          }
+      }
+
+      return bestScore;
+
+
+}
+
+
+
+
 bool AI::judge()
 {
     for(int i=0;i<length;i++)
@@ -230,116 +332,5 @@ void AI::dfs(int x, int y,int flag)
 
 
 }
-
-int AI::evaluate(int now_player)
-//估值函数
-{
-    int score = 0;
-       int maxScore = 0;
-       int minScore = 0;
-       int maxPlayerCount = 0;
-       int minPlayerCount = 0;
-
-       for (int i = 0; i < length; i++) {
-           for (int j = 0; j < length; j++) {
-               if (board[i][j] == now_player) {
-                   int stoneScore = getLiberty(i, j);
-                   score += stoneScore;
-                   maxScore = std::max(maxScore, stoneScore);
-                   maxPlayerCount++;
-               } else if (board[i][j] == -now_player) {
-                   int oppStoneScore = getLiberty(i, j);
-                   score -= oppStoneScore;
-                   minScore = std::max(minScore, oppStoneScore);
-                   minPlayerCount++;
-               }
-           }
-       }
-
-       if (maxPlayerCount == 0 && minPlayerCount == 0) {
-           return 0;
-       } else if (minPlayerCount == 0) {
-           return INF;
-       } else if (maxPlayerCount == 0) {
-           return -INF;
-       } else if (maxScore >= 3 && minScore == 1) {
-           return INF;
-       } else if (minScore >= 3 && maxScore == 1) {
-           return -INF;
-       }
-
-       return score;
-}
-
-
-int AI::MiniMax(int player, int depth, int alpha, int beta)
-{
-    if (depth == 0) {
-          return evaluate(player);
-      }
- //qDebug()<<globestRow<<" "<<globestCol;
-      int bestScore;
-      if (player == maxPlayer) {
-          bestScore = -INF;
-          for (int i = 0; i < length; i++) {
-              for (int j = 0; j < length; j++) {
-
-                  if (isValid(i, j)) {
-                      board[i][j] = player;
-                      if(!judge())
-                      {board[i][j] = EMPTY;
-                          flag0[i][j]=1;
-                         break;
-                      }
-                      int score = MiniMax(minPlayer, depth - 1, alpha, beta);
-
-                      board[i][j] = EMPTY;
-                      if (score > bestScore) {
-                          bestScore = score;
-                          globestRow = i;
-                          globestCol = j;
-                      }
-                      alpha = std::max(alpha, bestScore);
-                      if (beta <= alpha) {
-                          break;
-                      }
-                  }
-              }
-          }
-      } else {
-          bestScore = INF;
-          for (int i = 0; i < length; i++) {
-              for (int j = 0; j < length; j++) {
-
-                  if (isValid(i, j)) {
-                      board[i][j] = player;
-                      if(!judge())
-                      {board[i][j] = EMPTY;
-                          flag0[i][j]=1;
-                          break;
-                      }
-                      int score = MiniMax(maxPlayer, depth - 1, alpha, beta);
-                      board[i][j] = EMPTY;
-                      if (score < bestScore) {
-                          bestScore = score;
-                          globestRow = i;
-                          globestCol = j;
-                      }
-                      beta = std::min(beta, bestScore);
-                      if (beta <= alpha) {
-                          break;
-                      }
-                  }
-              }
-          }
-      }
-
-      return bestScore;
-
-
-}
-
-
-
 
 
