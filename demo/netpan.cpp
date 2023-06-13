@@ -47,7 +47,7 @@ netpan::netpan(QWidget *parent) :
     m = new QTimer(this);
     m->setInterval(1000);
     connect(m,&QTimer::timeout,this,netpan::OnTimerCountdown);
-    ui->txtl_pan_time->setText("50");
+    ui->txtl_pan_time->setText("3");
 
     //以下关联按钮
     QSignalMapper *myMapper = new QSignalMapper(this);
@@ -208,22 +208,6 @@ void netpan::OnTimerCountdown()
     }
 }
 
-/*void netpan::on_btn_stop_clicked()
-{
-    if(game_state ==on)
-    {
-        m->stop();
-        game_state = off;
-
-    }
-    else if(game_state == off)
-    {
-        this->on_btn_startgame_clicked();
-    }
-
-
-}
-*/
 void netpan::delete_time()
 {
     if (m)
@@ -278,34 +262,8 @@ int netpan::judge()//函数内部有分析
                 black_flag = on;
         }//检查一遍子棋盘，康康有没有棋子没气了
 
-     if(black_flag== on && white_flag== on)
+     if(black_flag== on || white_flag== on)
     {
-        if(now_player== black_player)//黑白棋都没气且黑棋下了最后一步棋，判定黑棋无路可走而输
-        {
-            QMessageBox::information(this, "嘻嘻嘻嘻", "黑棋你要输了捏，下次注意点", QMessageBox::Yes , QMessageBox::Yes);
-            return no;
-        }
-        else//黑白棋都没气且白棋下了最后一步棋，判定白棋无路可走而输
-        {
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你要输了捏，下次注意点", QMessageBox::Yes , QMessageBox::Yes);
-            return no;
-        }
-
-    }
-    else if(black_flag==on)//黑棋没气了。黑棋围的，鉴定为紫砂；白棋围的，鉴定为白棋输
-    {
-        if(now_player == black_player)
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋要你紫砂了捏，下次注意点", QMessageBox::Yes , QMessageBox::Yes);
-        else if(now_player == white_player)
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你要输了捏，下次注意点", QMessageBox::Yes , QMessageBox::Yes);
-        return no;
-    }
-    else if(white_flag ==on)//白棋没气了。白棋围的，鉴定为紫砂；黑棋围的，鉴定为白棋输
-    {
-        if(now_player == white_player)
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "白棋你要紫砂了捏，下次注意点", QMessageBox::Yes , QMessageBox::Yes);
-        else if(now_player == black_player)
-            QMessageBox::information(NULL, "嘻嘻嘻嘻", "黑棋你要输了捏，下次注意点", QMessageBox::Yes , QMessageBox::Yes);
         return no;
     }
 
@@ -415,6 +373,7 @@ void netpan::clear_pan()
 
 void netpan::on_btn_startgame_clicked()
 {
+    ai->clear();
     now_player = black_player;
     isbeginner = 1;
     if(mode == SOCKET && game_state == off)
@@ -464,7 +423,7 @@ void netpan::get_btn_sign(int idx)
 {
     int i_=idx/100;
     int j_=idx%100;
-    if(!(j_>=0&&j_<13) && !(i_>=0&&i_<13))
+    if(!(j_>=0&&j_<13) && !(i_>=0&&i_<13) && Qi[i_][j_]!=0)
         return;
     if(game_state == on && now_player==mycolor)
     {
@@ -554,7 +513,6 @@ void netpan::get_online_sign(int idx)
         if(j_>=0 && j_<13 && i_>=0 && i_<13 &&judge())
         {
             now_step++;
-
             if(now_player==black_player)
                 black_time += game_max_time - now_time;
             else
@@ -889,10 +847,6 @@ void netpan::receieveData(QTcpSocket* client, NetworkData data)
 
         if(lastOne)
             this->server->send(lastOne,NetworkData(OPCODE::GIVEUP_END_OP,username,""));
-
-
-
-
     }
     else if(data.op == OPCODE::GIVEUP_END_OP)
     {
@@ -1293,40 +1247,6 @@ void netpan::reConnect()
     if(!this->socket->base()->waitForConnected(3000)){
     }
 }
-/*void netpan::reStart()
-{
-    if(mode == SOCKET)
-        this->socket->bye();
-
-    mode = SERVER;
-    this->ui->connectLabel->setText("disconnect");
-
-    disconnect(this->server,&NetworkServer::receive,this,&netpan::receieveData);
-    clients.clear();
-    delete this->server;
-    this->server = new NetworkServer(this);
-    // 端口相当于传信息的窗户，收的人要在这守着
-    this->server->listen(QHostAddress::Any,PORT);
-    lastOne = nullptr;
-    connect(this->server,&NetworkServer::receive,this,&netpan::receieveData);
-}
-
-void netpan::reConnect()
-{
-    qDebug("trying connect");
-    if(mode == SERVER)
-    {
-        disconnect(this->server,&NetworkServer::receive,this,&netpan::receieveData);
-        clients.clear();
-        delete this->server;
-    }
-    mode = SOCKET;
-    this->ui->connectLabel->setText("connection fail");
-    this->socket->bye();
-    this->socket->hello(IP,PORT);
-    if(!this->socket->base()->waitForConnected(3000)){
-    }
-}*/
 
 void netpan::reSet()
 {

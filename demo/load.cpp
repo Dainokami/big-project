@@ -21,6 +21,7 @@ load::~load()
 
 void load::check()
 {
+    //以下确定棋盘大小
     if(fupan.indexOf('L')!=-1 ||fupan.indexOf('M')!=-1 ||fupan.indexOf("12")!=-1 ||fupan.indexOf("13")!=-1)
         length = 13;
     else if(fupan.indexOf('J')!=-1 ||fupan.indexOf('K')!=-1 ||fupan.indexOf("10")!=-1 ||fupan.indexOf("11")!=-1)
@@ -29,8 +30,15 @@ void load::check()
         length = 9;
     load::update();
 
-    length_pan = fupan.length();
+    //以下处理原存档数据
+    //由于两步之间有空格，每一步是三个或两个数字字母，则有ptr确定所读取那一步的后一步第一个字母，load_loc确定该步第一个字母
+    //例如对“A2 D4 F13”，想要读取D4，则ptr指向‘F’，load_loc指向‘D’，若ptr-load_loc==4则代表该步由三个字符组成，不然则由2个字符
+    //读取完一步后，load_loc = ptr，然后ptr不断++直到碰到空格后++停止
+    //length_pan为存档长度，当ptr == length_pan后停止循环
+    int length_pan = fupan.length();
     step=1;
+    int ptr = 0;
+    int load_loc=0;
     while (true)
     {
         for(;ptr<length_pan;)
@@ -51,8 +59,7 @@ void load::check()
                 log[step] =a*100 + QString(fupan.at(load_loc+1)).toInt()*10 + QString(fupan.at(load_loc+2)).toInt();
             }
             step++;
-            QPushButton *now_btn = this->findChild<QPushButton*>(now_btn_str);
-            qDebug()<<QString::number(log[step-1])<<"  ";
+            QPushButton *now_btn = this->findChild<QPushButton*>(now_btn_str);//寻找当前读取步数按钮的指针，若为空指针则报错
             if(now_btn ==nullptr)
             {
                 QMessageBox::warning(this,"错误","你打开了错误的存档\n请再次选择正确的存档");
@@ -128,10 +135,7 @@ void load::play_the_Go(QPushButton *now_btn)
 
 void load::clear()
 {
-    length_pan=0;
-    load_loc = 0;
     step=0;
-    ptr=0;
     fupan="";
     for(int i=1;i<=13;i++)
         for(int j=1;j<=13;j++)

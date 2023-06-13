@@ -32,7 +32,7 @@ public:
     const int size=50;
     const int x=35,y=35;
 
-private slots :
+protected slots :
 
     void on_btn_startgame_clicked();//开始游戏
 
@@ -46,7 +46,7 @@ private slots :
 
     void on_back_clicked();
 
-private:
+protected:
     Ui::pan *ui;
     QTimer *m;
     void paintEvent(QPaintEvent *);//绘图函数声明
@@ -87,12 +87,11 @@ private:
     int now_time=0;//倒计时的当前时长
     bool game_state = 0;//该变量为1则游戏开始，为0则不然
     int loc=-1;//落子位置，用于高亮当前子和记录对局,-1指游戏开始未有落子
-
-    const int INF = 0x3f3f3f3f;
-    int checkAI1_state;
+    int checkAI1_state;     //ai是否启动
     int checkAI2_state;
-    int is_ai1_thinking=0;
+    int is_ai1_thinking=0;  //用于OnTimerCountdown()函数中，防止重复启动ai
     int is_ai2_thinking=0;
+    const int INF = 0x3f3f3f3f;//用于OnTimerCountdown()函数中，防止ai返回无效值
     enum Chess
     {
         black_loseQi_or_unchecked = -1,empty_unchecked,white_loseQi_or_unchecked,empty_checked,white_have_Qi,black_have_Qi

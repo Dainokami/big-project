@@ -23,7 +23,7 @@ pan::pan(QWidget *parent) :
     m = new QTimer(this);
     m->setInterval(1000);
     connect(m,&QTimer::timeout,this,pan::OnTimerCountdown);
-    ui->txtl_pan_time->setText("50");
+    ui->txtl_pan_time->setText("3");
 
     //以下关联按钮
     QSignalMapper *myMapper = new QSignalMapper(this);
@@ -361,6 +361,8 @@ void pan::change_pan()
 
 void pan::clear_pan()
 {
+    A1.clear();
+    A2.clear();
     black_flag=off;
     white_flag=off;
     now_step=0;
