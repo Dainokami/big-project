@@ -421,10 +421,12 @@ void netpan::on_btn_startgame_clicked()
 
 void netpan::get_btn_sign(int idx)
 {
+    // qDebug()<<idx;
     int i_=idx/100;
     int j_=idx%100;
     if(!(j_>=0&&j_<13) && !(i_>=0&&i_<13) && Qi[i_][j_]!=0)
         return;
+
     if(game_state == on && now_player==mycolor)
     {
 
@@ -453,6 +455,7 @@ void netpan::get_btn_sign(int idx)
 
         if(judge())
         {
+
             now_step++;
             //设置时间
             if(now_player==black_player)
@@ -485,7 +488,6 @@ void netpan::get_btn_sign(int idx)
                 else if(now_player == black_player)
                     now_player = white_player;
             }
-
         }
         else
         {
@@ -500,8 +502,10 @@ void netpan::get_online_sign(int idx)
 {
     int i_=idx/100;
     int j_=idx%100;
+    //qDebug()<<idx;
     if(Qi[i_][j_] == empty_unchecked && game_state == on)
     {
+         //qDebug()<<"1";
 
         Qi[i_][j_] = now_player;
 
@@ -525,6 +529,7 @@ void netpan::get_online_sign(int idx)
                 loc = idx;
             QString now_btn_str = "btn_"+QString::number(i_)+"_"+QString::number(j_);
             QString last_btn_str = "btn_"+QString::number(loc/100)+"_"+QString::number(loc%100);
+            qDebug()<<now_btn_str <<last_btn_str;
             QPushButton *now_btn = this->findChild<QPushButton*>(now_btn_str);
             QPushButton *last_btn = this->findChild<QPushButton*>(last_btn_str);
             play_the_Go(now_btn,last_btn);
@@ -546,6 +551,7 @@ void netpan::get_online_sign(int idx)
         }
         else
         {
+           // qDebug()<<"2";
             Qi[i_][j_]= empty_unchecked;
             white_flag=off;
             black_flag=off;
@@ -567,6 +573,7 @@ void netpan::get_online_sign(int idx)
     //
     if(checkAI_state == Qt::Checked)
     {
+        qDebug()<<"ai启动";
         get_btn_sign(ai->AImakeMove(Qi,now_player,length));
     }
 }

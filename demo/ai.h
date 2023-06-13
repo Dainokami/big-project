@@ -1,6 +1,5 @@
 #ifndef AI_H
 #define AI_H
-//#include <netpan.h>
 #include <algorithm>
 #include <QDebug>
 #include <QRandomGenerator>
@@ -29,7 +28,6 @@ private:
     int length=0;//传入棋盘大小
     int globestRow=1;//最佳行号
     int globestCol=1;//最佳列号
-
 
     int evaluate(int now_player); // 估值函数
     bool isValid(int x, int y);//判断合法
